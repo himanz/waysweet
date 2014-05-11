@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 9.99
+  data: 1
+  minute: 1
+  text: 1
+
+two:
+  price: 9.99
+  data: 1
+  minute: 1
+  text: 1
