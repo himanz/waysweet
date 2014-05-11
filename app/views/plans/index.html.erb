@@ -1,0 +1,6 @@
+<% @plans.each do |plan| %>
+  <%= plan.price %>
+  <%= if plan.data == -1 ? "Unlimited" : plan.data %>
+  <%= if plan.minute == -1 ? "Unlimited" : plan.minute %>
+  <%= if plan.text == -1 ? "Unlimited" : plan.text %>
+<% end %>
