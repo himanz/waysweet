@@ -2,7 +2,20 @@
 <%= @plan.data == -1 ? "Unlimited" : @plan.data %>
 <%= @plan.minute == -1 ? "Unlimited" : @plan.minute %>
 <%= @plan.text == -1 ? "Unlimited" : @plan.text %>
+<p> ----------- </p>
+<p> Comments </p>
 
+<% @plan.comments.each do |comment| %>
+  <div class="comment">
+  	<%= comment.feedback %>
+  	<% if comment.user_id != nil %>
+      <em> by <%= comment.user_id %></em>
+      Added on: <%= comment.created_at %>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- Form for new comment -->
 <%= form_for ([@plan, @comment]) do |f| %>
   <% if @plan.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +30,7 @@
   <% end %>
 
   <div class="field">
-  	<%= f.label :feedback %><br />
+  	<%= f.label :Comment %><br />
   	<%= f.text_area :feedback %>
   </div>
   <div class="actions">
