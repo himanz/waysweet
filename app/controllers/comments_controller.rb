@@ -9,10 +9,14 @@ class CommentsController < ApplicationController
 		@comment = @plan.comments.build(comment_params)
 		@comment.user_id = current_user.id
 
-		if @comment.save
-			redirect_to @plan, notice: "Review created successfully"
-		else
-			render @plan, alert: "Error with creating review"
+    respond_to do |format|
+			if @comment.save
+				format.html { redirect_to @plan, notice: "Review created successfully" }
+				format.js {}
+			else
+				format.html { render @plan, alert: "Error with creating review" }
+				format.js {}
+			end
 		end
 	end
 
