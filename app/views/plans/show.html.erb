@@ -3,3 +3,24 @@
 <%= @plan.minute == -1 ? "Unlimited" : @plan.minute %>
 <%= @plan.text == -1 ? "Unlimited" : @plan.text %>
 
+<%= form_for ([@plan, @comment]) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+    	<h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+    	<ul>
+    		<% review.errors.full_messages.each do |msg| %>
+    		  <li><%= msg %></li>
+    		<% end %>
+    	</ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  	<%= f.label :feedback %><br />
+  	<%= f.text_area :feedback %>
+  </div>
+  <div class="actions">
+  	<%= f.submit "Create" %>
+  </div>
+<% end %>
