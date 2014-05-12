@@ -8,11 +8,11 @@ class PlansController < ApplicationController
   end
 
 
-
   end
 
 	def show
 		@plan = Plan.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def new

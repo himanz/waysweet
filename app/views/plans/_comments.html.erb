@@ -1,0 +1,9 @@
+<% @plan.comments.each do |comment| %>
+  <div class="feedback">
+  	<%= comment.feedback %>
+  	<% if comment.user_id != nil %>
+      <em> by <%= comment.user.email %></em>
+      Added on: <%= comment.created_at %>
+    <% end %>
+  </div>
+<% end %>
