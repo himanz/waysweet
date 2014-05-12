@@ -1,7 +1,15 @@
 class PlansController < ApplicationController
 	def index
-		@plans = Plan.all
-	end
+		@plans = Plan.order('plans.price DESC').page(params[:page])
+  
+  respond_to do |format|
+    format.js
+    format.html
+  end
+
+
+
+  end
 
 	def show
 		@plan = Plan.find(params[:id])

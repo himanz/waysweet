@@ -1,0 +1,21 @@
+<%= link_to plan_path(plan.id) do %>
+
+
+
+  
+<% @plans.each do |plan| %>
+  <!-- <ul class="small-block-grid-4"> -->
+    <div class="box2">
+      $ <%= plan.price %></br > 
+      Minutes: <%= plan.minute %>Minutes</li> </br > 
+      <li>Data: <%= plan.data %>MB</li> </br >
+      <li>Text: <%= plan.text %></li> </br >
+    </div>
+
+<% end %>
+
+<!-- </ul> -->
+ 
+
+<% end %>
+

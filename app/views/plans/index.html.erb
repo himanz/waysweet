@@ -1,50 +1,35 @@
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSzk7pOY2i5tRdi-GgMjqe7egs1eJaGkE&sensor=true">
-</script>
-
+<!-- 
 <head>
+
 <script>
-function initialize() {
-	  var mapProp = {
-	    center: new google.maps.LatLng(46.492838,-80.989151),
-	    zoom:6,
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
-	  };
-	  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-	}
+  function initialize() {
+  	  var mapProp = {
+  	    center: new google.maps.LatLng(46.492838,-80.989151),
+  	    zoom:6,
+  	    mapTypeId: google.maps.MapTypeId.ROADMAP
+  	  };
+  	  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  	}
 
-	function loadScript()
-	{
-	  var script = document.createElement("script");
-	  script.type = "text/javascript";
-	  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false&callback=initialize";
-	  document.body.appendChild(script);
-	}
+  	function loadScript()
+  	{
+  	  var script = document.createElement("script");
+  	  script.type = "text/javascript";
+  	  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false&callback=initialize";
+  	  document.body.appendChild(script);
+  	}
 
-	window.onload = loadScript;
+  	window.onload = loadScript;
 </script>
 
 <div id="googleMap" style="width:100%;height:500px;"></div>
 
-<div class="container">
+</head> -->
 
-   
-
-<ul class="medium-block-grid-3">
-
-  <% @plans.each do |plan| %>
-  
-   <div class="row">
-    <div class="main eight columns">
-    <li>Minutes: <%= plan.minute %>Minutes</li> </br > 
-
-    <li>Data: <%= plan.data %>MB</li> </br >
-    <li>Text: <%= plan.text %></li> </br >
-    
-    </div>
-    </div>
-
-    <% end %>
-
-  </ul>
- 
+<div id="plans">
+    <%= render @plans %>
 </div>
+
+<%= paginate @plans %>
+
+

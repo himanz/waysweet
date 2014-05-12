@@ -16,3 +16,16 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+jQuery(function() {
+  if ($('.pagination').length) {
+    $(window).scroll(function() {
+      var url;
+      url = $('.pagination span.next').children().attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Fetching more plans...");
+        return $.getScript(url);
+      }
+    });
+  }
+});
