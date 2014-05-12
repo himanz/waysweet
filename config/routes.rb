@@ -1,7 +1,7 @@
 Waysweet::Application.routes.draw do
 
   root 'plans#index'
-
+  get "home" => "static_pages#home"
   get "users/new"
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
