@@ -31,8 +31,6 @@ gem 'pg'
 
 gem 'foundation-rails'
 
-gem 'roo', '~> 1.13.2'
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
