@@ -1,5 +1,12 @@
 Waysweet::Application.routes.draw do
+  get "users/new"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :sessions
+  resources :users
   resources :plans
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
