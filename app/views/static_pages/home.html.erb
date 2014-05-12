@@ -10,6 +10,24 @@
   <fieldset>
   	<h2 class="fs-title">Location</h2>
   	<h3 class="fs-subtitle">Which city do you want plans for?</h3>
-  	<%= text_field_tag :city, 'City' %>
+  	City<%= text_field_tag :city %>
+  	<%= submit_tag "Next", :class => "next action-button"%>
+  </fieldset>
+  <fieldset>
+  	<h2 class="fs-title">Plan Details</h2>
+  	<h3 class="fs-subtitle">Main details for plans</h3>
+  	Price<%= number_field_tag :price %>
+    Data(GB)<%= number_field_tag :data %>
+    Minutes<%= number_field_tag :minute %>
+    Text<%= number_field_tag :text %>
+    <%= submit_tag "Next", :class => "next action-button"%>
+  </fieldset>
+  <fieldset>
+  	<h2 class="fs-title">Plan Features</h2>
+  	<h3 class="fs-subtitle">Features for plans</h3>
+  	Early Evening <%= check_box_tag :early_evening %>
+  	Canada Wide <%= check_box_tag :canada_wide %>
+  	Voice Mail <%= check_box_tag :voice_mail %>
+  	Call Display <%= check_box_tag :call_display %>
   </fieldset>
 <% end %>
