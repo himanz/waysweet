@@ -32,16 +32,16 @@ function initialize() {
 <ul class="medium-block-grid-3">
 
   <% @plans.each do |plan| %>
-  
-   <div class="row">
+   
+  <div class="row">
     <div class="main eight columns">
-    <li>Minutes: <%= plan.minute %>Minutes</li> </br > 
-
-    <li>Data: <%= plan.data %>MB</li> </br >
-    <li>Text: <%= plan.text %></li> </br >
+	    <li>Price: <%= plan.price %>
+	    <li>Minutes: <%= plan.minute %></li> 
+	    <li>Data: <%= plan.data %>MB</li>
+	    <li>Text: <%= plan.text %></li> </br >
     
     </div>
-    </div>
+  </div>
 
     <% end %>
 
