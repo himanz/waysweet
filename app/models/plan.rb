@@ -1,7 +1,5 @@
 class Plan < ActiveRecord::Base
-
-  def index
-    @plan = Plan.new
-  end
+  belongs_to :owner, class_name: "User"
+  
 
 end

@@ -13,6 +13,7 @@ class PlansController < ApplicationController
 
 	def create
     @plan = Plan.new(plan_params)
+    @plan.owner_id = current_user.id
     if @plan.save
     	redirect_to @plan
     else
