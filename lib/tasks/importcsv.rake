@@ -11,7 +11,9 @@ namespace :csv do
 				:price => row[0],
 				:minute => row[1],
 				:data => row[2],
-				:text => row[3],	
+				:text => row[3],
+				:carrier => row[4],
+				:city => row[5]	
 			})
 			puts "Row added!"
 		end
