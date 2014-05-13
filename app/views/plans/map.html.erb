@@ -24,30 +24,34 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
     <script>
-// Adding 500 Data Points
-var map, pointarray, heatmap;
 
-var taxiData = [
-  new google.maps.LatLng(37.782551, -122.445368),
-  new google.maps.LatLng(37.782745, -122.444586),
-  new google.maps.LatLng(37.782842, -122.443688),
-  new google.maps.LatLng(37.782919, -122.442815),
-  new google.maps.LatLng(37.782992, -122.442112)
-  ]
+var planPrice = []
+
+
+<% @plans.each do |plan| %>
+  var a = <%= Geocoder.coordinates(plan.city) %>
+  planPrice.push(new google.maps.LatLng(a[0],a[1]))
+<% end %>
+
+
+
+var map, pointarray, heatmap;
+// new google.maps.LatLng(37.782992, -122.442112)
+
 
 
 
 function initialize() {
   var mapOptions = {
-    zoom: 13,
-    center: new google.maps.LatLng(37.774546, -122.433523),
+    zoom: 8,
+    center: new google.maps.LatLng(43.7000, -79.4000),
     mapTypeId: google.maps.MapTypeId.SATELLITE
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  var pointArray = new google.maps.MVCArray(taxiData);
+  var pointArray = new google.maps.MVCArray(planPrice);
 
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: pointArray
