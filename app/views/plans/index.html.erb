@@ -51,8 +51,21 @@
 
 <div class="sidebar">
 
+  <div class="carriers">
+   <div class="large-12 columns">
+      <label>Select Carrier
+        <select>
+          <option value="rogers">Rogers</option>
+          <option value="bell">Bell</option>
+          <option value="telus">Telus</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+
     <div class="prices">
-      <h3>Price</h3>
+      <h5>Price</h5>
       <div class="range-slider round" data-slider data-options="start:1; end: 120; step: 10;">
       <span class="range-slider-handle"></span>
       <span class="range-slider-active-segment"></span>
@@ -61,7 +74,7 @@
     </div>
 
      <div class="minutes">
-      <h3>Minutes</h3>
+      <h5>Minutes</h5>
       <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
       <span class="range-slider-handle"></span>
       <span class="range-slider-active-segment"></span>
@@ -70,7 +83,7 @@
     </div>
 
       <div class="data">
-      <h3>Data</h3>
+      <h5>Data</h5>
       <div class="range-slider round" data-slider data-options="start:0; end: 6000; step: 500;">
       <span class="range-slider-handle"></span>
       <span class="range-slider-active-segment"></span>
@@ -79,7 +92,7 @@
     </div>
 
      <div class="texts">
-      <h3>Text</h3>
+      <h5>Text</h5>
       <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
       <span class="range-slider-handle"></span>
       <span class="range-slider-active-segment"></span>
@@ -87,7 +100,14 @@
       </div>
     </div>
 
-   
+  <div class="row">
+      <h5>Features</h5>
+      <input id="checkbox1" type="checkbox"><label for="checkbox1">Canada Wide Long Distance</label> <br />
+      <input id="checkbox1" type="checkbox"><label for="checkbox1">Caller ID</label> <br />
+      <input id="checkbox2" type="checkbox"><label for="checkbox2">Voicemail</label> <br />
+      <input id="checkbox2" type="checkbox"><label for="checkbox2">Early Evenings & Weekends</label> <br />
+      <input id="checkbox2" type="checkbox"><label for="checkbox2">Call Fowarding</label> <br />
+  </div>
 
 
 </div>
