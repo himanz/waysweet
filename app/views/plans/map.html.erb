@@ -1,0 +1,6 @@
+<% a = @plans.first %>
+  <% latlong = Geocoder.coordinates(a.city) %>
+  <%= latlong %>
+  <% lat = latlong[0] %>
+  <% long = latlong[1] %>
+  <%= a.city + " lat: #{lat} long: #{long}"  %>
