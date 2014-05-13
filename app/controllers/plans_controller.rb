@@ -1,10 +1,11 @@
 class PlansController < ApplicationController
 	def index
 		@plans = Plan.order('plans.created_at DESC').page(params[:page])
-  
+    @allplan = Plan.all
   respond_to do |format|
     format.js
     format.html
+    format.json
   end
 end
   

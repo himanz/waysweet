@@ -1,0 +1,36 @@
+// <script>
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.open('GET', 'http://localhost:3000/plans.json', true);
+// 	xhr.onload = function() {
+// 	  loadPrices(this.responseText);
+// 	};
+// 	xhr.send();
+
+// </script>
+
+<input type="button" id="driver" value="Load Data" />
+
+<script>
+  $(document).ready(function() {
+      $("#driver").click(function(event){
+          $.getJSON('/jquery/result.json', function(jd) {
+             $('#stage').html('<p> Name: ' + jd.name + '</p>');
+             $('#stage').append('<p>Age : ' + jd.age+ '</p>');
+             $('#stage').append('<p> Sex: ' + jd.sex+ '</p>');
+          });
+      });
+   });
+
+  $.getJSON( "localhost:3000/plans.json", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+  console.log(items);
+});
+</script>
