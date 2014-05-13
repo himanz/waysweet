@@ -36,8 +36,12 @@ end
 	def destroy
 	end
 
+	def map
+		@plans = Plan.all
+	end
+
 	private
 	def plan_params
-		params.require(:plan).permit(:price, :data, :minute, :text)
+		params.require(:plan).permit(:price, :data, :minute, :text, :carrier, :city)
 	end
 end
