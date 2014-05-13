@@ -22,16 +22,83 @@
 
 <div id="googleMap" style="width:100%;height:500px;"></div>
  -->
+<div class="container">
+  <h1><center>Plans <br /></center>
+  </h1>
+   <% @plans.each do |plan| %>
+  <div class="centered-columns">
+  <table>
+    <thead>
+      <tr>
+        <th width="150">Carrier</th>
+        <th width="150">Price</th>
+        <th width="150">Minutes</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Carrier</td>
+        <td><%= plan.price %></td>
+       <td><%= plan.minute %></td>
+       <td><%= plan.text %></td>
+       
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 
-<h1><center>Plans <br />
- <small><%= page_entries_info @plans %></small>
-</center>
-</h1>
+<div class="sidebar">
 
-<div id="planlist">
-    <%= render @plans %>
+    <div class="prices">
+      <h3>Price</h3>
+      <div class="range-slider round" data-slider data-options="start:1; end: 120; step: 10;">
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+      <input type="hidden">
+      </div>
+    </div>
+
+     <div class="minutes">
+      <h3>Minutes</h3>
+      <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+      <input type="hidden">
+      </div>
+    </div>
+
+      <div class="data">
+      <h3>Data</h3>
+      <div class="range-slider round" data-slider data-options="start:0; end: 6000; step: 500;">
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+      <input type="hidden">
+      </div>
+    </div>
+
+     <div class="texts">
+      <h3>Text</h3>
+      <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+      <input type="hidden">
+      </div>
+    </div>
+
+   
+
+
 </div>
 
-<%= paginate @plans %>
+  <%= paginate @plans %>
+
+</div>
+
+
+
+
+
 
 

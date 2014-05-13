@@ -26,7 +26,8 @@ ul#board li {
     display: inline-block;
     border-radius: 5px;
     padding: 3px;
-    width: 180px;
+    width: 240px;
+    height: 200px;
     margin: 10px 0px 0px 10px;
     background: white;
     border: 1px solid #FAFAFA;
@@ -43,4 +44,27 @@ ul#board li {
     border-radius: 6px 6px 0px 0px;
     padding: 8px 0px 4px 0px;
 
+}
+
+.container {
+  background: blue;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+  padding-left: 280px;
+  width: 100%;
+}
+
+.sidebar {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  background: lightgrey;
 }

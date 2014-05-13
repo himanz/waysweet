@@ -7,7 +7,10 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+
+
     <%= javascript_include_tag "vendor/modernizr" %>
+    
     <%= csrf_meta_tags %>
 
 
@@ -23,6 +26,10 @@
     <% end %>
 
     <%= yield %>
+    <div id="side-content">
+    <%= yield(:side_bar) %>
+</div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
