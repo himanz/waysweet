@@ -32,6 +32,7 @@ gem 'sorcery'
 
 gem 'kaminari'
 
+gem 'geocoder'
 
 gem 'figaro'
 
