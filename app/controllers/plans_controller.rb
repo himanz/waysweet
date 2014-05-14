@@ -38,6 +38,7 @@ end
 
 	def map
 		@plans = Plan.all
+		@cities = City.all
 	end
 
 	private
