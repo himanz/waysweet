@@ -7,13 +7,19 @@ namespace :csv do
 		csv_file_path = 'db/data.csv'
 
 		CSV.foreach(csv_file_path) do |row|
+			city = City.where(name: row[5]).first
+
+			if city.nil?
+				city = City.create(name: row[5])
+			end
+
 			Plan.create!({
 				:price => row[0],
 				:minute => row[1],
 				:data => row[2],
 				:text => row[3],
 				:carrier => row[4],
-				:city => row[5]	
+				:city_id => city.id
 			})
 			puts "Row added!"
 		end
