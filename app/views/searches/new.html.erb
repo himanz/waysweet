@@ -1,17 +1,36 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
 <div class="sbody">
-  <div class="scontent">
-
+  <div class="scontenta">
+    
     <div class="scity">
-      Which <b>City</b> are you searching from? 
+      
+      Which <b>City</b> are you searching from?
     </div>
-
+    
     <div id="scitya">
       <input type='textcity' name='cityname' size='15' placeholder='City' />
     </div>
+    
+    
+    <!-- <a href="#" class="button [radius round]">Next</a> -->
+    <button>Hide 'em</button>
 
-    <a href="#" class="button [radius round]">Next</a>
+  </div>
+  
+<script>
+$( "button" ).click(function() {
+  $( ".scontenta" ).hide( "slow" );
+});
+</script>
+   
+<script>
+$( "button" ).click(function() {
+  $( ".scontentb" ).show( "slow" );
+});
+</script>
 
+  <div class="scontentb">
     <div class="scity">
       How much are <b>YOU</b> paying?
     </div>
@@ -20,17 +39,44 @@
       <input type='number' name='planprice' size='15' placeholder='$' />
     </div>
 
-    <a href="#" class="button [radius round]">Next</a>
+    <button>Hide 'em</button>
+  
+  </div>
 
+
+<script>
+  $( ".scontentb" ).hide( );
+</script>   
+
+
+<script>
+$( "button" ).click(function() {
+  $( ".scontentc" ).show( "slow" );
+});
+</script>
+
+  <div class="scontentc">
     <div class="scity">
       What is included in <b>YOUR</b> plan?
     </div>
 
       <div id="scitya">
         <%= render partial: "form" %>
-        <a href="#" class="button [radius round]">Next</a>
+        <button>Next</button>
       </div>
+    </div>
 
+    <script>
+  $( ".scontentc" ).hide( );
+</script>   
+
+<script>
+$( "button" ).click(function() {
+  $( ".scontentd" ).show( "slow" );
+});
+</script>
+
+    <div class="scontentd">
        <div class="scity">
       What Plan are you <b>Searching</b> for?
     </div>
@@ -40,7 +86,15 @@
         <a href="#" class="button [radius round]">Next</a>
       </div>
 
+    </div>
+
+        <script>
+  $( ".scontentd" ).hide( );
+</script>   
+
   </div>
 
+
 </div>
+
 
