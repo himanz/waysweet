@@ -25,12 +25,21 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
     <script>
 
+
+
 var planPrice = []
 
 
 <% @plans.each do |plan| %>
+  var delay = 100000
+
   var a = <%= Geocoder.coordinates(plan.city) %>
+  setTimeout(function() {
+     }, delay);
   planPrice.push(new google.maps.LatLng(a[0],a[1]))
+  
+
+ 
 <% end %>
 
 
