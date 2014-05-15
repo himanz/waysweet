@@ -1,95 +1,63 @@
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<div id="searchbody">
 
-<div class="sbody">
+<form action="#" method="post">
 
-    <div class="scontenta">
-      <div class="scity">
-        Which <b>City</b> are you searching from?
-      </div>
-      
-      <div id="scitya">
-        <input type='textcity' name='cityname' size='15' placeholder='City' />
-      </div>
-      <button>Search</button>
-    </div>
-
-  <script>
-    $( "button" ).click(function() {
-    $( ".scontenta" ).hide( "slow" );
-    });
-  </script>
-
-
-
-  <script>
-    $( ".scontentb" ).show();
-  </script>
-
-
-  <div class="scontentb">
-    <div class="scity">
-      How much are <b>YOU</b> paying?
-    </div>
-
-    <div id="scity">
-      <input type='number' name='planprice' size='15' placeholder='$' />
-    </div>
-
-    <button class="b2">Next</button>
-
+<div id="first_step">
+  <div class="scity">
+  Which <b>City</b> are you searching from?
   </div>
 
-   <script>
-    $( ".b2" ).click(function() {
-    $( ".scontentb" ).hide( "slow" );
-    });
-  </script>   
+  <input type='textcity' name='cityname' size='15' placeholder='City' />
+  </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-  <script>
-    $( ".scontentc" ).show();
-  </script>
+  <input class="submit" type="submit" name="submit_first" id="submit_first" value="Next" />
+  <div class="clear"></div>
 
-  <div class="scontentc">
-    <div class="scity">
-      What is included in <b>YOUR</b> plan?
-    </div>
 
-      <div id="scitya">
-        <%= render partial: "form" %>
-        <button class="b3">Next</button>
-      </div>
+<div id="second_step">
+
+  <div class="scity">
+    How much are <b>YOU</b> paying?
   </div>
 
-  <script>
-    $( ".b3" ).click(function() {
-    $( ".scontentc" ).hide("slow");
-  });
-  </script>   
+  <div id="sprice">
+  <input type='number' name='planprice' size='15' placeholder='$' />
+  </div>
+  
+  <input class="submit" type="submit" name="submit_first" id="submit_second" value="Next" />
+  <div class="clear"></div>
 
-  <script>
-    $( ".scontentd" ).show( "slow" );
-  </script>
 
-  <div class="scontentd">
-     <div class="scity">
+<div id="third_step">
+  <div class="scity">
+    What is included in <b>YOUR</b> plan?
+  </div>
+
+    <div id="scitya">
+      <%= render partial: "form" %>
+    </div>
+
+<input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
+<div class="clear"></div>
+
+<div id="fourth_step">
+
+  <div class="scity">
     What Plan are you <b>Searching</b> for?
-    </div>
-
-  <div id="scitya">
-    <%= render partial: "form" %>
-    <button class="b4">Search</button>
   </div>
 
-  <script>
-    $( ".b4" ).click(function() {
-    $( ".scontentd" ).hide("slow");
-  });
-  </script>  
+    <div id="scitya">
+      <%= render partial: "form" %>
+    </div>
 
-  </div> 
+<input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
+<div class="clear"></div>
 
+    </form>
 </div>
 
-
-
+<div id="progress_bar">
+  <div id="progress"></div>
+  <div id="progress_text">0% Complete</div>
+</div>
 
