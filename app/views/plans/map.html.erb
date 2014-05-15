@@ -37,7 +37,34 @@ var planPrice = []
  
 // <% end %>
 <% @cities.each do |city| %>
-  planPrice.push(new google.maps.LatLng( Number(<%= city.latitude %>), Number(<%= city.longitude %>)))
+  
+  <% allcities = Plan.where(city_id:city.id) %>
+  <% plansum = allcities.to_a.sum(&:price) %>
+  <% planaverage = (plansum / allcities.count).round(2) %>
+  <% if planaverage <= 20 %>
+    <% weight = 1000 %>
+  <% elsif planaverage <= 30 %>
+    <% weight = 2000 %>
+  <% elsif planaverage <= 40 %>
+    <% weight = 4000 %>
+  <% elsif planaverage <= 50 %>
+    <% weight = 8000 %>
+  <% elsif planaverage <= 60 %>
+    <% weight = 16000 %>
+  <% elsif planaverage <= 70 %>
+    <% weight = 32000 %>
+  <% elsif planaverage <= 80 %>
+    <% weight = 64000 %>
+  <% elsif planaverage <= 90 %>
+    <% weight = 128000 %>
+  <% elsif planaverage <= 100 %>
+    <% weight = 256000 %>
+  <% else %>
+    <% weight = 400000 %>
+  <% end %>    
+  
+
+  planPrice.push({location: new google.maps.LatLng( Number(<%= city.latitude %>), Number(<%= city.longitude %>)), weight: <%= weight %>})
 <% end %>
 
 
