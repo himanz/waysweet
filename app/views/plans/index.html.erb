@@ -24,8 +24,32 @@
  -->
 
 
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
 
+  <a class="left-off-canvas-toggle" href="#" >Menu</a>
 
+  <!-- Off Canvas Menu -->
+  <aside class="left-off-canvas-menu">
+      <!-- whatever you want goes here -->
+      <ul>
+         <div class="carriers">
+ <div class="large-12 columns">
+    <label>Select Carrier
+      <select>
+        <option value="rogers">Rogers</option>
+        <option value="bell">Bell</option>
+        <option value="telus">Telus</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+  <%= render "sidebar" %> 
+        </ul>
+    </aside>
+
+    <!-- main content goes here -->
 <div class="container">
   <h1>Plans</h1> <br />
   
@@ -42,7 +66,7 @@
     <tr>
         <% @plans.each do |plan| %>
         <td><%= plan.carrier %></td>
-        <td><%= plan.price %></td>
+        <td>$<%= plan.price %></td>
        <td><%= plan.minute %></td>
        <td><%= plan.text %></td>
       </tr>
@@ -50,66 +74,8 @@
    
   </div>
 
-<div class="sidebar">
+  <!-- close the off-canvas menu -->
+  <a class="exit-off-canvas"></a>
 
-  <div class="carriers">
-   <div class="large-12 columns">
-      <label>Select Carrier
-        <select>
-          <option value="rogers">Rogers</option>
-          <option value="bell">Bell</option>
-          <option value="telus">Telus</option>
-        </select>
-      </label>
-    </div>
   </div>
-
-
-    <div class="prices">
-      <h5>Price</h5>
-      <div class="range-slider round" data-slider data-options="start:1; end: 120; step: 10;">
-      <span class="range-slider-handle"></span>
-      <span class="range-slider-active-segment"></span>
-      <input type="hidden">
-      </div>
-    </div>
-
-     <div class="minutes">
-      <h5>Minutes</h5>
-      <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
-      <span class="range-slider-handle"></span>
-      <span class="range-slider-active-segment"></span>
-      <input type="hidden">
-      </div>
-    </div>
-
-      <div class="data">
-      <h5>Data</h5>
-      <div class="range-slider round" data-slider data-options="start:0; end: 6000; step: 500;">
-      <span class="range-slider-handle"></span>
-      <span class="range-slider-active-segment"></span>
-      <input type="hidden">
-      </div>
-    </div>
-
-     <div class="texts">
-      <h5>Text</h5>
-      <div class="range-slider round" data-slider data-options="start:1; end: 600; step: 50;">
-      <span class="range-slider-handle"></span>
-      <span class="range-slider-active-segment"></span>
-      <input type="hidden">
-      </div>
-    </div>
-
-  <div class="row">
-      <h5>Features</h5>
-      <input id="checkbox1" type="checkbox"><label for="checkbox1">Canada Wide Long Distance</label> <br />
-      <input id="checkbox1" type="checkbox"><label for="checkbox1">Caller ID</label> <br />
-      <input id="checkbox2" type="checkbox"><label for="checkbox2">Voicemail</label> <br />
-      <input id="checkbox2" type="checkbox"><label for="checkbox2">Early Evenings & Weekends</label> <br />
-      <input id="checkbox2" type="checkbox"><label for="checkbox2">Call Fowarding</label> <br />
-  </div>
-
-
-
-
+</div>
