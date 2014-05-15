@@ -18,8 +18,15 @@ end
 	end
 
 	def create
+		city = City.where(params[:city]).first
+		if city.nil?	
+		  city = City.new
+		  city.name = params[:city]
+		  city.save	
+		end
     @plan = Plan.new(plan_params)
     @plan.owner_id = current_user.id
+    @plan.city_id = city.id
     if @plan.save
     	redirect_to @plan
     else
@@ -43,6 +50,7 @@ end
 
 	private
 	def plan_params
-		params.require(:plan).permit(:price, :data, :minute, :text, :carrier, :city)
+		params.require(:plan).permit(:price, :data, :minute, :text, :carrier, :city_id)
 	end
+
 end
