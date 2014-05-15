@@ -1,12 +1,15 @@
 class PlansController < ApplicationController
 	def index
-		@plans = Plan.order('plans.created_at DESC').page(params[:page])
-  
-  respond_to do |format|
-    format.js
-    format.html
+    @plans = if params[:search]
+      Plan.where(price: params[:search])
+
+      
+      
+    else
+      Plan.all
+    end
   end
-end
+
   
 	def show
 		@plan = Plan.find(params[:id])
@@ -47,6 +50,16 @@ end
 		@plans = Plan.all
 		@cities = City.all
 	end
+
+  def search
+    @plans = Plan.where("price LIKE ?", "%#{params[:search]}%")
+    render @plans
+  end
+
+  def home
+    
+  end
+  
 
 	private
 	def plan_params

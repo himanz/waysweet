@@ -53,7 +53,7 @@ ul#board li {
   box-sizing: border-box;
   height: 100%;
   overflow-x: hidden;
-  padding-left: 40%;
+  padding-left: 30%;
   width: 100%;
   font-size: 20px
 }
