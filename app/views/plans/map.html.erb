@@ -31,18 +31,14 @@
 var planPrice = []
 
 
-<% @plans.each do |plan| %>
+// <% @plans.each do |plan| %>
   
-  
-  
-  planPrice.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
-  
-  
-  
-
+  // planPrice.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
  
+// <% end %>
+<% @cities.each do |city| %>
+  planPrice.push(new google.maps.LatLng( Number(<%= city.latitude %>), Number(<%= city.longitude %>)))
 <% end %>
-
 
 
 var map, pointarray, heatmap;
