@@ -12,6 +12,7 @@ Waysweet::Application.routes.draw do
   resources :plans do
     resources :comments
   end
+  resources :cities
 
 
   # The priority is based upon order of creation: first created -> highest priority.
