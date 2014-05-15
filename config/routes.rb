@@ -1,6 +1,6 @@
 Waysweet::Application.routes.draw do
 
-  root 'plans#index'
+  root 'plans#home'
   get "map" => "plans#map"
   get "users/new"
   get "searches/new"
@@ -9,9 +9,13 @@ Waysweet::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :sessions
   resources :users
+  
+
   resources :plans do
     resources :comments
+    resources :searches
   end
+
   resources :cities
 
 

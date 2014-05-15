@@ -1,7 +1,14 @@
 class PlansController < ApplicationController
 	def index
 		@plans = Plan.order('plans.created_at DESC').page(params[:page])
-  
+      @plans = if params[:search]
+        Plan.where ("name ILIKE ?", "%#{params[:search]}%")
+      else
+      Plan.all
+    end
+  end
+
+
   respond_to do |format|
     format.js
     format.html
@@ -47,6 +54,11 @@ end
 		@plans = Plan.all
 		@cities = City.all
 	end
+
+  def home
+    
+  end
+  
 
 	private
 	def plan_params
