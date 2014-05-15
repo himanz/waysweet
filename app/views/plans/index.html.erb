@@ -29,23 +29,22 @@
 <div class="container">
   <h1>Plans</h1> <br />
   
-  <div class="planbar">
-       <a href="#" data-dropdown="drop1" class="button dropdown">Carrier</a>
-       <a href="#" data-dropdown="drop1" class="button dropdown">Price</a>
-       <a href="#" data-dropdown="drop1" class="button dropdown">Minutes</a>
-       <a href="#" data-dropdown="drop1" class="button dropdown">Data</a>
-       <a href="#" data-dropdown="drop1" class="button dropdown">Text</a>
-    
-</div>
-
-  <div class="tcolumn">
-
- 
+<table>
+  <thead>
+    <tr>
+      <th width="200">Carrier</th>
+      <th width="150">Price</th>
+      <th width="150">Minutes</th>
+      <th width="150">Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
         <% @plans.each do |plan| %>
+        <td><%= plan.carrier %></td>
         <td><%= plan.price %></td>
        <td><%= plan.minute %></td>
        <td><%= plan.text %></td>
-       
       </tr>
       <% end %>
    
