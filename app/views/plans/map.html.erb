@@ -42,25 +42,25 @@ var planPrice = []
   <% plansum = allcities.to_a.sum(&:price) %>
   <% planaverage = (plansum / allcities.count).round(2) %>
   <% if planaverage <= 20 %>
-    <% weight = 1000 %>
+    <% weight = 1 %>
   <% elsif planaverage <= 30 %>
-    <% weight = 2000 %>
+    <% weight = 2 %>
   <% elsif planaverage <= 40 %>
-    <% weight = 4000 %>
+    <% weight = 3 %>
   <% elsif planaverage <= 50 %>
-    <% weight = 8000 %>
+    <% weight = 7 %>
   <% elsif planaverage <= 60 %>
-    <% weight = 16000 %>
+    <% weight = 100 %>
   <% elsif planaverage <= 70 %>
-    <% weight = 32000 %>
+    <% weight = 9 %>
   <% elsif planaverage <= 80 %>
-    <% weight = 64000 %>
+    <% weight = 10 %>
   <% elsif planaverage <= 90 %>
-    <% weight = 128000 %>
+    <% weight = 20 %>
   <% elsif planaverage <= 100 %>
-    <% weight = 256000 %>
+    <% weight = 19 %>
   <% else %>
-    <% weight = 400000 %>
+    <% weight = 20 %>
   <% end %>    
   
 
@@ -70,7 +70,6 @@ var planPrice = []
 
 var map, pointarray, heatmap;
 // new google.maps.LatLng(37.782992, -122.442112)
-
 
 
 
@@ -87,7 +86,8 @@ function initialize() {
   var pointArray = new google.maps.MVCArray(planPrice);
 
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray
+    data: pointArray,
+    radius: 30
   });
 
   heatmap.setMap(map);
@@ -126,6 +126,7 @@ function changeOpacity() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
     </script>
   </head>
