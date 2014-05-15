@@ -1,18 +1,16 @@
 class PlansController < ApplicationController
 	def index
-      @plans = if params[:search]
-        Plan.where("name ILIKE ?", "%#{params[:search]}%")
-      else
+    puts params   
+    @plans = if params[:search]
+
+        Plan.where(price: params[:search])
+    else
       Plan.all
     end
   end
 
 
-#   respond_to do |format|
-#     format.js
-#     format.html
-#   end
-# end
+
   
 	def show
 		@plan = Plan.find(params[:id])
@@ -53,6 +51,11 @@ class PlansController < ApplicationController
 		@plans = Plan.all
 		@cities = City.all
 	end
+
+  def search
+    @plans = Plan.where("price LIKE ?", "%#{params[:search]}%")
+    render @plans
+  end
 
   def home
     
