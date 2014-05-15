@@ -1,0 +1,89 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<div class="sbody">
+  <div class="scontenta">
+    
+    <div class="scity">
+      
+      Which <b>City</b> are you searching from?
+    </div>
+    
+    <div id="scitya">
+      <input type='textcity' name='cityname' size='15' placeholder='City' />
+    </div>
+
+    <button>Search</button>
+
+  </div>
+  
+<script>
+$( "button" ).click(function() {
+  $( ".scontenta" ).hide( "slow" );
+});
+</script>
+
+
+<script>
+  $( ".scontentb" ).show();
+});
+</script>
+
+  <div class="scontentb">
+    <div class="scity">
+      How much are <b>YOU</b> paying?
+    </div>
+
+    <div id="scitya">
+      <input type='number' name='planprice' size='15' placeholder='$' />
+    </div>
+
+    <button>Next</button>
+  </div>
+
+ <script>
+  $( ".scontentb" ).hide( );
+</script>   
+
+
+  <div class="scontentc">
+    <div class="scity">
+      What is included in <b>YOUR</b> plan?
+    </div>
+
+      <div id="scitya">
+        <%= render partial: "form" %>
+        <button>Next</button>
+      </div>
+    </div>
+
+    <script>
+  $( ".scontentc" ).hide( );
+</script>   
+
+<script>
+$( "button" ).click(function() {
+  $( ".scontentd" ).show( "slow" );
+});
+</script>
+
+    <div class="scontentd">
+       <div class="scity">
+      What Plan are you <b>Searching</b> for?
+    </div>
+
+      <div id="scitya">
+        <%= render partial: "form" %>
+        <button>Search</button>
+      </div>
+
+    </div>
+
+<script>
+  $( ".scontentd" ).hide( );
+</script>   
+
+  </div>
+
+</div>
+
+
