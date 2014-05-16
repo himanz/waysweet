@@ -50,12 +50,13 @@ function initialize() {
     {
       stylers: [
         { hue: "#4A90E2" }
+        
       ]
     },{
       featureType: "road",
       elementType: "geometry",
       stylers: [
-        { visibility: "off" }
+        { visibility: "1%" }
       ]
     },{
       featureType: "road",
@@ -63,7 +64,15 @@ function initialize() {
       stylers: [
         { visibility: "off" }
       ]
-    }
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
+        { visibility: "40%" }
+      ]
+    },
+  
   ];
 
   var styledMap = new google.maps.StyledMapType(styles,
