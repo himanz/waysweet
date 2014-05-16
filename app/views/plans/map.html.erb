@@ -23,12 +23,14 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
+   
+
 
     <script>
 
 
 
-var planPrice = []
+// var planPrice = []
 
 
 // <% @plans.each do |plan| %>
@@ -36,94 +38,110 @@ var planPrice = []
   // planPrice.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
  
 // <% end %>
-<% @cities.each do |city| %>
-  
-  <% allcities = Plan.where(city_id:city.id) %>
-  <% plansum = allcities.to_a.sum(&:price) %>
-  <% planaverage = (plansum / allcities.count).round(2) %>
-  <% if planaverage <= 20 %>
-    <% weight = 1 %>
-  <% elsif planaverage <= 30 %>
-    <% weight = 2 %>
-  <% elsif planaverage <= 40 %>
-    <% weight = 3 %>
-  <% elsif planaverage <= 50 %>
-    <% weight = 7 %>
-  <% elsif planaverage <= 60 %>
-    <% weight = 100 %>
-  <% elsif planaverage <= 70 %>
-    <% weight = 9 %>
-  <% elsif planaverage <= 80 %>
-    <% weight = 10 %>
-  <% elsif planaverage <= 90 %>
-    <% weight = 20 %>
-  <% elsif planaverage <= 100 %>
-    <% weight = 19 %>
-  <% else %>
-    <% weight = 20 %>
-  <% end %>    
-  
-
-  planPrice.push({location: new google.maps.LatLng( Number(<%= city.latitude %>), Number(<%= city.longitude %>)), weight: <%= weight %>})
-<% end %>
+// 
 
 
 var map, pointarray, heatmap;
 // new google.maps.LatLng(37.782992, -122.442112)
 
-
-
 function initialize() {
-  var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(43.7000, -79.4000),
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+   // Create an array of styles.
+  var styles = [
+    {
+      stylers: [
+        { hue: "#4A90E2" }
+      ]
+    },{
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        { visibility: "off" }
+      ]
+    },{
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }
+  ];
+
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+
+  var myOptions = {
+    zoom: 12,
+    center: new google.maps.LatLng(43.641922, -79.387668),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
   };
 
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
-  var pointArray = new google.maps.MVCArray(planPrice);
+ map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray,
-    radius: 30
-  });
 
-  heatmap.setMap(map);
+  // Try W3C Geolocation (Preferred)
+  if(navigator.geolocation) {
+    browserSupportFlag = true;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      map.setCenter(initialLocation);
+    }, function() {
+      handleNoGeolocation(browserSupportFlag);
+    });
+  }
+  // Browser doesn't support Geolocation
+  else {
+    browserSupportFlag = false;
+    handleNoGeolocation(browserSupportFlag);
+  }
+
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag == true) {
+      alert("Geolocation service failed.");
+      initialLocation = toronto;
+    } else {
+      alert("Your browser doesn't support geolocation. We've placed you in Toronto.");
+      initialLocation = toronto;
+    }
+    map.setCenter(initialLocation);
+  }
 }
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
-}
 
-function changeGradient() {
-  var gradient = [
-    'rgba(0, 255, 255, 0)',
-    'rgba(0, 255, 255, 1)',
-    'rgba(0, 191, 255, 1)',
-    'rgba(0, 127, 255, 1)',
-    'rgba(0, 63, 255, 1)',
-    'rgba(0, 0, 255, 1)',
-    'rgba(0, 0, 223, 1)',
-    'rgba(0, 0, 191, 1)',
-    'rgba(0, 0, 159, 1)',
-    'rgba(0, 0, 127, 1)',
-    'rgba(63, 0, 91, 1)',
-    'rgba(127, 0, 63, 1)',
-    'rgba(191, 0, 31, 1)',
-    'rgba(255, 0, 0, 1)'
-  ]
-  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-}
 
-function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 20);
-}
+// function initialize() {
+//   var mapOptions = {
+//     zoom: 12,
+//     center: new google.maps.LatLng(43.7000, -79.4000),
+//     mapTypeId: google.maps.MapTypeId.MAPS
+//   };
 
-function changeOpacity() {
-  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-}
+//   map = new google.maps.Map(document.getElementById('map-canvas'),
+//       mapOptions);
+
+//   var pointArray = new google.maps.MVCArray(planPrice);
+
+//   heatmap = new google.maps.visualization.HeatmapLayer({
+//     data: pointArray,
+//     radius: 30
+//   });
+
+//   map.set('styles', [
+//  {
+ 
+//   }
+// ]);
+
+//   heatmap.setMap(map);
+// }
+
+// function toggleHeatmap() {
+//   heatmap.setMap(heatmap.getMap() ? null : map);
+// }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -134,9 +152,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <body>
     <div id="panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
+
     </div>
     <div id="map-canvas"></div>
   </body>
