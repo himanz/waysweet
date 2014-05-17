@@ -2,16 +2,21 @@
 
   <%= form_tag plans_path, method: :get, authentication: false, id: 'search-form' do %>
     <div id="step1">
+
       <div class="scity">
-        What <b>City</b> are you searching for?
+        <div class="small-3 small-centered columns">
+        Search for <b>City</b>
+
       </div>
 
-      <%= text_field_tag :city, params[:city] %>
-      <input name="next" id="button1"class="button" type="button" value="Next" />
+          <div class="large-3 columns">
+          <%= text_field_tag :city, params[:city] %>
+          </div>
+      
+        <input name="next" id="button1"class="button" type="button" value="Next" />
+        </div>
 
     </div>
-
-
 
     <div id="step2">
       <div class="scity">
