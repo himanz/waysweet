@@ -6,7 +6,6 @@ class PlansController < ApplicationController
       Plan.all
     end
   end
-
   
 	def show
 		@plan = Plan.find(params[:id])

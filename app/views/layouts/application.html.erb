@@ -8,14 +8,13 @@
 
     <%= stylesheet_link_tag    "application" %>
 
+    <%= javascript_include_tag "application" %>
 
     <%= javascript_include_tag "vendor/modernizr" %>
 
     <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
     
     <%= csrf_meta_tags %>
-
-
   </head>
 
   <body>
@@ -28,10 +27,10 @@
     <% end %>
 
     <%= yield %>
-    <div id="side-content">
-    <%= yield(:side_bar) %>
-</div>
 
-    <%= javascript_include_tag "application" %>
+    <div id="side-content">
+      <%= yield(:side_bar) %>
+    </div>
+
   </body>
 </html>

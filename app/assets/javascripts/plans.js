@@ -1,3 +1,4 @@
+// Updates firebase database on search submit
 var url = "https://sizzling-fire-5831.firebaseio.com";
 
 var firebaseRef = new Firebase(url);
