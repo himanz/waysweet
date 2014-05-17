@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
 	def index
-    @plans = if params[:search]
-      Plan.where(price: params[:search])
+    @plans = if params[:price]
+      Plan.where(price: params[:price])
 
       
       
