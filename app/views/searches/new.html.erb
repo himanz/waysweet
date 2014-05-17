@@ -1,59 +1,17 @@
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<form class="forms">
 
-
-<div class="step1">
+<div id="step1">
   <div class="scity">
-  Which <b>City</b> are you searching from?
+    Which <b>City</b> are you searching from?
   </div>
 
-  <input type='textcity' name='cityname' size='15' placeholder='City' />
-  <a href="#" id="button1">Next</a>
+    <%= form_tag(plans_path, method: :get) do %>
+      <%= label_tag :search %>
+      <input type='textcity' name='cityname' size='15' placeholder='City' />
+      <%= submit_tag :search %>
+    <% end %>
  
 </div>
 
 
-<div class="clear"></div>
-
-<div class="step2">
-
-  <div class="scity">
-    How much are <b>YOU</b> paying?
-  </div>
-
-  <div id="sprice">
-  <input type='number' name='planprice' size='15' placeholder='$' />
-  </div>
-
-  <a href="#" id="button2">Next</a>
- 
- </div>
-  
-  
-<!-- <div class="clear"></div> -->
-
-
-<div class="step3">
-  <div class="scity">
-    What is included in <b>YOUR</b> plan?
-  </div>
-
-    <div id="scitya">
-      <%= render partial: "form" %>
-    </div>
-    <a href="#" id="button3">Next</a>
-  </div>
-
-
-
-<div class="step4">
-  <div class="scity">
-    What Plan are you <b>Searching</b> for?
-  </div>
-
-    <div id="scitya">
-      <%= render partial: "form" %>
-    </div>
-    <a href="#" id="button4">Search</a>
-</div>
-
-
+</form>
