@@ -1,20 +1,46 @@
 // Updates firebase database on search submit
-var url = "https://sizzling-fire-5831.firebaseio.com";
 
-var firebaseRef = new Firebase(url);
+$(document).ready(function() {
 
-function funct1()
-{
-  var price = $('#price').val();
+  var url = "https://sizzling-fire-5831.firebaseio.com";
 
-  var date = Date();
+  var firebaseRef = new Firebase(url);
 
-  // firebaseRef.set({Price: price, Date: date});
-  var postRef = firebaseRef.push(); // create a new post
-  postRef.set({Price: price, Date: date});
-}
+  function funct1()
+  {
+    var price = $('#price').val();
+
+    var date = Date();
+
+    // firebaseRef.set({Price: price, Date: date});
+    var postRef = firebaseRef.push(); // create a new post
+    postRef.set({Price: price, Date: date});
+  }
 
 
-$('.search-submit').click(function() {
-	funct1();
+  $('.search-submit').click(function() {
+  	funct1();
+  });
+
+
+  $('#button1').click(function() {
+    $('#step1').hide();
+  });
+
+  $('#button2').click(function() {
+    $('#step2').hide();
+  });
+
+  $('#button3').click(function() {
+    $('#step3').hide();
+  });
+
+  $('#button4').click(function() {
+    $('#step4').hide();
+  });
+
+  $('#button5').click(function() {
+    $('#step5').hide();
+  });
+
 });
