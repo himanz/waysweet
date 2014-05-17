@@ -2,9 +2,6 @@ class PlansController < ApplicationController
 	def index
     @plans = if params[:price]
       Plan.where(price: params[:price])
-
-      
-      
     else
       Plan.all
     end
