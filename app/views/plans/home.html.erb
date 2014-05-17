@@ -1,11 +1,12 @@
 
 <div id="searchbody">
 
-<div id="first_step">
-  <div class="scity">
-  What <b>PRICE</b> are you looking for?
+  <div id="first_step">
+    <div class="scity">
+    What <b>PRICE</b> are you looking for?
+    </div>
   </div>
-
+</div>
 <%= form_tag plans_path, method: :get, authentication: false, id: 'search-form' do %>
   <%= number_field_tag :price, params[:price] %>
   <%= submit_tag "Search", :name => nil, class: 'search-submit' %>
