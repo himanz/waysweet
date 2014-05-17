@@ -1,3 +1,5 @@
+<div class ="homesearch">
+
   <%= form_tag plans_path, method: :get, authentication: false, id: 'search-form' do %>
     <div id="step1">
       <div class="scity">
@@ -9,7 +11,7 @@
 
     </div>
 
-<div id="searchbody">
+
 
     <div id="step2">
       <div class="scity">
@@ -44,11 +46,11 @@
       <div class="scity">
         How Many <b>Texts</b>?
         <%= number_field_tag :text, params[:text] %>
-
+        <input name="back" id="buttonback5"class="button" type="button" value="Back" />
+        <%= submit_tag "Search", :name => nil, class: 'button' %>
       </div>
     </div>
-    <input name="back" id="buttonback5"class="button" type="button" value="Back" />
-    <%= submit_tag "Search", :name => nil, class: 'button' %>
+    
 
   <% end %>
 
