@@ -1,3 +1,16 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$( "#button1" ).click(function() {
+   $( ".step1" ).hide( "slow" );
+ });
+
+ $( "#button2" ).click(function() {
+   $( ".step2" ).hide( "slow" );
+ });
+
+  $( "#button3" ).click(function() {
+   $( ".step3" ).hide( "slow" );
+ });
+ 
+   $( "#button4" ).click(function() {
+   $( ".step4" ).hide( "slow" );
+ });

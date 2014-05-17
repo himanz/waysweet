@@ -1,19 +1,20 @@
-<!-- <div id="searchbody"> -->
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-<form id='searchform'>
 
-<div class="step">
+<div class="step1">
   <div class="scity">
   Which <b>City</b> are you searching from?
   </div>
 
   <input type='textcity' name='cityname' size='15' placeholder='City' />
+  <a href="#" id="button1">Next</a>
+ 
 </div>
 
 
 <div class="clear"></div>
 
-<div class="step">
+<div class="step2">
 
   <div class="scity">
     How much are <b>YOU</b> paying?
@@ -22,12 +23,16 @@
   <div id="sprice">
   <input type='number' name='planprice' size='15' placeholder='$' />
   </div>
+
+  <a href="#" id="button2">Next</a>
+ 
+ </div>
   
   
-  <div class="clear"></div>
+<!-- <div class="clear"></div> -->
 
 
-<div class="step">
+<div class="step3">
   <div class="scity">
     What is included in <b>YOUR</b> plan?
   </div>
@@ -35,12 +40,12 @@
     <div id="scitya">
       <%= render partial: "form" %>
     </div>
+    <a href="#" id="button3">Next</a>
+  </div>
 
 
 
-
-<div class="step">
-
+<div class="step4">
   <div class="scity">
     What Plan are you <b>Searching</b> for?
   </div>
@@ -48,19 +53,7 @@
     <div id="scitya">
       <%= render partial: "form" %>
     </div>
+    <a href="#" id="button4">Search</a>
 </div>
 
-</form>
 
-
-
-
-$('#searchform').multistep({
-    stepSelector            : '.step', 
-    actions                 : '.actions', 
-    onAfterShowStep         : function(step){}, 
-    onBeforeShowNextStep    : function(step){},
-    onBeforeShowPrevStep    : function(step){}, 
-    prevButtonText          : 'Back', 
-    nextButtonText          : 'Next' 
-});
