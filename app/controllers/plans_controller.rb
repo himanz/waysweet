@@ -1,7 +1,9 @@
 class PlansController < ApplicationController
 	def index
-    @plans = if params[:price]
-      Plan.where(city_id: City.where(name:params[:price]).first.id)
+    @plans = if params[:city]
+      # Plan.where(city_id: City.where(name:params[:city]).first.id)
+      
+      Plan.where(city_id: City.where(name:params[:city]).first.id).where(price: params[:price]).where(minute:params[:minute]).where(data:params[:data]).where(text:params[:text])
     else
       Plan.all
     end

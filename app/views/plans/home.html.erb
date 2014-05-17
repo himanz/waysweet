@@ -9,8 +9,18 @@
 </div>
 
 <%= form_tag plans_path, method: :get, authentication: false, id: 'search-form' do %>
-  <%= text_field_tag :price, params[:price] %>
+  <%= label_tag :City %>
+  <%= text_field_tag :city, params[:city] %>
+  <%= label_tag :Price %>
+  <%= number_field_tag :price, params[:price] %>
+  <%= label_tag :Minute %>
+  <%= number_field_tag :minute, params[:minute] %>
+  <%= label_tag :Data %>
+  <%= number_field_tag :data, params[:data] %>
+  <%= label_tag :Text %>
+  <%= number_field_tag :text, params[:text] %>
   <%= submit_tag "Search", :name => nil, class: 'search-submit' %>
+
 <% end %>
 
 <div id="search-display"></div>
