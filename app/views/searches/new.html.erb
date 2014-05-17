@@ -1,67 +1,64 @@
-<div id="searchbody">
+<form id='searchform'>
 
-  <form action="#" method="post">
+<div class="step">
+  <div class="scity">
+  Which <b>City</b> are you searching from?
+  </div>
 
-    <div id="first_step">
-      <div class="scity">
-      Which <b>City</b> are you searching from?
-      </div>
-
-      <input type='textcity' name='cityname' size='15' placeholder='City' />
-      </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-
-      <input class="submit" type="submit" name="submit_first" id="submit_first" value="Next" />
-      <div class="clear"></div>
-    </div>
-
-
-    <div id="second_step">
-
-      <div class="scity">
-        How much are <b>YOU</b> paying?
-      </div>
-
-      <div id="sprice">
-      <input type='number' name='planprice' size='15' placeholder='$' />
-      </div>
-      
-      <input class="submit" type="submit" name="submit_first" id="submit_second" value="Next" />
-      <div class="clear"></div>
-    </div>
-
-
-    <div id="third_step">
-      <div class="scity">
-        What is included in <b>YOUR</b> plan?
-      </div>
-
-      <div id="scitya">
-        <%= render partial: "form" %>
-      </div>
-
-      <input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
-      <div class="clear"></div>
-    </div>
-
-    <div id="fourth_step">
-
-      <div class="scity">
-        What Plan are you <b>Searching</b> for?
-      </div>
-
-        <div id="scitya">
-          <%= render partial: "form" %>
-        </div>
-    </div>
-
-    <input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
-    <div class="clear"></div>
-
-  </form>
+  <input type='textcity' name='cityname' size='15' placeholder='City' />
 </div>
 
-<div id="progress_bar">
-  <div id="progress"></div>
-  <div id="progress_text">0% Complete</div>
+
+<div class="clear"></div>
+
+<div class="step">
+  <div id="sprice">
+  <input type='number' name='planprice' size='15' placeholder='$' />
+  </div>
+  
+  <div class="clear"></div>
+
+  <div id="scitya">
+    <%= render partial: "form" %>
+  </div>
+
 </div>
 
+<div class="step">
+  <div class="scity">
+    What is included in <b>YOUR</b> plan?
+  </div>
+
+  <input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
+  <div class="clear"></div>
+
+</div>
+
+
+<div class="step">
+
+  <div class="scity">
+    What Plan are you <b>Searching</b> for?
+  </div>
+
+  <div id="scitya">
+    <%= render partial: "form" %>
+  </div>
+
+
+  <input class="submit" type="submit" name="submit_first" id="submit_third" value="Next" />
+  <div class="clear"></div>
+
+</div>
+
+</form>
+
+$('#searchform').multistep({
+    stepSelector            : '.step', 
+    actions                 : '.actions', 
+    onAfterShowStep         : function(step){}, 
+    onBeforeShowNextStep    : function(step){},
+    onBeforeShowPrevStep    : function(step){}, 
+    prevButtonText          : 'Back', 
+    nextButtonText          : 'Next' 
+});
