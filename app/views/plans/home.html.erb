@@ -7,4 +7,17 @@
   <%= submit_tag "Search", :name => nil, class: 'search-submit' %>
 <% end %>
 
+<div id="search-display"></div>
 
+<script>
+  var url = "https://sizzling-fire-5831.firebaseio.com";
+  var firebaseRef = new Firebase(url);
+  firebaseRef.on('child_added', function(snapshot) {
+  	var search = snapshot.val();
+    displayChatMessage(search.Price);
+  	});
+  function displayChatMessage(price) {
+        $('<div/>').text(price).prepend($('<em/>').text("Price")).appendTo($('#search-display'));
+        $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
+      };
+</script>
