@@ -94,12 +94,17 @@
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
   	});
   function displayChatMessage(price, minute, data, text) {
-        $('<div/>').text(price).prepend($('<em/>').text("Price")).appendTo($('#search-display'));
-        $('<div/>').text(minute).prepend($('<em/>').text("Minute")).appendTo($('#search-display'));
-        $('<div/>').text(data).prepend($('<em/>').text("Data")).appendTo($('#search-display'));
-        $('<div/>').text(text).prepend($('<em/>').text("Text")).appendTo($('#search-display'));
-        $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
-      };
+
+    var div = $('<div/>', {'class':'realtime-plan'});
+    // Fills the div with information
+    $('<p>').text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
+    $('<p>').text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
+    $('<p>').text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
+    $('<p>').text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
+    // Appends the information to the home page
+    div.appendTo($('#search-display'));
+    $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
+  };
 
   // Autofill typeahead
   var substringMatcher = function(strs) {
