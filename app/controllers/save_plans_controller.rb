@@ -2,11 +2,15 @@ class SavePlansController < ApplicationController
 	def create
 		@save_plan = SavePlan.new(save_plan_params)
 		@save_plan.user_id = current_user.id
-		puts "========"
-		puts params[:save_plan][:plan_id]
 
 		@save_plan.plan_id = params[:save_plan][:plan_id]
 		@save_plan.save
+	end
+
+	def destroy
+		@save_plan = SavePlan.find(params[:id])
+		@save_plan.destroy
+		redirect_to plans_path
 	end
 
 	def save_plan_params
