@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :plans_owned, class_name: "Plan", foreign_key: 'owner_id'
   has_many :comments
+  has_many :save_plans 
 
   authenticates_with_sorcery! 
 
