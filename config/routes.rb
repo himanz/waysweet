@@ -18,6 +18,7 @@ Waysweet::Application.routes.draw do
   end
 
   resources :cities
+  resources :save_plans
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
 	def index
+		@save_plan = SavePlan.new
     @plans = if params[:city]
       # Plan.where(city_id: City.where(name:params[:city]).first.id)
       
@@ -42,6 +43,9 @@ class PlansController < ApplicationController
 	end
 
 	def destroy
+		@plan = Plan.find(params[:id])
+		@plan.destroy
+		redirect_to current_user
 	end
 
 	def map
