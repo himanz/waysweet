@@ -75,12 +75,13 @@ $(document).ready(function() {
 
   $(function() {
     $( "#slider1" ).slider({
+      range: "min",
       value:50,
       min: 0,
       max: 100,
       step: 5,
       slide: function( event, ui ) {
-        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#priceslider" ).val( "$" + ui.value );
         $( "#priceslider" ).html( "$" + ui.value );
       },
       change: function(event, ui ) {
@@ -92,12 +93,13 @@ $(document).ready(function() {
 
   $(function() {
     $( "#slider2" ).slider({
+      range: "min",
       value:300,
       min: 0,
       max: 600,
       step: 50,
       slide: function( event, ui ) {
-        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#minuteslider" ).val( "$" + ui.value );
         $( "#minuteslider" ).html( "$" + ui.value );
       },
       change: function(event, ui ) {
@@ -109,12 +111,13 @@ $(document).ready(function() {
 
   $(function() {
     $( "#slider3" ).slider({
+      range: "min",
       value:1000,
       min: 0,
       max: 4000,
       step: 500,
       slide: function( event, ui ) {
-        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#dataslider" ).val( "$" + ui.value );
         $( "#dataslider" ).html( "$" + ui.value );
       },
       change: function(event, ui ) {
@@ -126,12 +129,13 @@ $(document).ready(function() {
 
   $(function() {
     $( "#slider4" ).slider({
+      range: "min",
       value:200,
       min: 0,
       max: 600,
       step: 100,
       slide: function( event, ui ) {
-        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#textslider" ).val( "$" + ui.value );
         $( "#textslider" ).html( "$" + ui.value );
       },
       change: function(event, ui ) {
@@ -140,19 +144,6 @@ $(document).ready(function() {
       } 
     });
   });  
-// $(function() {
-//     $( "#slider4" ).slider({
-//       value:200,
-//       min: 0,
-//       max: 600,
-//       step: 100,
-//       slide: function( event, ui ) {
-//         $( "#amount4" ).val( ui.value );
-//       }
-//     });
-//     $( "#amount4" ).val($( "#slider4" ).slider( "value" ) );
-//   });
-
 
 });
 
