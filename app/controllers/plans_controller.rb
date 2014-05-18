@@ -65,8 +65,6 @@ class PlansController < ApplicationController
     	@cities.push(city.name)
     end
     @cities.sort!
-    puts "=========="
-    print @cities
   end
   
 
