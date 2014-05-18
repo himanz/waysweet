@@ -8,6 +8,8 @@ class PlansController < ApplicationController
     else
       Plan.all
     end
+    puts "========"
+    puts params
   end
   
 	def show

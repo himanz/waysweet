@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require foundation
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/typeahead
-//= require foundation
+//= require jquery.ui.progressbar
+//= require jquery.ui.slider
+//= require jquery.ui.spinner
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
