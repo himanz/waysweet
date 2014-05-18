@@ -79,10 +79,9 @@
   <% end %>
 
 </div>
-
-<div id="search-display"></div>
-
-
+<div class = "row">
+  <div id="search-display"></div>
+  </div>
 </div>
 
 <script>
@@ -95,7 +94,7 @@
   	});
   function displayChatMessage(price, minute, data, text) {
 
-    var div = $('<div/>', {'class':'realtime-plan'});
+    var div = $("<div class='realTimeSearch large-3 columns'/>", {'class':'realtime-plan'});
     // Fills the div with information
     $('<p>').text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
     $('<p>').text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
