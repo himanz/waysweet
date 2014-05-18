@@ -32,6 +32,9 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
+            <% if !current_user %>
+              <li class="active"><%= link_to "Create Account", new_user_path %> </li>
+            <% end %>
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>
             <li class="has-dropdown">
               <% if !current_user %>
