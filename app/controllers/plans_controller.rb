@@ -43,6 +43,9 @@ class PlansController < ApplicationController
 	end
 
 	def destroy
+		@plan = Plan.find(params[:id])
+		@plan.destroy
+		redirect_to current_user
 	end
 
 	def map
