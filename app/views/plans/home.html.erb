@@ -11,7 +11,7 @@
           <%= text_field_tag :city, params[:city] %>
           </div>
           <div class="btnlayout">
-        <input name="next" id="button1"class="button" type="button" value="Next" />
+        <input name="next" id="button1"class="button [tiny small large]" type="button" value="Next" />
           </div>
       </div> 
     </div>
@@ -19,17 +19,17 @@
     <div id="step2">
       <div class="sform">
         <div class="header2">
-          Plan <b>Search</b>
+          Search for <b>Plans</b>
         </div>
           <div class="formgrid">
             <%= render partial: "form" %>
           </div>
-          
+
           <div class="btnlayout">
-        <input name="back" id="buttonback2"class="button" type="button" value="Back" />
-        <input name="next" id="button2"class="button" type="button" value="Next" />
+        <input name="back" id="buttonback2"class="button [tiny small large]" type="button" value="Back" />
+        <%= submit_tag "Search", :name => nil, class: 'button [tiny small large]' %>
           </div>
-          </div>
+        </div>
       </div>
     </div>
 
