@@ -4,9 +4,10 @@
     <div id="step1">
 
       <div class="scity">
-        <div class="small-3 small-centered columns">
-        Search for <b>City</b>
-        
+        <div class="header1">
+         <center><b>City</b> search</center>
+        </div>
+          <div class="small-3 small-centered columns">
           <!-- <div class="large-3 columns"> -->
           <%= text_field_tag :city, params[:city] %>
           </div>
@@ -19,7 +20,7 @@
     <div id="step2">
       <div class="sform">
         <div class="header2">
-          Search for <b>Plans</b>
+          <center>Search for <b>Plans</b></center>
         </div>
           <div class="formgrid">
             <%= render partial: "form" %>
