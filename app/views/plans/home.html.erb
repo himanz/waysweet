@@ -7,7 +7,7 @@
         <div class="header1">
          <center><b>City</b> search</center>
         </div>
-          <div class="small-3 small-centered columns">
+          <div id='city-search' class="small-3 small-centered columns">
           <!-- <div class="large-3 columns"> -->
           <%= text_field_tag :city, params[:city] %>
           </div>
@@ -97,5 +97,43 @@
         $('<div/>').text(price).prepend($('<em/>').text("Price")).appendTo($('#search-display'));
         $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
       };
+
+  // Autofill typeahead
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+
+      // an array that will be populated with substring matches
+      matches = [];
+
+      // regex used to determine if a string contains the substring 'q'
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring 'q', add it to the 'matches' array
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          matches.push({ value: str});
+        }
+      })
+
+      cb(matches);
+    };
+  };
+  
+  var cities = <%= raw @cities %>
+  
+  
+  $('#city-search #city').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+  {
+    name: 'cities',
+    displayKey: 'value',
+    source: substringMatcher(cities)
+  }); 
+
 </script>
 

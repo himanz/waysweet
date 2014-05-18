@@ -59,7 +59,14 @@ class PlansController < ApplicationController
   end
 
   def home
-    
+  	allcities = City.all
+    @cities = []
+    allcities.each do |city|
+    	@cities.push(city.name)
+    end
+    @cities.sort!
+    puts "=========="
+    print @cities
   end
   
 
