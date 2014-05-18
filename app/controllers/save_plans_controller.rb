@@ -10,7 +10,7 @@ class SavePlansController < ApplicationController
 	def destroy
 		@save_plan = SavePlan.find(params[:id])
 		@save_plan.destroy
-		redirect_to plans_path
+		redirect_to current_user
 	end
 
 	def save_plan_params
