@@ -74,6 +74,10 @@ $(document).ready(function() {
   });
 
   $(function() {
+    // Sets default values
+    $("#priceslider").val( "$" + 50);
+    $("#price").val(50);   
+
     $( "#slider1" ).slider({
       range: "min",
       value:50,
@@ -92,6 +96,10 @@ $(document).ready(function() {
   });
 
   $(function() {
+    // Sets default values
+    $("#minuteslider").val(300);
+    $("#minute").val(300);   
+
     $( "#slider2" ).slider({
       range: "min",
       value:300,
@@ -110,6 +118,10 @@ $(document).ready(function() {
   });
 
   $(function() {
+    // Sets default values
+    $("#dataslider").val(1000);
+    $("#data").val(1000);  
+
     $( "#slider3" ).slider({
       range: "min",
       value:1000,
@@ -128,6 +140,10 @@ $(document).ready(function() {
   });  
 
   $(function() {
+    // Sets default values
+    $("#textslider").val(200);
+    $("#text").val(200);   
+
     $( "#slider4" ).slider({
       range: "min",
       value:200,
