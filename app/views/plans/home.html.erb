@@ -28,7 +28,7 @@
 
           <div class="btnlayout">
         <input name="back" id="buttonback2"class="button [tiny small large]" type="button" value="Back" />
-        <%= submit_tag "Search", :name => nil, class: 'button [tiny small large]' %>
+        <%= submit_tag "Search", :name => nil, class: 'button [tiny small large] search-submit' %>
           </div>
         </div>
       </div>
@@ -91,10 +91,13 @@
   var firebaseRef = new Firebase(url);
   firebaseRef.on('child_added', function(snapshot) {
   	var search = snapshot.val();
-    displayChatMessage(search.Price);
+    displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
   	});
-  function displayChatMessage(price) {
+  function displayChatMessage(price, minute, data, text) {
         $('<div/>').text(price).prepend($('<em/>').text("Price")).appendTo($('#search-display'));
+        $('<div/>').text(minute).prepend($('<em/>').text("Minute")).appendTo($('#search-display'));
+        $('<div/>').text(data).prepend($('<em/>').text("Data")).appendTo($('#search-display'));
+        $('<div/>').text(text).prepend($('<em/>').text("Text")).appendTo($('#search-display'));
         $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
       };
 

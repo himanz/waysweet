@@ -9,12 +9,14 @@ $(document).ready(function() {
   function funct1()
   {
     var price = $('#price').val();
-
+    var minute = $('#minute').val();
+    var data = $('#data').val();
+    var text = $('#text').val();
     var date = Date();
 
     // firebaseRef.set({Price: price, Date: date});
     var postRef = firebaseRef.push(); // create a new post
-    postRef.set({Price: price, Date: date});
+    postRef.set({Price: price, Minute: minute, Data: data, Text: text, Date: date});
   }
 
 
