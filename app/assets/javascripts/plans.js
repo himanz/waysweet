@@ -106,32 +106,40 @@ $(document).ready(function() {
       } 
     });
   });
-// $(function() {
-//     $( "#slider2" ).slider({
-//       value:300,
-//       min: 0,
-//       max: 600,
-//       step: 50,
-//       slide: function( event, ui ) {
-//         $( "#amount2" ).val( ui.value );
-//       }
-//     });
-//     $( "#amount2" ).val($( "#slider2" ).slider( "value" ) );
-//   });
 
-// $(function() {
-//     $( "#slider3" ).slider({
-//       value:1000,
-//       min: 0,
-//       max: 4000,
-//       step: 500,
-//       slide: function( event, ui ) {
-//         $( "#amount3" ).val( ui.value );
-//       }
-//     });
-//     $( "#amount3" ).val($( "#slider3" ).slider( "value" ) );
-//   });
+  $(function() {
+    $( "#slider3" ).slider({
+      value:1000,
+      min: 0,
+      max: 4000,
+      step: 500,
+      slide: function( event, ui ) {
+        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#dataslider" ).html( "$" + ui.value );
+      },
+      change: function(event, ui ) {
+        $("#data").val(ui.value);
+        console.log(ui.value); 
+      } 
+    });
+  });  
 
+  $(function() {
+    $( "#slider4" ).slider({
+      value:200,
+      min: 0,
+      max: 600,
+      step: 100,
+      slide: function( event, ui ) {
+        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#textslider" ).html( "$" + ui.value );
+      },
+      change: function(event, ui ) {
+        $("#text").val(ui.value);
+        console.log(ui.value); 
+      } 
+    });
+  });  
 // $(function() {
 //     $( "#slider4" ).slider({
 //       value:200,
