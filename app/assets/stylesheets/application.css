@@ -14,6 +14,17 @@
  *= require jquery.ui.all
  */
 
+ /*
+ *= require jquery.ui.progressbar
+ */
+/*
+*= require jquery.ui.slider
+*/
+/*
+*= require jquery.ui.spinner
+*/
+
+
  *= require_tree .
  */
 
