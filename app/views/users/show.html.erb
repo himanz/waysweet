@@ -1,7 +1,16 @@
 <% if current_user.id == @user.id %>
 	<p>Email</p>
 	<%= @user.email %>
-	
+	<p>Owned Plans</p>
+	<% @user.plans_owned.each do |plan| %>
+	  <%= plan.price %></br>
+		<%= plan.minute %></br>
+		<%= plan.data %></br>
+		<%= plan.text %>
+		<p>-------------</p>
+	<% end %>
+
+  <p>============</p>
 
 	<p>Saved Plans</p>
 	<% @user.plans.each do |plan| %>
