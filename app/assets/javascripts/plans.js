@@ -83,15 +83,29 @@ $(document).ready(function() {
         // $( "#priceslider" ).val( "$" + ui.value );
         $( "#priceslider" ).html( "$" + ui.value );
       },
-  
       change: function(event, ui ) {
         $("#price").val(ui.value);
         console.log(ui.value); 
       } 
-
     });
   });
 
+  $(function() {
+    $( "#slider2" ).slider({
+      value:300,
+      min: 0,
+      max: 600,
+      step: 50,
+      slide: function( event, ui ) {
+        // $( "#priceslider" ).val( "$" + ui.value );
+        $( "#minuteslider" ).html( "$" + ui.value );
+      },
+      change: function(event, ui ) {
+        $("#minute").val(ui.value);
+        console.log(ui.value); 
+      } 
+    });
+  });
 // $(function() {
 //     $( "#slider2" ).slider({
 //       value:300,
