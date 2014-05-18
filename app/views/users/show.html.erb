@@ -1,2 +1,4 @@
-<p>Email</p>
-<%= @user.email %>
+<% if current_user.id == @user.id %>
+	<p>Email</p>
+	<%= @user.email %>
+<% end %>

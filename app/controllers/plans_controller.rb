@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
 	def index
+		@save_plan = SavePlan.new
     @plans = if params[:city]
       # Plan.where(city_id: City.where(name:params[:city]).first.id)
       
