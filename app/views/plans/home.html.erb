@@ -84,7 +84,7 @@
 <script>
   // When firebase database gets added to, it will update root with what was added
   var url = "https://sizzling-fire-5831.firebaseio.com";
-  var firebaseRef = new Firebase(url).limit(8);
+  var firebaseRef = new Firebase(url).limit(10);
   firebaseRef.on('child_added', function(snapshot) {
   	var search = snapshot.val();
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
@@ -93,8 +93,8 @@
 
     var div = $("<div class='realTimeSearch medium-2 columns'/>");
     // Fills the div with information
-    $("<p class=displayPrice >").text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
-    $("<p class=displayMinute >").text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
+    $("<p class=displayPrice >").text(price).prepend($('<em/>').text("$ ")).appendTo(div);
+    $("<p class=displayMinute >").text(minute).prepend($('<em/>').text("Minutes: ")).appendTo(div);
     $("<p class=displayData >").text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
     $("<p class=displayText >").text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
     // Appends the information to the home page
@@ -125,6 +125,7 @@
     };
   };
   
+
   var cities = <%= raw @cities %>
   
   
@@ -140,4 +141,5 @@
   }); 
 
 </script>
+
 

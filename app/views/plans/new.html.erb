@@ -1,8 +1,11 @@
+<div class="newplan">
+
 <%= form_for @plan do |f| %>
   <div class="field">
 	  <%= f.label :price %>
 	  <%= f.number_field :price, :step => 'any' %>
-  </div>
+    </div>
+
   <div class="field">
 	  <%= f.label :data %>
 	  <%= f.number_field :data %>
@@ -27,3 +30,5 @@
 	  <%= f.submit :Submit %>
   </div>
 <% end %>
+
+</div>
