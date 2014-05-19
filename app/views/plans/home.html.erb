@@ -81,21 +81,21 @@
 <script>
   // When firebase database gets added to, it will update root with what was added
   var url = "https://sizzling-fire-5831.firebaseio.com";
-  var firebaseRef = new Firebase(url);
+  var firebaseRef = new Firebase(url).limit(8);
   firebaseRef.on('child_added', function(snapshot) {
   	var search = snapshot.val();
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
   	});
   function displayChatMessage(price, minute, data, text) {
 
-    var div = $("<div class='realTimeSearch large-3 columns'/>", {'class':'realtime-plan'});
+    var div = $("<div class='realTimeSearch large-3 columns'/>");
     // Fills the div with information
     $('<p>').text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
     $('<p>').text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
     $('<p>').text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
     $('<p>').text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
     // Appends the information to the home page
-    div.appendTo($('#search-display'));
+    $('#search-display').prepend(div);
     $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
   };
 
