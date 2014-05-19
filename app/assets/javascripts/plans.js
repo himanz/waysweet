@@ -162,6 +162,11 @@ $(document).ready(function() {
       } 
     });
   });  
+  
+  $('#search-display').on("click",".realTimeSearch", function() {
+    var selectPrice = $( "this").html(); 
+    console.log(selectPrice);
+  });
 
 });
 

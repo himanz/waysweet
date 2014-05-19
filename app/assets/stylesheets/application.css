@@ -99,3 +99,7 @@ ul#board li {
   background-color: white
   border: 1px solid black;
 }
+
+.realTimeSearch {
+  border: 1px solid black;
+}

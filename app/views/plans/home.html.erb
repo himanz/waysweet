@@ -90,10 +90,10 @@
 
     var div = $("<div class='realTimeSearch large-3 columns'/>");
     // Fills the div with information
-    $('<p>').text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
-    $('<p>').text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
-    $('<p>').text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
-    $('<p>').text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
+    $("<p class=displayPrice >").text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
+    $("<p class=displayMinute >").text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);
+    $("<p class=displayData >").text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
+    $("<p class=displayText >").text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
     // Appends the information to the home page
     $('#search-display').prepend(div);
     $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
