@@ -109,8 +109,8 @@ $(document).ready(function() {
       max: 600,
       step: 50,
       slide: function( event, ui ) {
-        $( "#minuteslider" ).val( "$" + ui.value );
-        $( "#minuteslider" ).html( "$" + ui.value );
+        $( "#minuteslider" ).val(ui.value );
+        $( "#minuteslider" ).html(ui.value );
       },
       change: function(event, ui ) {
         $("#minute").val(ui.value);
@@ -131,8 +131,8 @@ $(document).ready(function() {
       max: 4000,
       step: 500,
       slide: function( event, ui ) {
-        $( "#dataslider" ).val( "$" + ui.value );
-        $( "#dataslider" ).html( "$" + ui.value );
+        $( "#dataslider" ).val(ui.value);
+        $( "#dataslider" ).html(ui.value);
       },
       change: function(event, ui ) {
         $("#data").val(ui.value);
@@ -153,8 +153,8 @@ $(document).ready(function() {
       max: 600,
       step: 100,
       slide: function( event, ui ) {
-        $( "#textslider" ).val( "$" + ui.value );
-        $( "#textslider" ).html( "$" + ui.value );
+        $( "#textslider" ).val(ui.value );
+        $( "#textslider" ).html(ui.value );
       },
       change: function(event, ui ) {
         $("#text").val(ui.value);

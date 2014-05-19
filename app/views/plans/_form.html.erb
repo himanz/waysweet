@@ -35,7 +35,10 @@
     <input id="textslider" style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;"> 
     <%= hidden_field_tag :text %>
   </div>
-
+  <div class="btnlayout">
+    <input name="back" id="buttonback2"class="button [tiny small large]" type="button" value="Back" />
+    <%= submit_tag "Search", :name => nil, class: 'button [tiny small large] search-submit' %>
+  </div>
 </div>
 
 <!-- <div class="row">
