@@ -2,6 +2,12 @@
 <div class="compareBox">
 
 </div>
+<a href="#" data-reveal-id="myModal" class="modalButton radius button">Compare Plans</a>
+
+<div id="myModal" class="reveal-modal" data-reveal>
+	<a class="close-reveal-modal">&#215;</a>
+
+</div>
 
 <% if current_user.id == @user.id %>
 	<p>Email</p>
@@ -33,6 +39,11 @@
 
 <script>
   $(".savedPlans").on("click", function(){
+  	$(this).addClass("comparePlan");
     $(".compareBox").append($(this))
+  });
+  $(".modalButton").on("click", function(){
+    console.log($(".compareBox").children().length);
+    $(".reveal-modal").append("a");
   });
 </script>
