@@ -14,7 +14,6 @@ class PlansController < ApplicationController
 		end
     @plans = if params[:city]	 
       Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
-      
     else
       Plan.all
     end
@@ -76,8 +75,6 @@ class PlansController < ApplicationController
     	@cities.push(city.name)
     end
     @cities.sort!
-
-    
   end
   
 
