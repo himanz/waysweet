@@ -35,7 +35,7 @@ font-size: 60px;
 .header1{
 width: 50%;
 margin: 0px auto;
-padding-top: 5%;
+// padding-top: -10%;
 font-family: Helevtica;
 color: #4A90E2;
 font-size: 60px;
@@ -58,12 +58,12 @@ bottom: 0px;
 }
 
 .plansidebar{
-  height: 600px;
-  width: 200px;
-  // position-left: -10px;
-  // background-color: ;
-  // padding-top: 2%;
-  margin: 0px;
+  height: 65%;
+  width: 220px;
+  position: fixed;
+  top: 100px;
+  // background-color: black
+
 }
 
 .searches{
