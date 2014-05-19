@@ -13,20 +13,19 @@
       </div> 
     </div>
 
-    <div id="step2">
-      <div class="sform">
-        <div class="header2">
-          <center>Search for <b>Plans</b></center>
-        </div>
-          <div class="formgrid">
-            <%= render partial: "form" %>
-            
-          </div>
-
+  <div id="step2">
+    <div class="sform">
+      <div class="header2">
+        <center>Search for <b>Plans</b></center>
+      </div>
+        <div class="formgrid">
+          <%= render partial: "form" %>
           
         </div>
+        
       </div>
     </div>
+
 
    <!--  <div id="step3">
       <div class="scity">
@@ -73,9 +72,13 @@
   <% end %>
 
 </div>
-<div class = "row">
-  <div id="search-display"></div>
-  </div>
+
+<div class ="row">
+    <div class="searches">
+      <center><b>Recent</b> searches</center>
+    </div>
+
+    <div id="search-display"></div>
 </div>
 
 <script>
@@ -88,7 +91,7 @@
   	});
   function displayChatMessage(price, minute, data, text) {
 
-    var div = $("<div class='realTimeSearch large-3 columns'/>");
+    var div = $("<div class='realTimeSearch medium-2 columns'/>");
     // Fills the div with information
     $("<p class=displayPrice >").text(price).prepend($('<em/>').text("Price: ")).appendTo(div);
     $("<p class=displayMinute >").text(minute).prepend($('<em/>').text("Minute: ")).appendTo(div);

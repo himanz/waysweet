@@ -1,65 +1,43 @@
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-
-    <a class="left-off-canvas-toggle" href="#" >Menu</a>
-
-    <!-- Off Canvas Menu -->
-    <aside class="left-off-canvas-menu">
-      <!-- whatever you want goes here -->
-      <ul>
-        <div class="carriers">
-          <div class="large-12 columns">
-            <label>Select Carrier
-              <select>
-                <option value="rogers">Rogers</option>
-                <option value="bell">Bell</option>
-                <option value="telus">Telus</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <%= render "sidebar" %> 
-      </ul>
-    </aside>
-
-<!-- main content goes here -->
-    <div class="container">
-      <h1>Plans</h1> <br />
-      
-      <table>
-        <thead>
-          <tr>
-            <th width="200">Carrier</th>
-            <th width="150">Price</th>
-            <th width="150">Minutes</th>
-            <th width="150">Text</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @plans.each do |plan| %>
-
-            <tr>
-              <td><%= plan.carrier %></td>
-              <td>$<%= plan.price %></td>
-              <td><%= plan.minute %></td>
-              <td><%= plan.text %></td>
-              <td><%= form_for @save_plan do |f|%>
-                    <%= f.hidden_field :plan_id, value: plan.id %>
-                    <%= f.submit :Save %>
-                  <% end %>
-              </td>
-            </tr>
-
-          <% end %>
-
-        </tbody> 
-
-        <!-- close the off-canvas menu -->
-        <a class="exit-off-canvas"></a>
-      </table>
-    </div>
-
-  </div>
+<div class="plansidebar">
+  
+  <ul>
+    <!-- <div class="carriers"> -->
+  
+    <!-- </div> -->
+    <%= render "sidebar" %> 
+  </ul>
 </div>
+
+<div class="formgrid">
+  <h1>Plans</h1> <br />  
+  <table>
+      <thead>
+        <tr>
+          <th width="200">Carrier</th>
+          <th width="150">Price</th>
+          <th width="150">Minutes</th>
+          <th width="150">Text</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @plans.each do |plan| %>
+        <tr>
+          <td><%= plan.carrier %></td>
+          <td>$<%= plan.price %></td>
+          <td><%= plan.minute %></td>
+          <td><%= plan.text %></td>
+          <td><%= form_for @save_plan do |f|%>
+                <%= f.hidden_field :plan_id, value: plan.id %>
+                <%= f.submit :Save %>
+              <% end %>
+          </td>
+        </tr>
+
+      <% end %>
+    </tbody> 
+  </table>
+</div>
+
+
   

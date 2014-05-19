@@ -44,7 +44,8 @@ font-size: 60px;
 .formgrid{
 width: 50%;
 margin: 0px auto;
-padding-top: 2%;
+padding-top: 0%;
+
 }
 
 .media screen{
@@ -54,4 +55,64 @@ left: 0px;
 right: 0px;
 top: 0px;
 bottom: 0px;
+}
+
+.plansidebar{
+  height: 600px;
+  width: 200px;
+  // position-left: -10px;
+  // background-color: ;
+  // padding-top: 2%;
+  margin: 0px;
+}
+
+.searches{
+width: 50%;
+margin: 0px auto;
+padding-top: 5%;
+font-family: Helevtica;
+color: #4A90E2;
+font-size: 20px;
+padding-bottom: 5%;
+title-bg: #ddd;
+}
+
+.realTimeSearch {
+  width: 200px;
+  height: 200px;
+
+}
+
+p.displayPrice{
+  background-color: #ddd;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+p.displayMinute{
+  background-color: #fff;
+  text-align: center;
+  color: #777;
+  font-weight: normal;
+  line-height: 1.4;
+  bottom-border: dotted 1px #ddd;
+}
+
+p.displayData{
+  background-color: #fff;
+  text-align: center;
+  color: #777;
+  font-weight: normal;
+  line-height: 1.4;
+  bottom-border: dotted 1px #ddd;
+}
+
+p.displayText{
+  background-color: #fff;
+  text-align: center;
+  color: #777;
+  font-weight: normal;
+  line-height: 1.4;
+  bottom-border: dotted 1px #ddd;
 }
