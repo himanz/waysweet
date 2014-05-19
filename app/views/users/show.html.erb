@@ -41,9 +41,12 @@
   $(".savedPlans").on("click", function(){
   	$(this).addClass("comparePlan");
     $(".compareBox").append($(this))
+    // console.log($(this).attr("value"));
   });
   $(".modalButton").on("click", function(){
     console.log($(".compareBox").children().length);
-    $(".reveal-modal").append("a");
+    $(".reveal-modal").append($(".comparePlan:first").attr("value"));;
+    $(".reveal-modal").append($(".comparePlan:nth-child(2)").attr("value"));;
+    $(".reveal-modal").append($(".comparePlan:nth-child(3)").attr("value"));;
   });
 </script>
