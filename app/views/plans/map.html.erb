@@ -91,7 +91,7 @@ function initialize() {
     {name: "Styled Map"});
 
   var mapOptions = {
-    zoom: 13,
+    zoom: 8,
     center: new google.maps.LatLng(43.7000, -79.4000),
     mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
   };
@@ -105,7 +105,8 @@ function initialize() {
   var pointArray = new google.maps.MVCArray(planCarrier);
 
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray
+    data: pointArray,
+    radius: 20
   });
 
   heatmap.setMap(map);
