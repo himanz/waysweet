@@ -26,16 +26,19 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
 
     <script>
+var url = "https://sizzling-fire-5831.firebaseio.com";
+var firebaseRef = new Firebase(url).limit(8);
 
 var planCarrier = []
 
-<% @plans.each do |plan| %>
-
-<% if plan.carrier == 'rogers' %>
-  planCarrier.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
-
+// <% @plans.each do |plan| %>
+  <% @searches.each do |search| %>
+  // <% if plan.carrier == 'rogers' %>
+  //   planCarrier.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
+  // <% end %>
+  console.log(Number(<%= Time.now - search.created_at %>));
   <% end %>
-<% end %>
+// <% end %>
 
 
 var map, pointarray, heatmap;

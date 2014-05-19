@@ -49,6 +49,7 @@ class PlansController < ApplicationController
 	def map
 		@plans = Plan.all
 		@cities = City.all
+		@searches = Search.all
 	end
 
   def search
