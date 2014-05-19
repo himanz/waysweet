@@ -33,7 +33,8 @@
 
 /*.row { width: 100%; max-width: 980px; min-width: 727px; margin: 0 auto; }*/
     /* To fix the grid into a certain size, set max-width to width */
-    
+
+
 ul#board {
   margin: 20px auto;
   display:inline-block;
