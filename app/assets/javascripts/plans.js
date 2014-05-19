@@ -92,7 +92,6 @@ $(document).ready(function() {
       },
       change: function(event, ui ) {
         $("#price").val(ui.value);
-        console.log(ui.value); 
       } 
     });
   });
@@ -114,7 +113,6 @@ $(document).ready(function() {
       },
       change: function(event, ui ) {
         $("#minute").val(ui.value);
-        console.log(ui.value); 
       } 
     });
   });
@@ -136,7 +134,6 @@ $(document).ready(function() {
       },
       change: function(event, ui ) {
         $("#data").val(ui.value);
-        console.log(ui.value); 
       } 
     });
   });  
@@ -158,14 +155,35 @@ $(document).ready(function() {
       },
       change: function(event, ui ) {
         $("#text").val(ui.value);
-        console.log(ui.value); 
       } 
     });
   });  
   
-  $('#search-display').on("click",".realTimeSearch", function() {
-    var selectPrice = $( "this").html(); 
-    console.log(selectPrice);
+  // When clicking on real time searches, it will modify the search query to match the click
+  $(this).on("click", '.realTimeSearch', function() {
+    var selectPrice = $(this).find('.displayPrice').html(); 
+    selectPrice = selectPrice.replace( /[^\d.]/g, '' );
+    $("#priceslider").val( "$" + selectPrice);
+    $("#price").val(selectPrice);
+    $("#slider1").slider("option", "value", selectPrice);
+
+    var selectMinute = $(this).find('.displayMinute').html();
+    selectMinute = selectMinute.replace( /[^\d.]/g, '' );
+    $("#minuteslider").val(selectMinute);
+    $("#minute").val(selectMinute);
+    $("#slider2").slider("option", "value", selectMinute);
+
+    var selectData = $(this).find('.displayData').html();
+    selectData = selectData.replace( /[^\d.]/g, '' );
+    $("#dataslider").val(selectData);
+    $("#data").val(selectData);
+    $("#slider3").slider("option", "value", selectData);
+
+    var selectText = $(this).find('.displayText').html();
+    selectText = selectText.replace( /[^\d.]/g, '' );
+    $("#textslider").val(selectText);
+    $("#text").val(selectText);
+    $("#slider4").slider("option", "value", selectText);
   });
 
 });
