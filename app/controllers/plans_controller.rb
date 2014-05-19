@@ -1,6 +1,17 @@
 class PlansController < ApplicationController
 	def index
 		@save_plan = SavePlan.new
+		if params[:city]
+			search = Search.new
+			search.city= params[:city]
+			search.price = params[:price]
+      search.minute = params[:minute]
+      search.text = params[:text]
+      if current_user
+      	search.user_id = current_user.id
+      end
+      search.save      
+		end
     @plans = if params[:city]	 
       Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
     else
@@ -49,6 +60,7 @@ class PlansController < ApplicationController
 	def map
 		@plans = Plan.all
 		@cities = City.all
+		@searches = Search.all
 	end
 
   def search

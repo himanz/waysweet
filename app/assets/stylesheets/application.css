@@ -36,7 +36,15 @@
     
 ul#board {
   margin: 20px auto;
-    display:inline-block;
+  display:inline-block;
+}
+
+
+
+.waysweet-footer-bottom {
+  margin-top: 2.5%;
+  background-color: tomato;
+  height: 100px;  
 }
 
 ul#board li {
@@ -100,4 +108,9 @@ ul#board li {
   border: 1px solid black;
 }
 
+
+.social-icons {
+  list-style-type: none;
+  display: block;
+}
 

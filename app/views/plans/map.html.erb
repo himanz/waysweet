@@ -23,131 +23,121 @@
         max-width: inherit;
       }
     </style>
+    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
 
     <script>
 
-var planCarrier = []
+      var planCarrier = []
 
-<% @plans.each do |plan| %>
+      <% @searches.each do |search| %>
+        if (<%= (Time.now - search.created_at) / 60 %> <= 60) {
+          planCarrier.push(new google.maps.LatLng( Number(<%= @cities.find_by_name(search.city).latitude %>), Number(<%= @cities.find_by_name(search.city).longitude %>)))
+        }
+      <% end %>
 
-<% if plan.carrier == 'rogers' %>
-  planCarrier.push(new google.maps.LatLng( Number(<%= @cities.find_by_id(plan.city_id).latitude %>), Number(<%= @cities.find_by_id(plan.city_id).longitude %>)))
+      var map, pointarray, heatmap;
 
-  <% end %>
-<% end %>
+      function initialize() {
 
-
-var map, pointarray, heatmap;
-
-function initialize() {
-
-     // Create an array of styles.
+      // Create an array of styles.
   
-  var styles = [
-    {
-      stylers: [
-        { hue: "#4A90E5" }
+      var styles = [
+        {
+          stylers: [
+            { hue: "#4A90E5" }
 
-      ]
-    },{
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [
-        { visibility: "1%" }
-      ]
-    },
-      {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [
-        { visibility: "off" }
-      ]
-    },{
-      featureType: "road",
-      elementType: "labels",
-      stylers: [
-        { visibility: "off" }
-      ]
-    },
-    // {
-    //   featureType: "poi.park",
-    //   elementType: "geometry.fill",
-    //   stylers: [
-    //     { visibility: "off" }
-    //   ]
-    // },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [
-        { visibility: "20%" }
-      ]
-    },
-  
-  ];
+          ]
+        },{
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [
+            { visibility: "1%" }
+          ]
+        },
+          {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [
+            { visibility: "off" }
+          ]
+        },{
+          featureType: "road",
+          elementType: "labels",
+          stylers: [
+            { visibility: "off" }
+          ]
+        },{
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [
+            { visibility: "20%" }
+          ]
+        },
+      
+      ];
 
-  var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Styled Map"});
+      var styledMap = new google.maps.StyledMapType(styles,
+        {name: "Styled Map"});
 
-  var mapOptions = {
-    zoom: 13,
-    center: new google.maps.LatLng(43.7000, -79.4000),
-    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-  };
+      var mapOptions = {
+        zoom: 8,
+        center: new google.maps.LatLng(43.7000, -79.4000),
+        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+      };
 
 
-  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  map.mapTypes.set('map_style', styledMap);
-  map.setMapTypeId('map_style');
+      map.mapTypes.set('map_style', styledMap);
+      map.setMapTypeId('map_style');
 
-  var pointArray = new google.maps.MVCArray(planCarrier);
+      var pointArray = new google.maps.MVCArray(planCarrier);
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray
-  });
+      heatmap = new google.maps.visualization.HeatmapLayer({
+        data: pointArray,
+        radius: 20
+      });
 
-  heatmap.setMap(map);
-}
+      heatmap.setMap(map);
+      }
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
-}
+      function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+      }
 
-// /   // Try W3C Geolocation (Preferred)
-  if(navigator.geolocation) {
-    browserSupportFlag = true;
-    navigator.geolocation.getCurrentPosition(function(position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      map.setCenter(initialLocation);
-    }, function() {
-      handleNoGeolocation(browserSupportFlag);
-    });
-  }
-  // Browser doesn't support Geolocation
-  else {
-    browserSupportFlag = false;
-    handleNoGeolocation(browserSupportFlag);
-  }
+      // Try W3C Geolocation (Preferred)
+      if(navigator.geolocation) {
+        browserSupportFlag = true;
+        navigator.geolocation.getCurrentPosition(function(position) {
+          initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+          map.setCenter(initialLocation);
+        }, function() {
+          handleNoGeolocation(browserSupportFlag);
+        });
+      }
+      // Browser doesn't support Geolocation
+      else {
+        browserSupportFlag = false;
+        handleNoGeolocation(browserSupportFlag);
+      }
 
-  function handleNoGeolocation(errorFlag) {
-    if (errorFlag == true) {
-      alert("Geolocation service failed.");
-      initialLocation = toronto;
-    } else {
-      alert("Your browser doesn't support geolocation. We've placed you in Toronto.");
-      initialLocation = toronto;
-    }
-    map.setCenter(initialLocation);
-  }
+      function handleNoGeolocation(errorFlag) {
+        if (errorFlag == true) {
+          alert("Geolocation service failed.");
+          initialLocation = toronto;
+        } else {
+          alert("Your browser doesn't support geolocation. We've placed you in Toronto.");
+          initialLocation = toronto;
+        }
+        map.setCenter(initialLocation);
+      }
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
   </head>
-
+  <body>
     <div id="map-canvas"></div>
   </body>
 </html>
