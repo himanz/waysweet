@@ -1,4 +1,4 @@
-  <div class="prices">
+<!--   <div class="prices">
       <h5>Price</h5>
       <div class="range-slider round" data-slider data-options="start:1; end: 120; step: 10;">
       <span class="range-slider-handle"></span>
@@ -41,4 +41,43 @@
       <input id="checkbox2" type="checkbox"><label for="checkbox2">Voicemail</label> <br />
       <input id="checkbox2" type="checkbox"><label for="checkbox2">Early Evenings & Weekends</label> <br />
       <input id="checkbox2" type="checkbox"><label for="checkbox2">Call Fowarding</label> <br />
+  </div> -->
+
+
+
+  <div class="prices">
+    <h3>Price</h3>
+    <div id="slider1"></div>
+    <input id="priceslider" style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+    <%= hidden_field_tag :price %>
+  </div>
+
+  <div class="break"></div>
+
+  <div class="minutes">
+    <h3>Minutes</h3>
+    <div id="slider2"></div> 
+    <input id="minuteslider" style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+    <%= hidden_field_tag :minute %>
+  </div>
+
+  <div class="break"></div>
+
+  <div class="data">
+    <h3>Data (in MB)</h3>
+    <div id="slider3"></div>
+    <input id="dataslider" style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+    <%= hidden_field_tag :data %>
+  </div>
+
+  <div class="break"></div>
+
+  <div class="texts">
+    <h3>Text</h3>
+    <div id="slider4"></div>
+    <input id="textslider" style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;"> 
+    <%= hidden_field_tag :text %>
+  </div>
+  <div class="btnlayout">
+    <%= submit_tag "Search", :name => nil, class: 'button [tiny small large] search-submit' %>
   </div>
