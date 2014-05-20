@@ -24,9 +24,10 @@
 /*
 *= require jquery.ui.spinner
 */
-
 /*
-
+*= require select2
+*/
+/*
 *= require_tree .
 */
  
@@ -119,3 +120,7 @@ ul#board li {
   right: 100px;
 }
 
+.select2-container {
+  font-size: 1rem;
+  width: 100%;
+}
