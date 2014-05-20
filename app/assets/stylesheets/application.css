@@ -60,7 +60,6 @@ ul#board li {
     border: 1px solid #FAFAFA;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     vertical-align: top;
-  /*line-height: 98px;*/
 }
 
 .price {
