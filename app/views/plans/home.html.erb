@@ -7,7 +7,7 @@
           <center><b>City</b> search</center>
         </div>
           <div id='city-search' class="small-3 small-centered columns">
-            <center><%= text_field_tag :city, params[:city] %>
+            <center><%= text_field_tag :city, @location %>
             <input name="next" id="button1"class="button [tiny small large]" type="button" value="Next" />
             </center>
           </div>  
@@ -21,9 +21,7 @@
       </div>
         <div class="formgrid">
           <%= render partial: "form" %>
-          
         </div>
-        
       </div>
     </div>
 
@@ -36,7 +34,7 @@
     <div class="searches">
       <center><b>Recent</b> searches</center>
     </div>
- 
+
     <div id="search-display"></div>
 </div>  
 </div>
@@ -100,7 +98,6 @@
     source: substringMatcher(cities)
 
   }); 
-
 </script>
 
 <div class="scity">
