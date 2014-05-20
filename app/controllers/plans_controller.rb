@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
 	def index
 		@save_plan = SavePlan.new
-		if params[:city]
+		if params[:price]
 			search = Search.new
 			search.city = params[:city]
 			search.price = params[:price]
@@ -12,11 +12,15 @@ class PlansController < ApplicationController
       end
       search.save      
 		end
-    @plans = if params[:city]	 
-      Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
+    if params[:city]
+      @plans = if params[:price]	 
+        Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]) 
+      end
+    elsif params[:price]
+      @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]) 
     else
-      Plan.all
-    end
+      @plans =Plan.all
+    end 
   end
   
 	def show
