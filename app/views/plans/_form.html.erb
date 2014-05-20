@@ -36,7 +36,8 @@
 
   <div class="btnlayout">
     <input name="back" id="buttonback2" class="button [tiny small large]" type="button" value="Back" />
-    <%= submit_tag "Search", :name => nil, class: 'button [tiny small large] search-submit' %>
+    <%= submit_tag :Search, class: 'button [tiny small large] search-submit' %>
+    <%= hidden_field_tag :homesubmit %>
   </div>
 
 
