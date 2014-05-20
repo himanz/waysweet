@@ -32,21 +32,38 @@
 			<p class="minutePlan"><%= plan.minute %></p>
 			<p class="dataPlan"><%= plan.data %></p>
 			<p class="textPlan"><%= plan.text %></p>
+			<p class="carrierPlan"><%= plan.carrier %></p>
+			<p class="cityPlan"><%= @cities.find_by_id(plan.city_id).name %>
 			<p>------------</p>	
     </div>
 	<% end %>
 <% end %>
 
 <script>
+  $(".carrierPlan").hide();
+  $(".cityPlan").hide();
+  
   $(".savedPlans").on("click", function(){
-  	$(this).addClass("comparePlan");
+  $(this).addClass("comparePlan");
+    
     $(".compareBox").append($(this))
     // console.log($(this).attr("value"));
   });
+
   $(".modalButton").on("click", function(){
-    console.log($(".compareBox").children().length);
-    $(".reveal-modal").append($(".comparePlan:first").attr("value"));;
-    $(".reveal-modal").append($(".comparePlan:nth-child(2)").attr("value"));;
-    $(".reveal-modal").append($(".comparePlan:nth-child(3)").attr("value"));;
+    // console.log($(".compareBox").children().length);
+    $(".comparePlan:nth-child(1)").find(".carrierPlan").show();
+    $(".comparePlan:nth-child(1)").find(".cityPlan").show();
+    $(".reveal-modal").append($(".comparePlan:nth-child(1)"));
+
+    $(".comparePlan:nth-child(2)").find(".carrierPlan").show();
+    $(".comparePlan:nth-child(2)").find(".cityPlan").show();
+    $(".reveal-modal").append($(".comparePlan:nth-child(2)"));
+
+    $(".comparePlan:nth-child(3)").find(".carrierPlan").show();
+    $(".comparePlan:nth-child(3)").find(".cityPlan").show();
+    $(".reveal-modal").append($(".comparePlan:nth-child(3)"));
   });
+
+  
 </script>
