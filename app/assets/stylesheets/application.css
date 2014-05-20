@@ -24,9 +24,10 @@
 /*
 *= require jquery.ui.spinner
 */
-
 /*
-
+*= require select2
+*/
+/*
 *= require_tree .
 */
  

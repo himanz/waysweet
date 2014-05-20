@@ -7,7 +7,10 @@
           <center><b>City</b> search</center>
         </div>
           <div id='city-search' class="small-3 small-centered columns">
-            <center><%= text_field_tag :city, @location %>
+            <center><%= select_tag(:city, options_for_select(@cities)) %>
+              
+
+              
             <input name="next" id="button1"class="button [tiny small large]" type="button" value="Next" />
             </center>
           </div>  
@@ -61,43 +64,43 @@
   };
 
   // Autofill typeahead
-  var substringMatcher = function(strs) {
-    return function findMatches(q, cb) {
-      var matches, substringRegex;
+  // var substringMatcher = function(strs) {
+  //   return function findMatches(q, cb) {
+  //     var matches, substringRegex;
 
-      // an array that will be populated with substring matches
-      matches = [];
+  //     // an array that will be populated with substring matches
+  //     matches = [];
 
-      // regex used to determine if a string contains the substring 'q'
-      substrRegex = new RegExp(q, 'i');
+  //     // regex used to determine if a string contains the substring 'q'
+  //     substrRegex = new RegExp(q, 'i');
 
-      // iterate through the pool of strings and for any string that
-      // contains the substring 'q', add it to the 'matches' array
-      $.each(strs, function(i, str) {
-        if (substrRegex.test(str)) {
-          matches.push({ value: str});
-        }
-      })
+  //     // iterate through the pool of strings and for any string that
+  //     // contains the substring 'q', add it to the 'matches' array
+  //     $.each(strs, function(i, str) {
+  //       if (substrRegex.test(str)) {
+  //         matches.push({ value: str});
+  //       }
+  //     })
 
-      cb(matches);
-    };
-  };
+  //     cb(matches);
+  //   };
+  // };
   
 
-  var cities = <%= raw @cities %>
+  // var cities = <%= raw @cities %>
   
   
-  $('#city-search #city').typeahead({
-    hint: true,
-    highlight: true,
-    minLength: 3,
-  },
-  {
-    name: 'cities',
-    displayKey: 'value',
-    source: substringMatcher(cities)
+  // $('#city-search #city').typeahead({
+  //   hint: true,
+  //   highlight: true,
+  //   minLength: 3,
+  // },
+  // {
+  //   name: 'cities',
+  //   displayKey: 'value',
+  //   source: substringMatcher(cities)
 
-  }); 
+  // }); 
 </script>
 
 <div class="scity">

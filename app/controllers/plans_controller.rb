@@ -78,7 +78,7 @@ class PlansController < ApplicationController
   	allcities = City.all
     @cities = []
     allcities.each do |city|
-    	@cities.push(city.name)
+    	@cities.push([city.name,city.name])
     end
     @cities.sort!
   end
