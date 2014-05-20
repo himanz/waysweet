@@ -42,7 +42,7 @@ ul#board {
 
 .waysweet-footer-bottom {
     height: 100px;
-    /*position: fixed;*/
+    position: fixed;
     bottom: 0px;
     line-height: 50px;
     background-color: #0D6E92;
