@@ -1,9 +1,12 @@
 class PlansController < ApplicationController
 	def index
 		@save_plan = SavePlan.new
+    if params[:city]
+      params[:city] = params[:city].downcase.titleize
+    end
 		if params[:price]
 			search = Search.new
-			search.city = params[:city].downcase.titleize
+			search.city = params[:city]
 			search.price = params[:price]
       search.minute = params[:minute]
       search.text = params[:text]
