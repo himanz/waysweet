@@ -4,6 +4,7 @@ class PlansController < ApplicationController
     if params[:city]
       params[:city] = params[:city].downcase.titleize
     end
+
 		if params[:price]
 			search = Search.new
 			search.city = params[:city]
@@ -15,6 +16,7 @@ class PlansController < ApplicationController
       end
       search.save      
 		end
+    
     if params[:city]
       @plans = if params[:price]	 
         Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]) 
