@@ -69,6 +69,8 @@ class PlansController < ApplicationController
   end
 
   def home
+  	@location = request.location.city
+
   	allcities = City.all
     @cities = []
     allcities.each do |city|
