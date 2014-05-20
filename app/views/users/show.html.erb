@@ -44,14 +44,13 @@
   $(".cityPlan").hide();
   
   $(".savedPlans").on("click", function(){
-  $(this).addClass("comparePlan");
-    
+    // add class to comparePlan and then append it to the comparison box
+    $(this).addClass("comparePlan");
     $(".compareBox").append($(this))
-    // console.log($(this).attr("value"));
   });
 
   $(".modalButton").on("click", function(){
-    // console.log($(".compareBox").children().length);
+    // appends items in comparison box to the modal
     $(".comparePlan:nth-child(1)").find(".carrierPlan").show();
     $(".comparePlan:nth-child(1)").find(".cityPlan").show();
     $(".reveal-modal").append($(".comparePlan:nth-child(1)"));
@@ -65,5 +64,8 @@
     $(".reveal-modal").append($(".comparePlan:nth-child(3)"));
   });
 
-  
+  $(".close-reveal-modal").on("click", function(){ 
+  	// still working on functionality here
+  	console.log('hello');
+  });
 </script>
