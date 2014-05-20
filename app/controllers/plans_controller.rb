@@ -3,7 +3,7 @@ class PlansController < ApplicationController
 		@save_plan = SavePlan.new
 		if params[:city]
 			search = Search.new
-			search.city= params[:city]
+			search.city = params[:city]
 			search.price = params[:price]
       search.minute = params[:minute]
       search.text = params[:text]
