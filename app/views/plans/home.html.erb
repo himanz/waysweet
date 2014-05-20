@@ -74,18 +74,20 @@
 
 </div>
 
+   <div class="searchrow">
 <div class ="row">
     <div class="searches">
       <center><b>Recent</b> searches</center>
     </div>
-
+ 
     <div id="search-display"></div>
+</div>  
 </div>
 
 <script>
   // When firebase database gets added to, it will update root with what was added
   var url = "https://sizzling-fire-5831.firebaseio.com";
-  var firebaseRef = new Firebase(url).limit(10);
+  var firebaseRef = new Firebase(url).limit(5);
   firebaseRef.on('child_added', function(snapshot) {
   	var search = snapshot.val();
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
@@ -144,4 +146,12 @@
 
 </script>
 
+<!-- <div id="story">
+  <h3>How It Works</h3>
+</div> -->
 
+    <div class="scity">
+        <div class="header1">
+          <center><h3>How It Works</h3></center>
+        </div>
+      </div>
