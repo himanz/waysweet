@@ -106,7 +106,7 @@ ul#board li {
   height: 50px;
   width: 700px;
   position: left;
-  background-color: white
+  background-color: white;
   border: 1px solid black;
 }
 
