@@ -27,7 +27,7 @@ class PlansController < ApplicationController
     		format.js {}
     	end 
     else
-      @plans =Plan.all
+      @plans = Plan.all
     end 
   end
   
