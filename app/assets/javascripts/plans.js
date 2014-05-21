@@ -78,7 +78,7 @@ $(document).ready(function() {
   $(function() {
     // Sets default values
     $("#priceslider").val( "$" + 50);
-    $("#price").val(50);   
+    $("#price").val(50);  
 
     $( "#slider1" ).slider({
       range: "min",
@@ -95,6 +95,8 @@ $(document).ready(function() {
       } 
     });
   });
+
+
 
   $(function() {
     // Sets default values
