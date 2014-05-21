@@ -141,11 +141,13 @@ background-color: #f5f6f6
   
 }
 
-#draggable{
+.draggable{
   position: fixed;
   left: 50%;
   top: 100px;
   width: 150px;
+  height: 200px;
+  background-color: red
 
 }
 
