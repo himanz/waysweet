@@ -20,7 +20,13 @@ class PlansController < ApplicationController
         Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]) 
       end
     elsif params[:indexsubmit]
-      @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
+    	@plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
+    	respond_to do |format|
+
+    		format.html { redirect_to plans_path}
+    		format.js {}
+    	end
+      
       
     else
       @plans =Plan.all
