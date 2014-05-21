@@ -8,8 +8,8 @@
  <script>
  $(function() {
      $( ".planlist" ).draggable({ grid: [ 100, 100 ] });
-       $( ".planlist" ).draggable({ containment: "#droppable" });
-    $( "#droppable" ).droppable({
+       $( ".planlist" ).draggable({ containment: "#dropplanlist" });
+    $( "#dropplanlist" ).droppable({
       drop: function( event, ui ) {
         $( this )
           .addClass( "ui-state-highlight" )
@@ -25,7 +25,7 @@
 <div id="blankside">
 </div>
 
-  <div id="droppable" class="ui-widget-header">
+  <div id="dropplanlist" class="ui-widget-header">
     <p>Compare Plans</p>
   </div>
 

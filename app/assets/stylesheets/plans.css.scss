@@ -133,12 +133,12 @@ margin: 0px auto;
 background-color: #f5f6f6
 }
 
-#droppable{
+#dropplanlist{
   height: 100%;
   border: 1px dashed grey;
   float: left;
   width: 40%;
-  background-color: silver;
+  background-color: #FFF;
   right: 100px
   
 }
@@ -155,7 +155,7 @@ background-color: #f5f6f6
 #blankside{
   width: 2%;
   height: 100%;
-  background-color: grey;
+  background-color: #FFF;
   float: left;
   position: fixed
 }
