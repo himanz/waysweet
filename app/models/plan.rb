@@ -9,5 +9,11 @@ class Plan < ActiveRecord::Base
     return carrier
   end
 
- 
+  def unlimited(value)
+  	if value == 9999
+  		return "Unlimited"
+  	else
+  		return value
+  	end
+  end 
 end
