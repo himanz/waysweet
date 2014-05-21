@@ -132,3 +132,26 @@ margin: 0px auto;
   width: 100%;
 background-color: #f5f6f6
 }
+
+#droppable{
+  height: 100%;
+  background-color: grey;
+  float: right;
+  width: 80%;
+  
+}
+
+#plandrop{
+  height: 400px;
+  left: 100px;
+  width: 200px
+}
+
+#savedPlans{
+  height: 100%;
+  left: 100px;
+  width: 200px;
+  position: absolute;
+  background-color: green
+}
+
