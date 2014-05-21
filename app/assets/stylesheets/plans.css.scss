@@ -85,14 +85,14 @@ title-bg: #ddd;
   padding-left: 58%;
 }
 
-p.displayPrice{
+li.displayPrice{
   background-color: #ddd;
   text-align: center;
   color: #333;
   font-weight: bold;
 }
 
-p.displayMinute{
+li.displayMinute{
   background-color: #fff;
   text-align: center;
   color: #777;
@@ -101,7 +101,7 @@ p.displayMinute{
   bottom-border: dotted 1px #ddd;
 }
 
-p.displayData{
+li.displayData{
   background-color: #fff;
   text-align: center;
   color: #777;
@@ -110,7 +110,7 @@ p.displayData{
   bottom-border: dotted 1px #ddd;
 }
 
-p.displayText{
+li.displayText{
   background-color: #fff;
   text-align: center;
   color: #777;
