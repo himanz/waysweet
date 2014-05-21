@@ -41,7 +41,7 @@
                 <%= link_to "Login", login_path %>
                 
               <% else %>
-                <%= link_to current_user.email, current_user %>
+                <%= link_to current_user.first_name, current_user %>
                 <ul class="dropdown">
                   <li><%= link_to "Logout", logout_path %></li>
                 </ul>
