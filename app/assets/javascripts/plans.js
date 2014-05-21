@@ -79,7 +79,7 @@ $(document).ready(function() {
     // Sets default values
     $("#priceslider").val( "$" + 50);
     $("#price").val(50);   
-
+    $(".price-text").text("$" + 50);
     $( "#slider1" ).slider({
       range: "min",
       value:50,
@@ -88,7 +88,7 @@ $(document).ready(function() {
       step: 5,
       slide: function( event, ui ) {
         $( "#priceslider" ).val( "$" + ui.value );
-        $( "#priceslider" ).html( "$" + ui.value );
+        $( ".price-text" ).text("$" + ui.value);
       },
       change: function(event, ui ) {
         $("#price").val(ui.value);
@@ -100,7 +100,8 @@ $(document).ready(function() {
     // Sets default values
     $("#minuteslider").val(300);
     $("#minute").val(300);   
-
+    $( ".minute-text" ).text(300);
+    
     $( "#slider2" ).slider({
       range: "min",
       value:300,
@@ -125,7 +126,8 @@ $(document).ready(function() {
     // Sets default values
     $("#dataslider").val(1000);
     $("#data").val(1000);  
-
+    $( ".data-text" ).text(1000);
+    
     $( "#slider3" ).slider({
       range: "min",
       value:1000,
@@ -150,6 +152,7 @@ $(document).ready(function() {
     // Sets default values
     $("#textslider").val(200);
     $("#text").val(200);   
+    $( ".text-text" ).text(200);
 
     $( "#slider4" ).slider({
       range: "min",
@@ -221,6 +224,10 @@ $(document).ready(function() {
     //     return false; // Returning false will stop page from reloading.
   })
 
+  $("#minuteslider").hide();
+  $("#dataslider").hide();
+  $("#textslider").hide();
+  $("#priceslider").hide();
 });
 
 
