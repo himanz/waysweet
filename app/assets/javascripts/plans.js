@@ -107,11 +107,11 @@ $(document).ready(function() {
       range: "min",
       value:300,
       min: 0,
-      max: 600,
+      max: 1050,
       step: 50,
       slide: function( event, ui ) {
         $( "#minuteslider" ).val(ui.value );
-        if ($( "#minuteslider").val() == 600 ) {
+        if ($( "#minuteslider").val() == 1050 ) {
           $( ".minute-text").text("Unlimited") 
         } else {
           $( ".minute-text" ).text(ui.value);  
@@ -133,11 +133,11 @@ $(document).ready(function() {
       range: "min",
       value:1000,
       min: 0,
-      max: 4000,
+      max: 6500,
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        if ($( "#dataslider").val() == 4000 ) {
+        if ($( "#dataslider").val() == 6500 ) {
           $( ".data-text").text("Unlimited") 
         } else {
           $( ".data-text" ).text(ui.value);  
@@ -151,19 +151,19 @@ $(document).ready(function() {
 
   $(function() {
     // Sets default values
-    $("#textslider").val(200);
-    $("#text").val(200);   
-    $( ".text-text" ).text(200);
+    $("#textslider").val(500);
+    $("#text").val(500);   
+    $( ".text-text" ).text(500);
 
     $( "#slider4" ).slider({
       range: "min",
-      value:200,
+      value:500,
       min: 0,
-      max: 600,
+      max: 2600,
       step: 100,
       slide: function( event, ui ) {
         $( "#textslider" ).val(ui.value );
-        if ($( "#textslider").val() == 600 ) {
+        if ($( "#textslider").val() == 2600 ) {
           $( ".text-text").text("Unlimited") 
         } else {
           $( ".text-text" ).text(ui.value);  
