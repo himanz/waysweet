@@ -2,7 +2,6 @@ class SavePlansController < ApplicationController
 	def create
 		@save_plan = SavePlan.new(save_plan_params)
 		@save_plan.user_id = current_user.id
-
 		@save_plan.plan_id = params[:save_plan][:plan_id]
 		@save_plan.save
 	end

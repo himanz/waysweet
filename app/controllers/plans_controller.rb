@@ -33,12 +33,14 @@ class PlansController < ApplicationController
       end
     elsif params[:indexsubmit]
     	@plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
-    	respond_to do |format|
-    		format.html { redirect_to plans_path}
-    		format.js {}
-    	end 
+    	 
     else
       @plans = Plan.all
+    end
+
+    respond_to do |format|
+      format.html { }
+      format.js {}
     end 
   end
   
