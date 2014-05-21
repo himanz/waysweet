@@ -59,14 +59,3 @@ var new_value = 3;
 $('prices').foundation('prices', 'set_value', new_value);
 
 
-$(function() {
-    $( "#draggable" ).draggable();
-    $( "#droppable" ).droppable({
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Added!" );
-      }
-    });
-  });
