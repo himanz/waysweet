@@ -152,13 +152,16 @@ background-color: #f5f6f6
 
 }
 
+.reveal-modal{
+  height: 350px;
+  position: fixed
+}
+
 #revealplanlist{
   height: 100%;
-  border: 1px dashed grey;
   float: left;
-  width: 40%;
-  background-color: grey;
-  
+  width: 150px;
+  background-color: lightgrey;
   
 }
 
