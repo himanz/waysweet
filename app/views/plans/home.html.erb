@@ -48,7 +48,15 @@
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
   	});
   function displayChatMessage(price, minute, data, text) {
-
+    if (text == 2600) {
+      text = "Unlimited";
+    }
+    if (minute == 1050) {
+      minute = "Unlimited";
+    }
+    if (data == 6500) {
+      data = "Unlimited";
+    }
     var div = $("<div class='realTimeSearch medium-2 columns'/>");
     // Fills the div with information
     $("<p class=displayPrice >").text(price).prepend($('<em/>').text("$ ")).appendTo(div);

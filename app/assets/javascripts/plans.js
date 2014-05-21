@@ -195,18 +195,27 @@ $(document).ready(function() {
 
     var selectMinute = $(this).find('.displayMinute').html();
     selectMinute = selectMinute.replace( /[^\d.]/g, '' );
+    if (selectMinute == "") {
+      selectMinute = 1050;
+    }
     $("#minuteslider").val(selectMinute);
     $("#minute").val(selectMinute);
     $("#slider2").slider("option", "value", selectMinute);
 
     var selectData = $(this).find('.displayData').html();
     selectData = selectData.replace( /[^\d.]/g, '' );
+    if (selectData == "") {
+      selectData = 6500;
+    }
     $("#dataslider").val(selectData);
     $("#data").val(selectData);
     $("#slider3").slider("option", "value", selectData);
 
     var selectText = $(this).find('.displayText').html();
     selectText = selectText.replace( /[^\d.]/g, '' );
+    if (selectText == "") {
+      selectText = 2600;
+    }
     $("#textslider").val(selectText);
     $("#text").val(selectText);
     $("#slider4").slider("option", "value", selectText);
