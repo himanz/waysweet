@@ -4,9 +4,9 @@
     <td>$<%= plan.price %></td>
     <td><%= plan.minute %></td>
     <td><%= plan.text %></td>
-    <td><%= form_for @save_plan do |f|%>
+    <td><%= form_for @save_plan, :remote => true do |f|%>
           <%= f.hidden_field :plan_id, value: plan.id %>
-          <%= f.submit :Save, :class => 'save-plan' %>
+          <%= f.submit  "Save", :class => 'save-plan' %>
         <% end %>
     </td>
   </tr>

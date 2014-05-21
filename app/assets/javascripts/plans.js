@@ -130,7 +130,25 @@ $(document).ready(function() {
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        $( "#dataslider" ).html(ui.value);
+        if ($( "#dataslider").val() == 4000 ) {
+        //   $( "#dataslider").text("Unlimited") 
+        // } else {
+        //   $( "#dataslider" ).text(ui.value);  
+        // }
+          $( ".test").text("Unlimited") 
+        } else {
+          $( ".test" ).text(ui.value);  
+        }
+
+        // var slidervalue = $("#slider3").slider("#dataslider");
+        // $( "#dataslider" ).val(ui.value);
+        // if (slidervalue >= 4000) {
+        //   alert('hello');
+        //   $("#dataslider").html("Unlimited")
+        // } else {
+        //   $("#dataslider").html(slidervalue)
+        // }       
+
       },
       change: function(event, ui ) {
         $("#data").val(ui.value);
@@ -185,6 +203,29 @@ $(document).ready(function() {
     $("#text").val(selectText);
     $("#slider4").slider("option", "value", selectText);
   });
+
+  $(".save-plan").on('click', function(event) {
+    
+    // event.preventDefault();
+    // // Create DataString
+    //     var dataString = '&name=' + $('input[name=name]').val() +
+    //                      '&email=' + $('input[name=email]').val() +
+    //                      '&phone=' + $('input[name=phone]').val() +
+    //                      '&message=' + $('textarea[name=message]').val() +
+
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://example.com/test.php",
+    //         data: dataString,
+    //         success: function() {
+    //             alert('Form Successfully Submitted');
+    //         },  
+    //         error: function() {
+    //             alert('There was an error submitting the form');
+    //         }   
+    //     }); 
+    //     return false; // Returning false will stop page from reloading.
+  })
 
 });
 
