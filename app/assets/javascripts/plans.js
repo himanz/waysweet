@@ -109,7 +109,11 @@ $(document).ready(function() {
       step: 50,
       slide: function( event, ui ) {
         $( "#minuteslider" ).val(ui.value );
-        $( "#minuteslider" ).html(ui.value );
+        if ($( "#minuteslider").val() == 600 ) {
+          $( ".minute-text").text("Unlimited") 
+        } else {
+          $( ".minute-text" ).text(ui.value);  
+        }   
       },
       change: function(event, ui ) {
         $("#minute").val(ui.value);
@@ -131,24 +135,10 @@ $(document).ready(function() {
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
         if ($( "#dataslider").val() == 4000 ) {
-        //   $( "#dataslider").text("Unlimited") 
-        // } else {
-        //   $( "#dataslider" ).text(ui.value);  
-        // }
-          $( ".test").text("Unlimited") 
+          $( ".data-text").text("Unlimited") 
         } else {
-          $( ".test" ).text(ui.value);  
-        }
-
-        // var slidervalue = $("#slider3").slider("#dataslider");
-        // $( "#dataslider" ).val(ui.value);
-        // if (slidervalue >= 4000) {
-        //   alert('hello');
-        //   $("#dataslider").html("Unlimited")
-        // } else {
-        //   $("#dataslider").html(slidervalue)
-        // }       
-
+          $( ".data-text" ).text(ui.value);  
+        }      
       },
       change: function(event, ui ) {
         $("#data").val(ui.value);
@@ -169,7 +159,11 @@ $(document).ready(function() {
       step: 100,
       slide: function( event, ui ) {
         $( "#textslider" ).val(ui.value );
-        $( "#textslider" ).html(ui.value );
+        if ($( "#textslider").val() == 600 ) {
+          $( ".text-text").text("Unlimited") 
+        } else {
+          $( ".text-text" ).text(ui.value);  
+        } ;
       },
       change: function(event, ui ) {
         $("#text").val(ui.value);
