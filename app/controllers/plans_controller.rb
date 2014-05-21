@@ -1,10 +1,10 @@
 class PlansController < ApplicationController
 	def index
 		@save_plan = SavePlan.new
-   
+    
+    # checks if search is coming from home
 		if params[:homesubmit]
 			search = Search.new
-			params[:city] = params[:city].downcase.titleize
 			search.city = params[:city]
 			search.price = params[:price]
       search.minute = params[:minute]
@@ -15,6 +15,7 @@ class PlansController < ApplicationController
       search.save      
 		end
     
+    # different queries in database depending on where search originates
     if params[:homesubmit]
       @plans = if params[:price]	 
         Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]) 
@@ -22,16 +23,12 @@ class PlansController < ApplicationController
     elsif params[:indexsubmit]
     	@plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
     	respond_to do |format|
-
     		format.html { redirect_to plans_path}
     		format.js {}
     	end
-      
-      
     else
       @plans =Plan.all
     end 
-
   end
   
 	def show

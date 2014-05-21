@@ -1,1 +1,2 @@
-alert("I’m responding to your request!");
+$("tbody").empty()
+$("tbody").append("<%= escape_javascript(render(:partial => 'plans/planlist')) %>");

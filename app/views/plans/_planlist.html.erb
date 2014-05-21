@@ -1,0 +1,13 @@
+<% @plans.each do |plan| %>
+  <tr>
+    <td><%= plan.carrier %></td>
+    <td>$<%= plan.price %></td>
+    <td><%= plan.minute %></td>
+    <td><%= plan.text %></td>
+    <td><%= form_for @save_plan do |f|%>
+          <%= f.hidden_field :plan_id, value: plan.id %>
+          <%= f.submit :Save %>
+        <% end %>
+    </td>
+  </tr>
+<% end %>
