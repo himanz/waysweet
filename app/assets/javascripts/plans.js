@@ -78,7 +78,7 @@ $(document).ready(function() {
   $(function() {
     // Sets default values
     $("#priceslider").val( "$" + 50);
-    $("#price").val(50);   
+    $("#price").val(50);  
 
     $( "#slider1" ).slider({
       range: "min",
@@ -96,6 +96,8 @@ $(document).ready(function() {
     });
   });
 
+
+
   $(function() {
     // Sets default values
     $("#minuteslider").val(300);
@@ -105,8 +107,9 @@ $(document).ready(function() {
       range: "min",
       value:300,
       min: 0,
-      max: 600,
+      max: 999,
       step: 50,
+
       slide: function( event, ui ) {
         $( "#minuteslider" ).val(ui.value );
         $( "#minuteslider" ).html(ui.value );
@@ -117,6 +120,14 @@ $(document).ready(function() {
     });
   });
 
+  $(".slider2").slider({
+   slide: function(event, ui) { 
+       if(ui.value > 600){//Note the value of ui.value is between 0 to 99
+          return false;
+       }
+   }
+});
+
   $(function() {
     // Sets default values
     $("#dataslider").val(1000);
@@ -126,7 +137,7 @@ $(document).ready(function() {
       range: "min",
       value:1000,
       min: 0,
-      max: 4000,
+      max: 6999,
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
@@ -147,7 +158,7 @@ $(document).ready(function() {
       range: "min",
       value:200,
       min: 0,
-      max: 600,
+      max: 999,
       step: 100,
       slide: function( event, ui ) {
         $( "#textslider" ).val(ui.value );
