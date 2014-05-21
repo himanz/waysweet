@@ -57,3 +57,4 @@ function loadScript() {
 
 var new_value = 3;
 $('prices').foundation('prices', 'set_value', new_value);
+

@@ -21,9 +21,11 @@ class PlansController < ApplicationController
       end
     elsif params[:indexsubmit]
       @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text])
+      
     else
       @plans =Plan.all
     end 
+
   end
   
 	def show
