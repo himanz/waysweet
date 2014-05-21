@@ -137,18 +137,26 @@ background-color: #f5f6f6
   height: 100%;
   border: 1px dashed grey;
   float: left;
-  width: 50%;
+  width: 40%;
+  background-color: silver;
+  right: 100px
   
 }
 
 .draggable{
-  position: fixed;
   left: 50%;
   top: 100px;
   width: 150px;
   height: 200px;
-  background-color: red
+  border: 1px dashed grey;
 
 }
 
+#blankside{
+  width: 2%;
+  height: 100%;
+  background-color: grey;
+  float: left;
+  position: fixed
+}
 

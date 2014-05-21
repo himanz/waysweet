@@ -241,7 +241,16 @@ $(document).ready(function() {
   $("#priceslider").hide();
 });
 
-
+$('#draggable').draggable(
+    {snap : grid: [20,20]},
+    {start : function(event, ui) {
+        var startPosition = $(ui.draggable).position(); 
+        $(ui.draggable).css({
+            'left' : (Math.round(startPosition.left/20)*20)+'px',
+            'top' : (Math.round(startPosition.top/20)*20)+'px'});
+        }
+    }
+);
 
 
 
