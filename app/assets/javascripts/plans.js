@@ -192,6 +192,7 @@ $(document).ready(function() {
     $("#priceslider").val( "$" + selectPrice);
     $("#price").val(selectPrice);
     $("#slider1").slider("option", "value", selectPrice);
+    $( ".price-text" ).text("$" + selectPrice);
 
     var selectMinute = $(this).find('.displayMinute').html();
     selectMinute = selectMinute.replace( /[^\d.]/g, '' );
@@ -201,6 +202,11 @@ $(document).ready(function() {
     $("#minuteslider").val(selectMinute);
     $("#minute").val(selectMinute);
     $("#slider2").slider("option", "value", selectMinute);
+    if (selectMinute == 1050) {
+      $( ".minute-text" ).text("Unlimited");
+    } else {
+      $( ".minute-text" ).text(selectMinute);
+    }
 
     var selectData = $(this).find('.displayData').html();
     selectData = selectData.replace( /[^\d.]/g, '' );
@@ -210,6 +216,11 @@ $(document).ready(function() {
     $("#dataslider").val(selectData);
     $("#data").val(selectData);
     $("#slider3").slider("option", "value", selectData);
+    if (selectData == 6500) {
+      $( ".data-text" ).text("Unlimited");
+    } else {
+      $( ".data-text" ).text(selectData);
+    }
 
     var selectText = $(this).find('.displayText').html();
     selectText = selectText.replace( /[^\d.]/g, '' );
@@ -219,6 +230,11 @@ $(document).ready(function() {
     $("#textslider").val(selectText);
     $("#text").val(selectText);
     $("#slider4").slider("option", "value", selectText);
+    if (selectText == 2600) {
+      $( ".text-text" ).text("Unlimited");
+    } else {
+      $( ".text-text" ).text(selectText);
+    }
   });
 
   $(".save-plan").on('click', function(event) {
