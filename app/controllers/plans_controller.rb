@@ -25,9 +25,9 @@ class PlansController < ApplicationController
     	respond_to do |format|
     		format.html { redirect_to plans_path}
     		format.js {}
-    	end
+    	end 
     else
-      @plans =Plan.all
+      @plans = Plan.all
     end 
   end
   

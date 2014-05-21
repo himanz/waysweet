@@ -77,8 +77,9 @@ $(document).ready(function() {
 
   $(function() {
     // Sets default values
-    $("#priceslider").val( "$" + 50);
-    $("#price").val(50);  
+    $("#priceslider").val(50);
+    $("#price").val(50);   
+    $(".price-text").text("$" + 50);
 
     $( "#slider1" ).slider({
       range: "min",
@@ -87,8 +88,8 @@ $(document).ready(function() {
       max: 100,
       step: 5,
       slide: function( event, ui ) {
-        $( "#priceslider" ).val( "$" + ui.value );
-        $( "#priceslider" ).html( "$" + ui.value );
+        $( "#priceslider" ).val(ui.value);
+        $( ".price-text" ).text("$" + ui.value);
       },
       change: function(event, ui ) {
         $("#price").val(ui.value);
@@ -102,17 +103,21 @@ $(document).ready(function() {
     // Sets default values
     $("#minuteslider").val(300);
     $("#minute").val(300);   
-
+    $( ".minute-text" ).text(300);
+    
     $( "#slider2" ).slider({
       range: "min",
       value:300,
       min: 0,
-      max: 999,
+      max: 1050,
       step: 50,
-
       slide: function( event, ui ) {
         $( "#minuteslider" ).val(ui.value );
-        $( "#minuteslider" ).html(ui.value );
+        if ($( "#minuteslider").val() == 1050 ) {
+          $( ".minute-text").text("Unlimited") 
+        } else {
+          $( ".minute-text" ).text(ui.value);  
+        }   
       },
       change: function(event, ui ) {
         $("#minute").val(ui.value);
@@ -132,16 +137,21 @@ $(document).ready(function() {
     // Sets default values
     $("#dataslider").val(1000);
     $("#data").val(1000);  
-
+    $( ".data-text" ).text(1000);
+    
     $( "#slider3" ).slider({
       range: "min",
       value:1000,
       min: 0,
-      max: 6999,
+      max: 6500,
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        $( "#dataslider" ).html(ui.value);
+        if ($( "#dataslider").val() == 6500 ) {
+          $( ".data-text").text("Unlimited") 
+        } else {
+          $( ".data-text" ).text(ui.value);  
+        }      
       },
       change: function(event, ui ) {
         $("#data").val(ui.value);
@@ -151,18 +161,23 @@ $(document).ready(function() {
 
   $(function() {
     // Sets default values
-    $("#textslider").val(200);
-    $("#text").val(200);   
+    $("#textslider").val(500);
+    $("#text").val(500);   
+    $( ".text-text" ).text(500);
 
     $( "#slider4" ).slider({
       range: "min",
-      value:200,
+      value:500,
       min: 0,
-      max: 999,
+      max: 2600,
       step: 100,
       slide: function( event, ui ) {
         $( "#textslider" ).val(ui.value );
-        $( "#textslider" ).html(ui.value );
+        if ($( "#textslider").val() == 2600 ) {
+          $( ".text-text").text("Unlimited") 
+        } else {
+          $( ".text-text" ).text(ui.value);  
+        } ;
       },
       change: function(event, ui ) {
         $("#text").val(ui.value);
@@ -197,6 +212,33 @@ $(document).ready(function() {
     $("#slider4").slider("option", "value", selectText);
   });
 
+  $(".save-plan").on('click', function(event) {
+    
+    // event.preventDefault();
+    // // Create DataString
+    //     var dataString = '&name=' + $('input[name=name]').val() +
+    //                      '&email=' + $('input[name=email]').val() +
+    //                      '&phone=' + $('input[name=phone]').val() +
+    //                      '&message=' + $('textarea[name=message]').val() +
+
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://example.com/test.php",
+    //         data: dataString,
+    //         success: function() {
+    //             alert('Form Successfully Submitted');
+    //         },  
+    //         error: function() {
+    //             alert('There was an error submitting the form');
+    //         }   
+    //     }); 
+    //     return false; // Returning false will stop page from reloading.
+  })
+
+  $("#minuteslider").hide();
+  $("#dataslider").hide();
+  $("#textslider").hide();
+  $("#priceslider").hide();
 });
 
 
