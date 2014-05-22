@@ -5,7 +5,8 @@
     <td><%= plan.unlimited(plan.minute) %></td>
     <td><%= plan.unlimited(plan.data) %></td>
     <td><%= plan.unlimited(plan.text) %></td>
-    <td>     
+    <td>  
+      <!-- Show save button to only logged in users -->
       <% if current_user %>
         <% if !@save_plans.map(&:plan_id).include? plan.id %>
           <%= form_for @save_plan, :remote => true do |f|%>
@@ -13,8 +14,9 @@
             <%= f.submit  "Save", :class => 'button tiny save-plan' %>
           <% end %>
         <% end %>
-      <% end %>
-      
+      <% else %>
+        <p class="ask-save">Log in to Save</p>
+      <% end %>   
     </td>
   </tr>
 <% end %>
