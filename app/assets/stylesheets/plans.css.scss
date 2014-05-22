@@ -132,3 +132,47 @@ margin: 0px auto;
   width: 100%;
 background-color: #f5f6f6
 }
+
+#dropplanlist{
+  height: 100%;
+  border: 1px dashed grey;
+  float: left;
+  width: 40%;
+  right: 100px
+  
+}
+
+.planlist{
+height: 250px;
+width: 250px;
+display: inline-block;
+white-space: nowrap
+  
+
+}
+
+.draglist{
+    left: 50%;
+  top: 100px;
+  width: 150px;
+  height: 280px;
+
+}
+
+
+.reveal-modal{
+  height: 350px;
+  position: fixed
+}
+
+#revealplanlist{
+  height: 100%;
+  float: left;
+  width: 150px;
+  // border: 1px dashed black;
+  padding-left: 20px
+  
+}
+
+
+
