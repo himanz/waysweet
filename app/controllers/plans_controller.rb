@@ -57,10 +57,10 @@ class PlansController < ApplicationController
 	end
 
 	def create
-		city = City.find_by_name(params["plan"]["city_id"])
+		city = City.find_by_name(params["plan"]["city_id"].downcase.titleize)
 		if city.nil?	
 		  city = City.new
-		  city.name = params["plan"]["city_id"]
+		  city.name = params["plan"]["city_id"].downcase.titleize
 		  city.save	
 		end
     @plan = Plan.new(plan_params)
