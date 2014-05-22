@@ -1,6 +1,9 @@
 class PlansController < ApplicationController
 	def index
 		@save_plan = SavePlan.new
+    if current_user
+      @save_plans = SavePlan.where(user_id: current_user.id)
+    end
     
     # checks if search is coming from home
 		if params[:homesubmit]
