@@ -1,9 +1,8 @@
-
 <div class="newplan">
   
-<%= form_for @plan do |f| %>
+  <%= form_for @plan do |f| %>
     <%= render "errorform" %>
-  
+
     <div class="formgrid">
       <div class="prices">
         <h3>Price</h3>
@@ -56,8 +55,7 @@
         <%= f.submit :Submit, :class => 'button medium save-plan' %>
       </div>
     </div>  
-  
-<% end %>
-
+    
+  <% end %>
 
 </div>
