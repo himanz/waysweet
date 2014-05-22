@@ -2,8 +2,56 @@
 <div class="newplan">
   
 <%= form_for @plan do |f| %>
- <%= f.label :price %>
-  <div class="planfield">
+  
+    <div class="formgrid">
+      <div class="prices">
+        <h3>Price</h3>
+        <div id="slider1"></div>
+        <input id="priceslider" disabled style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+        <div class="slider-text price-text"></div>
+        <%= hidden_field_tag :price %>
+      </div>
+
+      <div class="break"></div>
+
+      <div class="minutes">
+        <h3>Minutes</h3>
+        <div id="slider2"></div> 
+        <input id="minuteslider" disabled style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+        <div class="slider-text minute-text"></div>
+        <%= hidden_field_tag :minute %>
+      </div>
+
+      <div class="break"></div>
+
+      <div class="data">
+        <h3>Data (in MB)</h3>
+        <div id="slider3"></div>
+        <input id="dataslider" disabled style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
+        <div class="slider-text data-text"></div>
+        <%= hidden_field_tag :data %>
+      </div>
+
+      <div class="break"></div>
+
+      <div class="texts">
+        <h3>Text</h3>
+        <div id="slider4"></div>
+        <input id="textslider" disabled style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;"> 
+        <div class="slider-text text-text"></div>
+        <%= hidden_field_tag :text %>
+      </div>
+      <div class"city">
+        <h3>City</h3>
+        <%= f.label :city %>
+        <%= f.text_field :city_id %>
+      </div>
+
+      <div class="planfield">
+        <%= f.submit :Submit, :class => 'button medium save-plan' %>
+      </div>
+    </div> 
+  <!-- <div class="planfield">
     <%= f.number_field :price, :step => 'any' %>
     </div>
 
@@ -30,11 +78,9 @@
   <div class="planfield">
     <%= f.label :carrier %>
     <%= f.text_field :carrier %>
-  </div>
+  </div> -->
 
-  <div class="planfield">
-	  <%= f.submit :Submit %>
-  </div>
+  
   
 <% end %>
 

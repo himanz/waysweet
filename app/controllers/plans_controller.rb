@@ -64,6 +64,21 @@ class PlansController < ApplicationController
 		  city.save	
 		end
     @plan = Plan.new(plan_params)
+    if params[:minute] == "1050"
+        params[:minute] = "9999"
+    end
+    if params[:data] == "6500"
+      params[:data] = "9999"
+    end
+    if params[:text] == "2600"
+      params[:text] = "9999"
+    end
+      
+    @plan.price = params[:price]
+    @plan.minute = params[:minute]
+    @plan.data = params[:data]
+    @plan.text = params[:text]
+    
     @plan.owner_id = current_user.id
     @plan.city_id = city.id
     if @plan.save
