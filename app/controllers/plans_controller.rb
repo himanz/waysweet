@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_filter :require_login, only: :new
 	def index
 		@save_plan = SavePlan.new
     if current_user
@@ -38,7 +39,7 @@ class PlansController < ApplicationController
       if params[:carrier] == "Any"
         @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC")
       else
-    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC")
+    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC")  
     	end
     else
       @plans = Plan.all
