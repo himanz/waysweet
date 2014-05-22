@@ -2,6 +2,7 @@
 <div class="newplan">
   
 <%= form_for @plan do |f| %>
+    <%= render "errorform" %>
   
     <div class="formgrid">
       <div class="prices">
@@ -42,7 +43,7 @@
         <%= hidden_field_tag :text %>
       </div>
       <div class="city">
-        <h3>City</h3>
+        <h3>City Name</h3>
         <%= f.text_field :city_id %>
       </div>
 

@@ -54,15 +54,16 @@ class PlansController < ApplicationController
 
 	def new
 		@plan = Plan.new
+    @city = City.new
 	end
 
 	def create
 		@plan = Plan.new(plan_params)
-    city = City.find_by_name(params["plan"]["city_id"].downcase.titleize)
-		if city.nil?
-		  city = City.new
-		  city.name = params["plan"]["city_id"].downcase.titleize
-		  city.save	
+    @city = City.find_by_name(params["plan"]["city_id"].downcase.titleize)
+		if @city.nil?
+		  @city = City.new
+		  @city.name = params["plan"]["city_id"].downcase.titleize
+		  @city.save	
 		end
     
     if params[:minute] == "1050"
@@ -80,11 +81,11 @@ class PlansController < ApplicationController
     @plan.text = params[:text]
     @plan.carrier = params[:plan][:carrier]
     @plan.owner_id = current_user.id
-    @plan.city_id = city.id
+    @plan.city_id = @city.id
     if @plan.save
     	redirect_to plans_path
     else
-    	redirect_to new_plan_path
+    	render new_plan_path
     end
 	end
 
