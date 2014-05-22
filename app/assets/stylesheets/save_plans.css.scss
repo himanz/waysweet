@@ -1,3 +1,93 @@
 // Place all the styles related to the savePlans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#dropplanlist{
+  height: 40%;
+  border: 1px dashed grey;
+  float: left;
+  width: 750px;
+  right: 100px;
+  
+  
+}
+
+.planlist{
+height: 250px;
+width: 200px;
+display: inline-block;
+background-color: white
+  
+
+}
+
+.draglist{
+  left: 50%;
+  top: 100px;
+  width: 200px;
+  height: 280px;
+
+}
+
+
+.reveal-modal{
+  height: 350px;
+  position: fixed
+}
+
+#revealplanlist{
+  height: 100%;
+  float: left;
+  width: 150px;
+  // border: 1px dashed black;
+  padding-left: 20px
+  
+}
+
+#pricePlan{
+  background-color: aliceblue;
+  font-weight: bold;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.desc{
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  border: dotted 1px #ddd
+
+}
+
+#tooltip{
+  top: 200px
+}
+
+#savedlist{
+  position: absolute;
+  top: 500px;
+  width: 40%;
+  height: 40%;
+  border: 1px dashed grey
+
+}
+
+.savedlistplan{
+  width: 200px;
+  height: 120px;
+}
+
+
+#pricesavedPlan{
+  background-color: #bff1d3;
+  font-weight: bold;
+  width: 100%;
+  margin: 0px auto;
+  display: inline-block;
+}
+
+.planlist ui-draggable{
+  left: 0px
+}
+
+
