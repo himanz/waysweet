@@ -19,7 +19,6 @@ $(document).ready(function() {
     postRef.set({Price: price, Minute: minute, Data: data, Text: text, Date: date});
   }
 
-
   $('.search-submit').click(function() {
   	funct1();
   });
@@ -39,40 +38,6 @@ $(document).ready(function() {
   $('#buttonback2').click(function() {
     $('#step2').hide();
     $('#step1').show();
-  });
-
-  $('#button2').click(function() {
-    $('#step2').hide();
-    $('#step3').show();
-  });
-
-  $('#button3').click(function() {
-    $('#step3').hide();
-    $('#step4').show();
-  });
-
-  $('#buttonback3').click(function() {
-    $('#step3').hide();
-    $('#step2').show();
-  });
-
-  $('#button4').click(function() {
-    $('#step4').hide();
-    $('#step5').show();
-  });
-
-  $('#buttonback4').click(function() {
-    $('#step4').hide();
-    $('#step3').show();
-  });
-
-  $('#button5').click(function() {
-    $('#step5').hide();
-  });
-
-  $('#buttonback5').click(function() {
-    $('#step5').hide();
-    $('#step4').show();
   });
 
   $(function() {
