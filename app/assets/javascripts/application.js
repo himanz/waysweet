@@ -14,7 +14,6 @@
 //= require foundation
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require twitter/typeahead
 //= require jquery.ui.progressbar
 //= require jquery.ui.slider
 //= require jquery.ui.spinner
