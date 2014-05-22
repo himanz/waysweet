@@ -28,7 +28,7 @@ $(document).ready(function() {
   $('#step4').hide();
   $('#step5').hide();
 
-
+  // Button navigation for home page
   $('#button1').click(function() {
     $('#step1').hide();
     $('#step2').show();
@@ -62,8 +62,6 @@ $(document).ready(function() {
     });
   });
 
-
-
   $(function() {
     // Sets default values
     $("#minuteslider").val(300);
@@ -89,14 +87,6 @@ $(document).ready(function() {
       } 
     });
   });
-
-  $(".slider2").slider({
-   slide: function(event, ui) { 
-       if(ui.value > 600){//Note the value of ui.value is between 0 to 99
-          return false;
-       }
-   }
-});
 
   $(function() {
     // Sets default values
@@ -164,6 +154,7 @@ $(document).ready(function() {
     if (selectMinute == "") {
       selectMinute = 1050;
     }
+    // Does the text for slider
     $("#minuteslider").val(selectMinute);
     $("#minute").val(selectMinute);
     $("#slider2").slider("option", "value", selectMinute);
@@ -178,6 +169,7 @@ $(document).ready(function() {
     if (selectData == "") {
       selectData = 6500;
     }
+    // Does the text for slider
     $("#dataslider").val(selectData);
     $("#data").val(selectData);
     $("#slider3").slider("option", "value", selectData);
@@ -192,6 +184,7 @@ $(document).ready(function() {
     if (selectText == "") {
       selectText = 2600;
     }
+    // Does the text for slider
     $("#textslider").val(selectText);
     $("#text").val(selectText);
     $("#slider4").slider("option", "value", selectText);
