@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #dropplanlist{
-  height: 60%;
+  height: 600px;
   border: 1px dashed grey;
   float: left;
   width: 650px;
@@ -44,8 +44,9 @@ background-color: white
 }
 
 #pricePlan{
-  background-color: aliceblue;
+  background-color: #00285a;
   font-weight: bold;
+  color: white;
   width: 100%;
   margin: 0px auto;
 }
@@ -63,11 +64,10 @@ background-color: white
 }
 
 #savedlist{
-  position: absolute;
-  top: 500px;
+  position: relative;
   width: 40%;
-  height: 40%;
-  border: 1px dashed grey
+  height: 80%;
+  display: inline-block;
 
 }
 
@@ -87,6 +87,12 @@ background-color: white
 
 .planlist ui-draggable{
   left: 0px
+}
+
+.dragcontainer {
+  background-color: green;
+  width: 650px;
+  height: 60%
 }
 
 
