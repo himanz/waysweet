@@ -2,13 +2,10 @@
 
   <div class="plansidebar">
     <div class="large-12 columns">
-        <label>Select Carrier
-          <select>
-            <option value="rogers">Rogers</option>
-            <option value="bell">Bell</option>
-            <option value="telus">Telus</option>
-          </select>
-        </label>
+      <div class="carrier">
+        <h3>Select Carrier</h3>
+        <%= select_tag(:carrier, options_for_select([["Rogers","Rogers"],["Bell","Bell"],["Telus","Telus"]])) %>
+      </div>
 
       <div class="prices">
         <h3>Price</h3>
