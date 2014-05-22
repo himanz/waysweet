@@ -30,6 +30,16 @@ background-color: white
 
 }
 
+#savedlist{
+  position: absolute;
+  top: 400px;
+  width: 40%;
+  height: 50%;
+  border: 1px dashed grey
+
+
+}
+
 
 .reveal-modal{
   height: 350px;
@@ -45,7 +55,6 @@ background-color: white
   
 }
 
-
 #pricePlan{
   background-color: aliceblue;
   font-weight: bold;
@@ -59,4 +68,21 @@ background-color: white
   text-align: center;
   border: dotted 1px #ddd
 
+}
+
+#tooltip{
+  top: 200px
+}
+
+.savedlistplan{
+  width: 200px;
+  height: 120px;
+  background-color: yellow
+}
+
+#pricesavedPlan{
+  background-color: red;
+  font-weight: bold;
+  width: 100%;
+  margin: 0px auto;
 }
