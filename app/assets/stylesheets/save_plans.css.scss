@@ -14,7 +14,7 @@
 
 .planlist{
 height: 250px;
-width: 250px;
+width: 200px;
 display: inline-block;
 background-color: white
   
@@ -24,18 +24,8 @@ background-color: white
 .draglist{
   left: 50%;
   top: 100px;
-  width: 150px;
+  width: 200px;
   height: 280px;
-
-
-}
-
-#savedlist{
-  position: absolute;
-  top: 400px;
-  width: 40%;
-  height: 50%;
-  border: 1px dashed grey
 
 
 }
@@ -74,10 +64,20 @@ background-color: white
   top: 200px
 }
 
+#savedlist{
+  position: absolute;
+  top: 500px;
+  width: 40%;
+  height: 40%;
+  border: 1px dashed grey
+
+}
+
 .savedlistplan{
   width: 200px;
   height: 120px;
 }
+
 
 #pricesavedPlan{
   background-color: #bff1d3;
