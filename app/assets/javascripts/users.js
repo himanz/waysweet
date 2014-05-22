@@ -1,6 +1,6 @@
 $(function() {
  $( ".planlist" ).draggable({ grid: [ 200, 200 ] });
- 
+ $( ".planlist" ).draggable ({ containment: ".pcontain" });
  $( "#dropplanlist" ).droppable({
   drop: function( event, ui ) {
 

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #dropplanlist{
-  height: 60%;
+  height: 600px;
   border: 1px dashed grey;
   float: left;
   width: 650px;
@@ -86,6 +86,12 @@ background-color: white
 
 .planlist ui-draggable{
   left: 0px
+}
+
+.dragcontainer {
+  background-color: green;
+  width: 650px;
+  height: 60%
 }
 
 
