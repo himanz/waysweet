@@ -6,10 +6,12 @@
     <td><%= plan.unlimited(plan.data) %></td>
     <td><%= plan.unlimited(plan.text) %></td>
     <td>     
-      <% if !@save_plans.map(&:plan_id).include? plan.id %>
-        <%= form_for @save_plan, :remote => true do |f|%>
-          <%= f.hidden_field :plan_id, value: plan.id %>
-          <%= f.submit  "Save", :class => 'button tiny save-plan' %>
+      <% if current_user %>
+        <% if !@save_plans.map(&:plan_id).include? plan.id %>
+          <%= form_for @save_plan, :remote => true do |f|%>
+            <%= f.hidden_field :plan_id, value: plan.id %>
+            <%= f.submit  "Save", :class => 'button tiny save-plan' %>
+          <% end %>
         <% end %>
       <% end %>
       
