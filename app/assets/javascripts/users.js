@@ -4,7 +4,10 @@ $(function() {
  $( "#dropplanlist" ).droppable({
   drop: function( event, ui ) {
     $( this )
-    .html( "Plan Added!" );
+    alert("Plan Added!");
   }
 });
 });
+
+
+
