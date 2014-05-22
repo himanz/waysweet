@@ -87,7 +87,7 @@ class PlansController < ApplicationController
     @plan.owner_id = current_user.id
     @plan.city_id = @city.id
     if @plan.save
-    	redirect_to plans_path
+    	redirect_to plans_path, :notice => "Plan Submitted"
     else
     	render new_plan_path
     end
