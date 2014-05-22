@@ -82,7 +82,7 @@ class PlansController < ApplicationController
     @plan.owner_id = current_user.id
     @plan.city_id = city.id
     if @plan.save
-    	redirect_to @plan
+    	redirect_to plans_path
     else
     	render 'new'
     end
