@@ -237,6 +237,11 @@ $(document).ready(function() {
     }
   });
 
+  $(this).on("mouseenter", '.realTimeSearch', function() {
+    $( this ).fadeOut( 100 );
+    $( this ).fadeIn( 500 );
+  });
+
   $(".save-plan").on('click', function() {
     $(this).hide();
     $(this).closest(".new_save_plan").append("<input type='button' value='SAVED' class='button tiny saved-button'>");
