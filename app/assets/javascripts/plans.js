@@ -237,29 +237,11 @@ $(document).ready(function() {
     }
   });
 
-  $(".save-plan").on('click', function(event) {
-    
-    // event.preventDefault();
-    // // Create DataString
-    //     var dataString = '&name=' + $('input[name=name]').val() +
-    //                      '&email=' + $('input[name=email]').val() +
-    //                      '&phone=' + $('input[name=phone]').val() +
-    //                      '&message=' + $('textarea[name=message]').val() +
-
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "http://example.com/test.php",
-    //         data: dataString,
-    //         success: function() {
-    //             alert('Form Successfully Submitted');
-    //         },  
-    //         error: function() {
-    //             alert('There was an error submitting the form');
-    //         }   
-    //     }); 
-    //     return false; // Returning false will stop page from reloading.
+  $(".save-plan").on('click', function() {
+    $(this).hide();
+    $(this).closest(".new_save_plan").append("<input type='button' value='SAVED' class='button tiny saved-button'>");
+    $(this).closest(".new_save_plan").find(".saved-button").prop('disabled', true);
   })
-
   $("#minuteslider").hide();
   $("#dataslider").hide();
   $("#textslider").hide();
