@@ -63,11 +63,10 @@ background-color: white
 }
 
 #savedlist{
-  position: absolute;
-  top: 500px;
+  position: relative;
   width: 40%;
-  height: 40%;
-  border: 1px dashed grey
+  height: 80%;
+  display: inline-block;
 
 }
 
