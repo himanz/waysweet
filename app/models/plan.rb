@@ -3,7 +3,7 @@ class Plan < ActiveRecord::Base
   has_many :comments
   has_many :save_plans, :dependent => :destroy
   has_many :users, :through => :save_plans 
-
+  validates :city_id, presence: true
   def self.average_city_price(carrier)
     allcarriers = Plan.where(carrier:carrier)
     return carrier

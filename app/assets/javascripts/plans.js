@@ -246,6 +246,7 @@ $(document).ready(function() {
   $("#dataslider").hide();
   $("#textslider").hide();
   $("#priceslider").hide();
+
 });
 
 
