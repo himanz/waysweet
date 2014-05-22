@@ -143,13 +143,20 @@ background-color: #f5f6f6
 }
 
 .planlist{
-  left: 50%;
-  top: 100px;
-  width: 150px;
-  height: 280px;
+background-color: gold;
+height: 250px;
+width: 200px
   
 
 }
+
+.draglist{
+    left: 50%;
+  top: 100px;
+  width: 150px;
+  height: 280px;
+}
+
 
 .reveal-modal{
   height: 350px;
@@ -160,7 +167,8 @@ background-color: #f5f6f6
   height: 100%;
   float: left;
   width: 150px;
-  background-color: lightgrey;
+  border: 1px dashed black;
+  padding-left: 20px
   
 }
 
