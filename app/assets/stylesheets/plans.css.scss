@@ -143,9 +143,10 @@ background-color: #f5f6f6
 }
 
 .planlist{
-background-color: gold;
 height: 250px;
-width: 200px
+width: 250px;
+display: inline-block;
+white-space: nowrap
   
 
 }
@@ -155,6 +156,7 @@ width: 200px
   top: 100px;
   width: 150px;
   height: 280px;
+
 }
 
 
@@ -167,7 +169,7 @@ width: 200px
   height: 100%;
   float: left;
   width: 150px;
-  border: 1px dashed black;
+  // border: 1px dashed black;
   padding-left: 20px
   
 }
