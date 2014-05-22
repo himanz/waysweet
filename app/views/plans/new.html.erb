@@ -41,10 +41,14 @@
         <div class="slider-text text-text"></div>
         <%= hidden_field_tag :text %>
       </div>
-      <div class"city">
+      <div class="city">
         <h3>City</h3>
-        <%= f.label :city %>
         <%= f.text_field :city_id %>
+      </div>
+
+      <div class="carrier">
+        <h3>Carrier</h3>
+        <%= f.select(:carrier, options_for_select([["Rogers","Rogers"],["Bell","Bell"]])) %>
       </div>
 
       <div class="planfield">
