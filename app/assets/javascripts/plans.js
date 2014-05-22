@@ -242,11 +242,12 @@ $(document).ready(function() {
     $( this ).fadeIn( 500 );
   });
 
-  $(".save-plan").on('click', function() {
+  $("body").on('click', ".save-plan", function() {
     $(this).hide();
     $(this).closest(".new_save_plan").append("<input type='button' value='SAVED' class='button tiny saved-button'>");
     $(this).closest(".new_save_plan").find(".saved-button").prop('disabled', true);
-  })
+  });
+
   $("#minuteslider").hide();
   $("#dataslider").hide();
   $("#textslider").hide();
