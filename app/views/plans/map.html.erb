@@ -6,6 +6,8 @@
     
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
 
+    <div id="maptitle">City searches by other users</div>
+
     <script>
 
       var planCarrier = []
@@ -51,8 +53,8 @@
           featureType: "water",
           elementType: "geometry",
           stylers: [
-            {color: "#00305B" },
-            { visibility: "20%" }
+            {color: "#07467c" },
+            { visibility: "50%" }
           ]
         },
       
@@ -65,6 +67,7 @@
         zoom: 9,
         center: new google.maps.LatLng(43.7000, -79.4000),
         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+
       };
 
 
