@@ -32,12 +32,16 @@
 <div class="searchrow">
   <div class ="row">
     <div class="searches">
-      <center><h3>Recent</h3> searches</center>
+      <span data-tooltip class="has-tip" title="Click to set search criteria recently searched by other users!">
+        <center><h3>Recent</h3>searches</center>
+      </span>
     </div>
 
     <div id="search-display"></div>
+
   </div>  
 </div>
+
 
 <script>
   // When firebase database gets added to, it will update root with what was added
@@ -73,5 +77,4 @@
     allowClear: true
   });
 </script>
-
 
