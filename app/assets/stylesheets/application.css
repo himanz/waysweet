@@ -141,18 +141,9 @@ color: red;
   text-align: center
 }
 
-p#alert{
-  color:red;
-  font-size: 30px;
-  text-align: center;
-  font-style: italic
-}
-
-p#notice{
-  color:red;
-  font-size: 30px;
-  text-align: center;
-  font-style: italic
+.alert-box success radius{
+  float: right;
+  width: 50%;
 }
 
 #maptitle{
@@ -164,3 +155,4 @@ p#notice{
   padding-top: 10px;
   font-weight: bold
 }
+

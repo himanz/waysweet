@@ -58,10 +58,10 @@
     </div>
 
     <% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
+      <div class="alert-box success radius"><%= flash[:notice] %></div>
     <% end %>
     <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
+      <div class="alert-box alert radius"><%= flash[:alert] %></div>
     <% end %>
 
     <%= yield %>
