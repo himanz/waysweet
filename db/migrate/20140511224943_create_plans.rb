@@ -5,7 +5,7 @@ class CreatePlans < ActiveRecord::Migration
       t.integer :data
       t.integer :minute
       t.integer :text
-
+      t.integer :city_id
       t.timestamps
     end
   end
