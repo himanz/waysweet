@@ -9,7 +9,7 @@ Waysweet::Application.routes.draw do
   resources :users
   get "signup" => "users#new", :as => "signup"
 
-  resources :plans do
+  resources :plans, :except => [:show, :edit, :update] do
     resources :comments
   end
   get "map" => "plans#map"

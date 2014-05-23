@@ -93,12 +93,6 @@ class PlansController < ApplicationController
     end
 	end
 
-	def edit
-	end
-
-	def update
-	end
-
 	def destroy
 		@plan = Plan.find(params[:id])
 		@plan.destroy
