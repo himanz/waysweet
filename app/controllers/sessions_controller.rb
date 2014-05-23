@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-  	redirect_to plans_url, :notice => "Logged out!"
+  	redirect_to plans_url, :alert => "Logged out!"
   end
 end
