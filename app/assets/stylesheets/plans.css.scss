@@ -82,7 +82,8 @@ title-bg: #ddd;
 
 }
 .btnlayout {
-  padding-left: 58%;
+  padding-left: 50%;
+  padding-top: 15%;
 }
 
 p.displayPrice{
@@ -133,4 +134,9 @@ margin: 0px auto;
 background-color: #efefef;
 position: absolute;
 top: 650px
+}
+
+.plansidebar{
+  border: 1px solid #DDD;
+  height: 550px
 }
