@@ -134,3 +134,15 @@ ul#board li {
 #map-canvas img {
   max-width: inherit;
 }
+
+.error_messages{
+color: red;
+  font-size: 30px;
+  text-align: center
+}
+
+p#alert{
+  color:red;
+  font-size: 30px;
+  text-align: center;
+}
