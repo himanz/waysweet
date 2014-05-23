@@ -2,12 +2,10 @@ Waysweet::Application.routes.draw do
 
   root 'plans#home'
   
-  
-  get "searches/new"
-  
   resources :sessions
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
+  
   resources :users
   get "signup" => "users#new", :as => "signup"
 
