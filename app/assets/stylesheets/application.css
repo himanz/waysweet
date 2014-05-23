@@ -37,6 +37,10 @@ ul#board {
     width: 100%;
 }
 
+p#copyright{
+  color: #252525;
+  text-align: right
+}
 
 ul#board li {
     display: inline-block;
