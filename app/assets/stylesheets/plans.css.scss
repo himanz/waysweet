@@ -129,10 +129,14 @@ p.displayText{
   margin: 0px auto;
 }
 
-.text-bars {
+.text-bars, .create-user {
   padding-top: 10%;
   width: 25%;
   margin: 0px auto;
+}
+
+.create-user {
+  padding-top: 5%;
 }
 
 .searchrow{
