@@ -37,9 +37,6 @@ ul#board {
     width: 100%;
 }
 
-.button{
-  background-color: black
-}
 
 ul#board li {
     display: inline-block;
