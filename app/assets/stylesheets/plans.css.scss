@@ -124,16 +124,22 @@ p.displayText{
   width: 200px
 }
 
-.newplan{
-width: 33%;
-margin: 0px auto;
+.newplan {
+  width: 33%;
+  margin: 0px auto;
+}
+
+.text-bars {
+  padding-top: 10%;
+  width: 25%;
+  margin: 0px auto;
 }
 
 .searchrow{
   width: 100%;
-background-color: #efefef;
-position: absolute;
-top: 650px
+  background-color: #efefef;
+  position: absolute;
+  top: 650px
 }
 
 .plansidebar{
