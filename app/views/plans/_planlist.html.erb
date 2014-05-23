@@ -1,10 +1,10 @@
 <% @plans.each do |plan| %>
   <tr>
-    <td><%= plan.carrier %></td>
-    <td>$<%= plan.price %></td>
-    <td><%= plan.unlimited(plan.minute) %></td>
-    <td><%= plan.unlimited(plan.data) %></td>
-    <td><%= plan.unlimited(plan.text) %></td>
+    <td><center><%= plan.carrier %></center></td>
+    <td><center>$<%= plan.price %></center></td>
+    <td><center><%= plan.unlimited(plan.minute) %></center></td>
+    <td><center><%= plan.unlimited(plan.data) %></center></td>
+    <td><center><%= plan.unlimited(plan.text) %></center></td>
     <td>  
       <!-- Show save button to only logged in users -->
       <% if current_user %>
