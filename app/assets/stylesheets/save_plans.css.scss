@@ -4,7 +4,7 @@
 
 #dropplanlist{
   height: 600px;
-  border: 1px dashed grey;
+  border: 1px solid #ddd;
   float: left;
   width: 650px;
   // right: 100px;
@@ -55,13 +55,19 @@ background-color: white
   width: 100%;
   margin: 0px auto;
   text-align: center;
-  border: dotted 1px #ddd
+  
 
 }
 
 #tooltip{
-  top: 200px
+  top: 50px;
+  
 }
+
+.modalButton{
+top: 10px
+}
+
 
 #savedlist{
   position: relative;
@@ -95,4 +101,7 @@ background-color: white
   height: 60%
 }
 
-
+.large-6{
+  background-color: #FFF;
+  height: 600px;
+}
