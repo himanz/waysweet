@@ -27,9 +27,11 @@ $(document).ready(function() {
   $('#step2').hide();
 
 
+
   // Button navigation for home page
   $('#button1').click(function() {
     $('#step1').hide();
+    $('.desc').hide();
     $('#step2').show();
     $('.searchrow').show();
 
@@ -39,6 +41,7 @@ $(document).ready(function() {
     $('#step2').hide();
     $('.searchrow').hide();
     $('#step1').show();
+    $('.desc').show();
   });
 
   $(function() {
