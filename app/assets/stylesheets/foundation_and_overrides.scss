@@ -350,7 +350,7 @@ $block-grid-elements: 3;
 // We use these to control button border styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $bg: $primary-color;
+$bg: #04345c;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
@@ -1169,7 +1169,7 @@ $progress-meter-color: #0067C3;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #00305b;
+$topbar-bg-color: #FFF;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1182,7 +1182,7 @@ $topbar-bg-color: #00305b;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #FFF;
+$topbar-dropdown-link-color: #FFF;
 // $topbar-dropdown-link-bg: #FFF;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
@@ -1190,8 +1190,8 @@ $topbar-bg-color: #00305b;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: white;
-$topbar-link-color-hover: #1295fd;
+$topbar-link-color: #252525;
+$topbar-link-color-hover: #097cda;
 // $topbar-link-color-active: #155eaf;
 // $topbar-link-color-active-hover: #155eaf;
 // $topbar-link-weight: normal;
