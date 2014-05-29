@@ -23,7 +23,6 @@ $(document).ready(function() {
   	funct1();
   });
 
-  
   $('.searchrow').hide();
   $('#step2').hide();
 
@@ -32,11 +31,13 @@ $(document).ready(function() {
   $('#button1').click(function() {
     $('#step1').hide();
     $('#step2').show();
-    
+    $('.searchrow').show();
+
   });
 
   $('#buttonback2').click(function() {
     $('#step2').hide();
+    $('.searchrow').hide();
     $('#step1').show();
   });
 
