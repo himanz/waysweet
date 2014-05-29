@@ -23,10 +23,10 @@ $(document).ready(function() {
   	funct1();
   });
 
+  
+  $('.searchrow').hide();
   $('#step2').hide();
-  $('#step3').hide();
-  $('#step4').hide();
-  $('#step5').hide();
+
 
   // Button navigation for home page
   $('#button1').click(function() {
