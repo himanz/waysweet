@@ -29,17 +29,14 @@ ul#board {
 }
 
 .waysweet-footer-bottom {
-    height: 2%;
-    position: fixed;
-    bottom: 0px;
+    height: 10%;
+    position: absolute;
+    bottom: -100px;
     line-height: 50px;
     background-color: #295781;
     width: 100%;
-}
-
-p#copyright{
-  color: #252525;
-  text-align: right
+    color: white;
+    padding-bottom: 50px
 }
 
 ul#board li {
@@ -155,3 +152,14 @@ color: red;
   font-weight: bold
 }
 
+.fi-mail{
+  font-size: 36px;
+}
+
+.fi-social-facebook{
+  font-size: 36px;
+}
+
+.fi-social-twitter{
+  font-size: 36px;
+}
