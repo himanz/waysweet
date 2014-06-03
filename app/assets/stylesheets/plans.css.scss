@@ -19,7 +19,6 @@
   color: white;
   font-size: 60px;
   padding-top: 5%;
-  height: 515px;
   background-color: #255B99
 }
 
@@ -54,7 +53,8 @@ font-size: 60px;
 
 #descheader{
   font-size: 25px;
-  text-align: center
+  text-align: center;
+  padding-top: 2%
 }
 
 .progress{
@@ -183,3 +183,10 @@ top: 60%
 
 }
 
+.ui-widget-header{
+  background: #0067C3
+}
+
+.ui-widget-content{
+  background: #78BDFA
+}

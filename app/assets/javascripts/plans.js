@@ -31,7 +31,7 @@ $(document).ready(function() {
   // Button navigation for home page
   $('#button1').click(function() {
     $('#step1').hide();
-    $('.desc').hide();
+    $('.homedesc').hide();
     $('#step2').show();
     $('.searchrow').show();
 
@@ -216,9 +216,3 @@ $(document).ready(function() {
   $("#priceslider").hide();
 
 });
-
-
-
-
-
-
