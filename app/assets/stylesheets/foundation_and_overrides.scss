@@ -350,7 +350,7 @@ $block-grid-elements: 3;
 // We use these to control button border styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-$bg: #04345c;
+// $bg: #04345c;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
@@ -880,7 +880,7 @@ $bg: #04345c;
 
 // We use this to set the progress bar height
 // $progress-bar-height: rem-calc(25);
-$progress-bar-color: #78BDFA  ;
+$progress-bar-color: #78BDFA;
 
 // We use these to control the border styles
 // $progress-bar-border-color: scale-color(#fff, $lightness: 20%);

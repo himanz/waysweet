@@ -31,7 +31,7 @@ $(document).ready(function() {
   // Button navigation for home page
   $('#button1').click(function() {
     $('#step1').hide();
-    $('.desc').hide();
+    $('.homedesc').hide();
     $('#step2').show();
     $('.searchrow').show();
 
@@ -106,10 +106,11 @@ $(document).ready(function() {
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        if ($( "#dataslider").val() == 6500 ) {
-          $( ".data-text").text("Unlimited") 
+        if ($( "#dataslider").val() == 1500 ) {
+          $( ".data-text").text("1.5 GB") 
         } else {
           $( ".data-text" ).text(ui.value);  
+
         }      
       },
       change: function(event, ui ) {
@@ -216,9 +217,3 @@ $(document).ready(function() {
   $("#priceslider").hide();
 
 });
-
-
-
-
-
-

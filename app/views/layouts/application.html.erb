@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "View and Compare Cheap Wireless Plans" %></title>
     <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-
+     <link rel="stylesheet" href="/stylesheets/foundation-icons.css" />
     <%= stylesheet_link_tag    "application" %>
 
     <%= javascript_include_tag "application" %>
@@ -71,13 +71,14 @@
     </div>
 
     <footer class="waysweet-footer-bottom">
-      <p id="copyright">&#169; 2014 Waysweeter.com</p>
-   <!--    <div class="medium-4 medium-4 push-8 columns">
+      <div class="medium-4 medium-4 push-8 columns">
         <ul class="social-icons">
-          Twitter | Facebook | Email
-          &#169;
+          <i class="fi-social-twitter"></i>
+          <i class="fi-social-facebook"></i>
+          <i class="fi-mail"></i>
+          &#169;2014 Waysweeter
         </ul>
-      </div> -->
+      </div>
 <!--       <%= link_to "Waysweeter", root_path %>   -->
     </footer>
 
