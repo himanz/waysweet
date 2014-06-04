@@ -48,11 +48,11 @@ font-size: 60px;
 .homedesc{
   background-color: #F6F6F6;
   width: 100%;
-  height: 400px
+  height: 30%
 }
 
 #descheader{
-  font-size: 25px;
+  font-size: 35px;
   text-align: center;
   padding-top: 2%
 }
@@ -194,3 +194,74 @@ top: 60%
 // .ui-slider-handle{
 //   background: red
 // }
+
+#dsearchtitle{
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  text-align: center;
+  
+}
+
+#dsavetitle{
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  text-align: center;
+  
+}
+
+#dsubmit{
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  text-align: center;
+  
+}
+
+#ddesc{
+text-align: center;
+}
+
+.fi-magnifying-glass{
+  font-size: 72px
+}
+
+.fi-dollar{
+  font-size: 72px
+}
+
+.fi-page-edit{
+  font-size: 72px
+}
+
+#iconmagn{
+  width: 60px;
+  padding-top: 10%;
+  margin: 0 auto;
+  text-align: center
+}
+
+#icondollar{
+  width: 180px;
+  padding-top: 10%;
+  margin: 0 auto;
+  text-align: center
+}
+
+#iconsubmit{
+  width: 60px;
+  padding-top: 10%;
+  margin: 0 auto;
+  text-align: center
+}
+
+.button{
+  background-color: #4A90E2
+}
+
+#descstory{
+  padding-top: 2%;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem
+}

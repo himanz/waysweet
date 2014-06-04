@@ -41,7 +41,7 @@ $(document).ready(function() {
     $('#step2').hide();
     $('.searchrow').hide();
     $('#step1').show();
-    $('.desc').show();
+    $('.homedesc').show();
   });
 
   $(function() {

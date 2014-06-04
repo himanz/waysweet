@@ -5,7 +5,7 @@
     <div id="step1">
       <div class="scity">
         <div class="header1">
-          <center>Find the <b>Best Price</b> on Wireless Plans</center>
+          <center>Find the <b>Best Price</b> on Cellphone Plans</center>
         </div>
           <div id='city-search' class="small-3 small-centered columns">
             <center><%= select_tag(:city, options_for_select(@cities)) %>
@@ -49,40 +49,67 @@
   </div>
 
   <div class="row">
-    <div class="small-2 large-4 columns">
+    <div class="small-4 large-4 columns">
+
+      <div id="iconmagn">
+        <i class="fi-magnifying-glass"></i>
+      </div>
+
       <div id="dsearchtitle">
       Search for Your Plan
       </div>
+
+      <div id="ddesc">
       Discover the best plans submitted by other users
+      </div>
+
     </div>
 
     <div class="small-4 large-4 columns">
-      <div id="dsavetitle">
-        Save Money  <i class="fi-dollar"></i> <i class="fi-dollar"></i> <i class="fi-dollar"></i>
+
+      <div id="icondollar">
+        <i class="fi-dollar"></i> <i class="fi-dollar"></i> <i class="fi-dollar"></i>
       </div>
+
+       <div id="dsavetitle">
+        Save Money
+       </div>
+
+       <div id="ddesc">
+      Find the best plan and use it to negoitate your cellphone plan
+      </div>
+
     </div>
 
-    <div class="small-6 large-4 columns">
-     <div id="dsubmit">
-      Submit your plan
+    <div class="small-4 large-4 columns">
+      <div id="iconsubmit">
+        <i class="fi-page-edit"></i>
       </div>
-      <div id="dsavetitle">
+        
+      <div id="dsubmit">
+        Submit Your Plan
+      </div>
+
+      <div id="ddesc">
         Enter your plan details to help build the community base
       </div>
+
+     </div>
+  </div> 
+</div>
+
+
+<div class="row">
+  <div class="homestory">
+     <div id="descheader">
+      Our Story
     </div>
 
-  </div>
-
-
-   
-
+      <div id="descstory">
+        We believe Canadians have been overpaying for their cellphone plans for too long. We want to make pricing of  plans transparent and ultimately save people money. You shouldn’t have to pay more for your plan than your neighbour that has the exact same plan. Waysweeter makes it easy to view, compare, and save money on cellphone plans.
+      </div>
       
-      
-      
-
-
-
- 
+  </div>    
 </div>
 
 <script>
