@@ -198,19 +198,26 @@ top: 60%
 #dsearchtitle{
   font-size: 1.5em;
   padding-bottom: 1em;
+  text-align: center;
   
 }
 
 #dsavetitle{
   font-size: 1.5em;
   padding-bottom: 1em;
+  text-align: center;
   
 }
 
 #dsubmit{
   font-size: 1.5em;
   padding-bottom: 1em;
+  text-align: center;
   
+}
+
+#ddesc{
+text-align: center;
 }
 
 .fi-magnifying-glass{
@@ -225,7 +232,20 @@ top: 60%
   font-size: 72px
 }
 
-#magn{
+#iconmagn{
+  width: 60px;
+  padding-top: 80px;
+  margin: 0 auto;
+  text-align: center
+}
+
+#icondollar{
+  width: 180px;
+  padding-top: 80px;
+  margin: 0 auto
+}
+
+#iconsubmit{
   width: 60px;
   padding-top: 80px;
   margin: 0 auto
