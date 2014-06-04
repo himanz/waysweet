@@ -106,10 +106,11 @@ $(document).ready(function() {
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        if ($( "#dataslider").val() == 6500 ) {
-          $( ".data-text").text("Unlimited") 
+        if ($( "#dataslider").val() == 1500 ) {
+          $( ".data-text").text("1.5 GB") 
         } else {
           $( ".data-text" ).text(ui.value);  
+
         }      
       },
       change: function(event, ui ) {
