@@ -42,7 +42,7 @@ class PlansController < ApplicationController
     	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
     	end
     else
-      @plans = Plan.all
+      @plans = Plan.all.page(params[:page])
     end
 
     respond_to do |format|
