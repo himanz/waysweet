@@ -33,13 +33,13 @@ class PlansController < ApplicationController
     # different queries in database depending on where search originates
     if params[:homesubmit]
       @plans = if params[:price]	 
-        Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC") 
+        Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
       end
     elsif params[:indexsubmit]
       if params[:carrier] == "Any"
-        @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC")
+        @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
       else
-    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC")  
+    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
     	end
     else
       @plans = Plan.all

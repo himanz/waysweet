@@ -7,6 +7,9 @@
   <table>
     <thead>
       <tr>
+        <h1>Plans <small><%= page_entries_info @plans %></small></h1>
+      </tr>
+      <tr>
         <th width="150" class="displayPrice">Carrier</th>
         <th width="150" class="displayPrice">Price</th>
         <th width="150" class="displayPrice">Minutes</th>
@@ -22,6 +25,7 @@
       </div>
     </tbody> 
   </table>
+  <%= paginate @plans %>
 </div>
 
 
