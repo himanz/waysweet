@@ -1,14 +1,18 @@
-<div class="empty">
-    <%= render "sidebar" %>   
-</div>
+
 
 <div class="formgrid">
   <center><h1>Cellphone Plans</h1></center> <br />  
   <table>
     <thead>
+      <div class="empty">
+        <%= render "searchbar" %>   
+      </div>
       <tr>
         <h1><small><%= page_entries_info @plans %></small></h1>
       </tr>
+
+
+
       <tr>
         <th width="150" class="displayPrice">Carrier</th>
         <th width="150" class="displayPrice">Price</th>
