@@ -96,7 +96,7 @@ $(document).ready(function() {
     // Sets default values
     $("#dataslider").val(1000);
     $("#data").val(1000);  
-    $( ".data-text" ).text(1000);
+    $( ".data-text" ).text(1 + " GB");
     
     $( "#slider3" ).slider({
       range: "min",
@@ -106,10 +106,10 @@ $(document).ready(function() {
       step: 500,
       slide: function( event, ui ) {
         $( "#dataslider" ).val(ui.value);
-        if ($( "#dataslider").val() == 1500 ) {
-          $( ".data-text").text("1.5 GB") 
+        if ($( "#dataslider").val() == 6500 ) {
+          $( ".data-text").text("Unlimited") 
         } else {
-          $( ".data-text" ).text(ui.value);  
+          $( ".data-text" ).text(ui.value / 1000 + " GB");  
 
         }      
       },
