@@ -48,7 +48,7 @@ font-size: 60px;
 .homedesc{
   background-color: #F6F6F6;
   width: 100%;
-  height: 400px
+  height: 30%
 }
 
 #descheader{
@@ -234,26 +234,32 @@ text-align: center;
 
 #iconmagn{
   width: 60px;
-  padding-top: 80px;
+  padding-top: 10%;
   margin: 0 auto;
   text-align: center
 }
 
 #icondollar{
   width: 180px;
-  padding-top: 80px;
+  padding-top: 10%;
   margin: 0 auto;
   text-align: center
 }
 
 #iconsubmit{
   width: 60px;
-  padding-top: 80px;
+  padding-top: 10%;
   margin: 0 auto;
   text-align: center
 }
 
-
 .button{
   background-color: #4A90E2
+}
+
+#descstory{
+  padding-top: 2%;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto
 }
