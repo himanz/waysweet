@@ -14,6 +14,8 @@ Waysweet::Application.routes.draw do
   end
   get "map" => "plans#map"
 
+  get "faq" => "plans#faq"
+
   resources :cities
   resources :save_plans
   resources :searches

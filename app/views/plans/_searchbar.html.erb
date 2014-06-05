@@ -1,6 +1,5 @@
 <%= form_tag plans_path, method: :get, id: 'search-form' do %>
-
-
+<div class="row">
       <div class="carrier">
         <h3>Select Carrier</h3>
         <%= select_tag(:carrier, options_for_select([["Any","Any"],["Bell","Bell"],["Chatr","Chatr"], ["Fido","Fido"], ["Koodo","Koodo"],["Rogers","Rogers"],["Telus","Telus"], ["Virgin","Virgin"], ["Wind","Wind"]])) %>
@@ -12,9 +11,6 @@
         <input id="priceslider" disabled style="border:0; color:#0067C3; font-weight:bold; font-size: 20px;">
         <div class="slider-text price-text"></div>
         <%= hidden_field_tag :price %>
-   
-
-      <div class="break"></div>
 
       <div class="minutes">
         <h3>Minutes</h3>
@@ -24,7 +20,6 @@
         <%= hidden_field_tag :minute %>
       </div>
 
-      <div class="break"></div>
 
       <div class="data">
         <h3>Data (in MB)</h3>
@@ -33,8 +28,6 @@
         <div class="slider-text data-text"></div>
         <%= hidden_field_tag :data %>
       </div>
-
-      <div class="break"></div>
 
       <div class="texts">
         <h3>Text</h3>
@@ -48,7 +41,7 @@
         <%= submit_tag "Search", :name => nil, class: 'button [tiny small large] search-submit' %>
         <%= hidden_field_tag :indexsubmit %>
       </div>
-      
+</div>   
 
 <% end %>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "View and Compare Cheap Wireless Plans" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "View and Compare Cheap Cellphone Plans" %></title>
     <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
      <link rel="stylesheet" href="/stylesheets/foundation-icons.css" />
     <%= stylesheet_link_tag    "application" %>
@@ -52,6 +52,7 @@
           <ul class="left">
             <li><%= link_to "Plans", plans_path %></li>
             <li><%= link_to "Map", map_path %></li>
+            <li><%= link_to "FAQ", faq_path %></li>
           </ul>
         </section>
       </nav>
