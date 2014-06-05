@@ -32,6 +32,7 @@ $(document).ready(function() {
   $('#button1').click(function() {
     $('#step1').hide();
     $('.homedesc').hide();
+    $('.homestory').hide();
     $('#step2').show();
     $('.searchrow').show();
 
@@ -41,6 +42,7 @@ $(document).ready(function() {
     $('#step2').hide();
     $('.searchrow').hide();
     $('#step1').show();
+    $('.homestory').show();
     $('.homedesc').show();
   });
 
