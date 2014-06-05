@@ -10,9 +10,6 @@
       <tr>
         <h1><small><%= page_entries_info @plans %></small></h1>
       </tr>
-
-
-
       <tr>
         <th width="150" class="displayPrice">Carrier</th>
         <th width="150" class="displayPrice">Price</th>
@@ -29,7 +26,7 @@
       </div>
     </tbody> 
   </table>
-  
+  <%= paginate @plans %>
 </div>
 
 
