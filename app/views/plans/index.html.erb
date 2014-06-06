@@ -2,7 +2,7 @@
 
 <div class="formgrid">
   <center><h1>Cellphone Plans</h1></center> <br />  
-  <table>
+  <table class="planstable">
     <thead>
       <div class="searchbarbox">
         <%= render "searchbar" %>   
@@ -10,14 +10,18 @@
       <tr>
         <h1><small><%= page_entries_info @plans %></small></h1>
       </tr>
-      <tr class="tablerow">
-        <th width="20%" class="tabletitle">Carrier</th>
-        <th width="20%" class="tabletitle">Price</th>
-        <th width="20%" class="tabletitle">Minutes</th>
-        <th width="20%" class="tabletitle">Data</th>
-        <th width="20%" class="tabletitle">Text</th>
-        <th width="20%" class="tabletitle">Save Plan</th>
-      </tr>
+      
+      <div class="theader">
+        <tr>
+          <th width="20%" class="tabletitle">Carrier</th>
+          <th width="20%" class="tabletitle">Price</th>
+          <th width="20%" class="tabletitle">Minutes</th>
+          <th width="20%" class="tabletitle">Data</th>
+          <th width="20%" class="tabletitle">Text</th>
+          <th width="20%" class="tabletitle">Save Plan</th>
+        </tr>
+      </div>
+      
     </thead>
 
     <tbody>
