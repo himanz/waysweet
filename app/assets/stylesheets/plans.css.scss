@@ -102,8 +102,7 @@ title-bg: #ddd;
 
 }
 .btnlayout {
-  padding-left: 55%;
-  padding-top: 5%;
+  text-align: center
 }
 
 p.displayPrice{
@@ -358,4 +357,8 @@ text-align: center;
 .carrierbar{
   width: 15%;
   display: inline-block;
+}
+
+#bartitle{
+  padding-bottom: 0.5em
 }
