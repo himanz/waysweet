@@ -61,7 +61,7 @@ font-size: 60px;
   margin: 0 auto
 }
 .formgrid{
-width: 50%;
+width: 90%;
 margin: 0px auto;
 padding-top: 0%;
   
@@ -110,6 +110,7 @@ p.displayPrice{
   text-align: center;
   color: #FFF;
   font-weight: bold;
+
 }
 
 p.displayMinute{
@@ -360,5 +361,16 @@ text-align: center;
 }
 
 #bartitle{
-  padding-bottom: 0.5em
+  padding-bottom: 0.5em;
+  text-align: center;
+  width: 95%
+}
+
+.indexslider-text{
+  font-size: 1.25em;
+  padding-top: 5px;
+}
+
+.ui-slider{
+  width: 95%
 }
