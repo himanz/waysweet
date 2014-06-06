@@ -140,12 +140,14 @@ p.displayText{
   bottom-border: dotted 1px #ddd;
 }
 
-.displayPrice{
-  background-color: #002043;
+.tabletitle{
+  background-color: #DDEDFF;
   text-align: center;
-  color: #FFF;
+  color: #000;
   font-weight: bold;
 }
+
+
 
 .planfield{
   width: 200px
@@ -364,7 +366,7 @@ text-align: center;
 .carrierbar{
   width: 15%;
   display: inline-block;
-  
+
 }
 
 #bartitle{
