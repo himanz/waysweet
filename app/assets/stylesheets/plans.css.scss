@@ -181,6 +181,8 @@ p.displayText{
   
 }
 
+// Slider customization
+
 .slider-text{
   font-size: 25px;
   color: #0084e8;
@@ -193,6 +195,12 @@ p.displayText{
 
 .ui-widget-content{
   background: #e0e0e0
+}
+
+.ui-slider-handle{
+  border-radius: 10px;
+  border: 0 
+
 }
 
 // .ui-slider-handle{
