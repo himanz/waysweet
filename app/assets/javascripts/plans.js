@@ -220,3 +220,14 @@ $(document).ready(function() {
 
 });
 
+// Replacing Carriers with logos
+
+carrier
+
+// if ($(.carrier).text()== "Rogers"){
+//   Robbers
+// } else {
+//   Nothing
+// }
+// });
+

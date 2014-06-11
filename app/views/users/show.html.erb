@@ -27,7 +27,7 @@
             <div class="planlist">            
               <ul>
                 <center><div id="pricePlan">$<%= plan.price %></div></center>
-                <div class="desc"><%= plan.carrier %></div>
+                <div class="descarrier"><%= plan.carrier %></div>
                 <div class="desc"><%= plan.unlimited(plan.minute) %> Minutes</div>
                 <div class="desc"><%= plan.unlimited(plan.data)%> MB</div>
                 <div class="desc"><%= plan.unlimited(plan.text) %> Text</div>
@@ -51,7 +51,7 @@
     <% @user.plans_owned.each do |plan| %>
       <div class="savedlistplan">
         <center><div id="pricesavedPlan">$<%= plan.price %></div></center>
-          <div class="desc"><%= plan.carrier %></div>
+          <div class="descarrier"><%= plan.carrier %></div>
           <div class="desc"><%= plan.unlimited(plan.minute) %> Minutes</div>
           <div class="desc"><%= plan.unlimited(plan.data)%> MB</div>
           <div class="desc"><%= plan.unlimited(plan.text) %> Text</div>
