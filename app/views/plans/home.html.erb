@@ -121,6 +121,7 @@
     displayChatMessage(search.Price, search.Minute, search.Data, search.Text);
   	});
   function displayChatMessage(price, minute, data, text) {
+
     if (text == 2600) {
       text = "Unlimited";
     }
@@ -133,9 +134,9 @@
     var div = $("<div class='realTimeSearch medium-2 columns'/>");
     // Fills the div with information
     $("<p class=displayPrice >").text(price).prepend($('<em/>').text("$ ")).appendTo(div);
-    $("<p class=displayMinute >").text(minute).prepend($('<em/>').text("Minutes: ")).appendTo(div);
-    $("<p class=displayData >").text(data).prepend($('<em/>').text("Data: ")).appendTo(div);
-    $("<p class=displayText >").text(text).prepend($('<em/>').text("Text: ")).appendTo(div);
+    $("<p class=displayMinute >").text(minute).append($('<bold>').text(" minutes")).appendTo(div);
+    $("<p class=displayData >").text(data).append($('<bold>').text(" MB ")).appendTo(div);
+    $("<p class=displayText >").text(text).append($('<bold>').text(" text")).appendTo(div);
     // Appends the information to the home page
     $('#search-display').prepend(div);
     $('#search-display')[0].scrollTop = $('#search-display')[0].scrollHeight;
