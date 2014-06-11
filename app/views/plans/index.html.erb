@@ -2,22 +2,26 @@
 
 <div class="formgrid">
   <center><h1>Cellphone Plans</h1></center> <br />  
-  <table>
+  <table class="planstable">
     <thead>
-      <div class="empty">
+      <div class="searchbarbox">
         <%= render "searchbar" %>   
       </div>
       <tr>
         <h1><small><%= page_entries_info @plans %></small></h1>
       </tr>
-      <tr>
-        <th width="150" class="displayPrice">Carrier</th>
-        <th width="150" class="displayPrice">Price</th>
-        <th width="150" class="displayPrice">Minutes</th>
-        <th width="150" class="displayPrice">Data</th>
-        <th width="150" class="displayPrice">Text</th>
-        <th width="150" class="displayPrice">Save Plan</th>
-      </tr>
+      
+      <div class="theader"> 
+        <tr>
+          <th width="20%" class="tabletitle">Carrier</th>
+          <th width="20%" class="tabletitle">Price</th>
+          <th width="20%" class="tabletitle">Minutes</th>
+          <th width="20%" class="tabletitle">Data</th>
+          <th width="20%" class="tabletitle">Text</th>
+          <th width="20%" class="tabletitle">Save Plan</th>
+        </tr>
+      </div>
+
     </thead>
 
     <tbody>

@@ -23,21 +23,21 @@
 }
 
 .header2{
-width: 50%;
-margin: 0px auto;
-padding-top: 5%;
-font-family: Helevtica;
-color: #00305B;
-font-size: 60px;
+  width: 50%;
+  margin: 0px auto;
+  padding-top: 5%;
+  font-family: Helevtica;
+  color: #00305B;
+  font-size: 60px;
 }
 
 .header1{
-width: 50%;
-margin: 0px auto;
-// padding-top: -10%;
-font-family: Helevtica;
-color: white;
-font-size: 60px;
+  width: 50%;
+  margin: 0px auto;
+  // padding-top: -10%;
+  font-family: Helevtica;
+  color: white;
+  font-size: 60px;
 }
 
 .desc{
@@ -48,7 +48,12 @@ font-size: 60px;
 .homedesc{
   background-color: #F6F6F6;
   width: 100%;
+<<<<<<< HEAD
   height: 40%
+=======
+  height: 30%;
+  min-height: 300px
+>>>>>>> searchtable
 }
 
 #descheader{
@@ -60,20 +65,20 @@ font-size: 60px;
 .progress{
   margin: 0 auto
 }
+
 .formgrid{
-width: 50%;
-margin: 0px auto;
-padding-top: 0%;
-  
+  width: 90%;
+  margin: 0px auto;
+  padding-top: 0%;
 }
 
 .media screen{
-margin: 0;
-padding: 0;
-left: 0px;
-right: 0px;
-top: 0px;
-bottom: 0px;
+  margin: 0;
+  padding: 0;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
 }
 
 .plansidebar{
@@ -86,14 +91,14 @@ bottom: 0px;
 }
 
 .searches{
-width: 50%;
-margin: 0px auto;
-padding-top: 5%;
-font-family: Helevtica;
-color: #252525;
-font-size: 20px;
-padding-bottom: 5%;
-title-bg: #ddd;
+  width: 50%;
+  margin: 0px auto;
+  padding-top: 5%;
+  font-family: Helevtica;
+  color: #252525;
+  font-size: 20px;
+  padding-bottom: 5%;
+  title-bg: #ddd;
 }
 
 .realTimeSearch {
@@ -102,8 +107,7 @@ title-bg: #ddd;
 
 }
 .btnlayout {
-  padding-left: 55%;
-  padding-top: 5%;
+  text-align: center
 }
 
 p.displayPrice{
@@ -111,6 +115,7 @@ p.displayPrice{
   text-align: center;
   color: #FFF;
   font-weight: bold;
+
 }
 
 p.displayMinute{
@@ -140,12 +145,14 @@ p.displayText{
   bottom-border: dotted 1px #ddd;
 }
 
-.displayPrice{
-  background-color: #002043;
+.tabletitle{
+  background-color: #DDEDFF;
   text-align: center;
-  color: #FFF;
+  color: #000;
   font-weight: bold;
 }
+
+
 
 .planfield{
   width: 200px
@@ -167,9 +174,9 @@ p.displayText{
 }
 
 .searchrow{
-width: 100%;
-background-color: #efefef;
-top: 60%
+  width: 100%;
+  background-color: #efefef;
+  top: 60%
 }
 
 .plansidebar{
@@ -288,7 +295,7 @@ text-align: center;
   background-color: white;
   padding: 20px;
   min-height: 200px;
-  margin-bottom: 2em;
+  margin-top: 2em;
   border-radius: 10px;
   border-style: solid;
   border-color: #e3e3e3;
@@ -302,7 +309,7 @@ text-align: center;
   background-color: white;
   padding: 20px;
   min-height: 200px;
-  margin-bottom: 2em;
+  margin-top: 2em;
   border-radius: 10px;
   border-style: solid;
   border-color: #e3e3e3;
@@ -349,3 +356,36 @@ text-align: center;
   text-align: center;
   margin: 0 auto;
 }
+
+.searchbarbox{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.searchbar{
+  width: 20%;
+  display: inline-block;
+  padding-left: 1em
+}
+
+.carrierbar{
+  width: 15%;
+  display: inline-block;
+
+}
+
+#bartitle{
+  padding-bottom: 0.5em;
+  text-align: center;
+  width: 95%
+}
+
+.indexslider-text{
+  font-size: 1.25em;
+  padding-top: 5px;
+}
+
+#blankslider{
+  height: .8em
+}
+
