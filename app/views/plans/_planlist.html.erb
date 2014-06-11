@@ -3,7 +3,7 @@
     <td><center><%= plan.carrier %></center></td>
     <td><center>$<%= plan.price %></center></td>
     <td><center><%= plan.unlimited(plan.minute) %></center></td>
-    <td><center><%= plan.unlimited(plan.data) %></center></td>
+    <td><center><%= plan.unlimited(plan.data) / 1000 %> GB</center></td>
     <td><center><%= plan.unlimited(plan.text) %></center></td>
     <td>  <center>
       <!-- Show save button to only logged in users -->
