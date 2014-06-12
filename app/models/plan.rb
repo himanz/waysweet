@@ -23,7 +23,7 @@ class Plan < ActiveRecord::Base
     elsif carrier == "Bell"
       "bell.png"
     elsif carrier == "Chatr"
-      "chatr.png"
+      "chatr.jpg"
     elsif carrier == "Fido"
       "fido.png"
     elsif carrier == "Koodo"
