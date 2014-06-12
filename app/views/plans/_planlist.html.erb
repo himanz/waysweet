@@ -3,7 +3,11 @@
     <td><center><%= image_tag(plan.carrier_image(plan.carrier)) %></center></td>
     <td><center>$<%= plan.price %></center></td>
     <td><center><%= plan.unlimited(plan.minute) %></center></td>
-    <td><center><%= plan.unlimited(plan.data) / 1000 %> GB</center></td>
+    <% if plan.unlimited(plan.data) != "Unlimited" %>
+      <td><center><%= plan.unlimited(plan.data) / 1000 %> GB</center></td>
+    <% else %>
+      <td><center> Unlimited </center></td>
+    <% end %>
     <td><center><%= plan.unlimited(plan.text) %></center></td>
     <td>  <center>
       <!-- Show save button to only logged in users -->
