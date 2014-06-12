@@ -1,9 +1,6 @@
 <% @plans.each do |plan| %>
   <tr>
-    <td><center>
-      <%= image_tag(plan.carrier_image(plan.carrier)) %>
-      
-    </center></td>
+    <td><center><%= image_tag(plan.carrier_image(plan.carrier)) %></center></td>
     <td><center>$<%= plan.price %></center></td>
     <td><center><%= plan.unlimited(plan.minute) %></center></td>
     <td><center><%= plan.unlimited(plan.data) / 1000 %> GB</center></td>
