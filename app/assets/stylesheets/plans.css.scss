@@ -64,7 +64,7 @@
 }
 
 .formgrid{
-  width: 90%;
+  width: 50%;
   margin: 0px auto;
   padding-top: 0%;
 }
@@ -99,7 +99,7 @@
 }
 
 .realTimeSearch {
-  width: 200px;
+  width: 20%;
   height: 200px;
 
 }
@@ -112,6 +112,7 @@ p.displayPrice{
   text-align: center;
   color: #FFF;
   font-weight: bold;
+  font-size: 1.3em
 
 }
 
@@ -120,8 +121,8 @@ p.displayMinute{
   text-align: center;
   color: #777;
   font-weight: normal;
-  line-height: 1.4;
-  bottom-border: dotted 1px #ddd;
+  // line-height: 1.4;
+  // bottom-border: dotted 1px #ddd;
 }
 
 p.displayData{
@@ -129,8 +130,7 @@ p.displayData{
   text-align: center;
   color: #777;
   font-weight: normal;
-  line-height: 1.4;
-  bottom-border: dotted 1px #ddd;
+
 }
 
 p.displayText{
@@ -138,8 +138,7 @@ p.displayText{
   text-align: center;
   color: #777;
   font-weight: normal;
-  line-height: 1.4;
-  bottom-border: dotted 1px #ddd;
+
 }
 
 .tabletitle{
