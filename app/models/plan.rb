@@ -16,4 +16,28 @@ class Plan < ActiveRecord::Base
   		return value
   	end
   end 
+
+  def carrier_image(carrier)
+    if carrier == "Rogers"
+      "rogers.jpg"
+    elsif carrier == "Bell"
+      "bell.png"
+    elsif carrier == "Chatr"
+      "chatr.png"
+    elsif carrier == "Koodo"
+      "koodo.jpg"
+    elsif carrier == "Mobilicity"
+      "mobilicity.jpg"
+    elsif carrier == "Petro Canada"
+      "petrocanada.gif"
+    elsif carrier == "Public Mobile"
+      "publicmobile.gif"
+    elsif carrier == "Solo"
+      "solo.jpg"
+    elsif carrier == "Telus"
+      "telus.gif"
+    elsif carrier == "Wind"
+      "wind.png"
+    end
+  end
 end
