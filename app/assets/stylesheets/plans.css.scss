@@ -94,15 +94,18 @@
   font-family: Helevtica;
   color: #252525;
   font-size: 20px;
-  padding-bottom: 5%;
+  padding-bottom: 1em;
   title-bg: #ddd;
 }
 
 .realTimeSearch {
   width: 20%;
-  height: 200px;
-
 }
+
+.homesearch{
+  padding-bottom: 5%
+}
+
 .btnlayout {
   text-align: center
 }
@@ -117,7 +120,6 @@ p.displayPrice{
 }
 
 p.displayMinute{
-  background-color: #F5F6F6;
   text-align: center;
   color: #777;
   font-weight: normal;
@@ -126,7 +128,6 @@ p.displayMinute{
 }
 
 p.displayData{
-  background-color: #F5F6F6;
   text-align: center;
   color: #777;
   font-weight: normal;
@@ -134,7 +135,6 @@ p.displayData{
 }
 
 p.displayText{
-  background-color: #F5F6F6;
   text-align: center;
   color: #777;
   font-weight: normal;
@@ -147,7 +147,6 @@ p.displayText{
   color: #000;
   font-weight: bold;
 }
-
 
 
 .planfield{
@@ -172,7 +171,9 @@ p.displayText{
 .searchrow{
   width: 100%;
   background-color: #efefef;
-  top: 60%
+  top: 60%;
+  height: 50%
+
 }
 
 .plansidebar{
