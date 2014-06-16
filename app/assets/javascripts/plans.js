@@ -146,13 +146,6 @@ $(document).ready(function() {
       } 
     });
   });  
-  
-
-
-  $(this).on("mouseenter", '.realTimeSearch', function() {
-    $( this ).fadeOut( 100 );
-    $( this ).fadeIn( 500 );
-  });
 
   $("body").on('click', ".save-plan", function() {
     $(this).hide();
