@@ -147,60 +147,7 @@ $(document).ready(function() {
     });
   });  
   
-  // When clicking on real time searches, it will modify the search query to match the click
-  $(this).on("click", '.realTimeSearch', function() {
-    var selectPrice = $(this).find('.displayPrice').html(); 
-    selectPrice = selectPrice.replace( /[^\d.]/g, '' );
-    $("#priceslider").val( "$" + selectPrice);
-    $("#price").val(selectPrice);
-    $("#slider1").slider("option", "value", selectPrice);
-    $( ".price-text" ).text("$" + selectPrice);
 
-    var selectMinute = $(this).find('.displayMinute').html();
-    selectMinute = selectMinute.replace( /[^\d.]/g, '' );
-    if (selectMinute == "") {
-      selectMinute = 1050;
-    }
-    // Does the text for slider
-    $("#minuteslider").val(selectMinute);
-    $("#minute").val(selectMinute);
-    $("#slider2").slider("option", "value", selectMinute);
-    if (selectMinute == 1050) {
-      $( ".minute-text" ).text("Unlimited");
-    } else {
-      $( ".minute-text" ).text(selectMinute);
-    }
-
-    var selectData = $(this).find('.displayData').html();
-    selectData = selectData.replace( /[^\d.]/g, '' );
-    if (selectData == "") {
-      selectData = 6500;
-    }
-    // Does the text for slider
-    $("#dataslider").val(selectData);
-    $("#data").val(selectData);
-    $("#slider3").slider("option", "value", selectData);
-    if (selectData == 6500) {
-      $( ".data-text" ).text("Unlimited");
-    } else {
-      $( ".data-text" ).text(selectData);
-    }
-
-    var selectText = $(this).find('.displayText').html();
-    selectText = selectText.replace( /[^\d.]/g, '' );
-    if (selectText == "") {
-      selectText = 2600;
-    }
-    // Does the text for slider
-    $("#textslider").val(selectText);
-    $("#text").val(selectText);
-    $("#slider4").slider("option", "value", selectText);
-    if (selectText == 2600) {
-      $( ".text-text" ).text("Unlimited");
-    } else {
-      $( ".text-text" ).text(selectText);
-    }
-  });
 
   $(this).on("mouseenter", '.realTimeSearch', function() {
     $( this ).fadeOut( 100 );
