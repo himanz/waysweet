@@ -1,23 +1,4 @@
-// Updates firebase database on search submit
-
 $(document).ready(function() {
-
-  var url = "https://sizzling-fire-5831.firebaseio.com";
-
-  var firebaseRef = new Firebase(url);
-
-  function funct1()
-  {
-    var price = $('#price').val();
-    var minute = $('#minute').val();
-    var data = $('#data').val();
-    var text = $('#text').val();
-    var date = Date();
-
-    // firebaseRef.set({Price: price, Date: date});
-    var postRef = firebaseRef.push(); // create a new post
-    postRef.set({Price: price, Minute: minute, Data: data, Text: text, Date: date});
-  }
 
   $('.search-submit').click(function() {
   	funct1();
