@@ -137,6 +137,11 @@ $(document).ready(function() {
   $("#textslider").hide();
   $("#priceslider").hide();
 
+  $('#city').select2({
+    placeholder: "Select a City",
+    allowClear: true
+  });
+
 });
 
 // Replacing Carriers with logos
