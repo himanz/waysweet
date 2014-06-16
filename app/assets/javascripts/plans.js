@@ -7,8 +7,6 @@ $(document).ready(function() {
   $('.searchrow').hide();
   $('#step2').hide();
 
-
-
   // Button navigation for home page
   $('#button1').click(function() {
     $('#step1').hide();
