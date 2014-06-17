@@ -33,13 +33,12 @@ gem 'sorcery'
 
 gem 'kaminari'
 
-gem 'geocoder'
-
 gem 'figaro'
 
 gem 'jquery-ui-rails'
 
 gem 'select2-rails'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
