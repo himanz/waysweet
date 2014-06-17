@@ -20,6 +20,11 @@ Waysweet::Application.routes.draw do
   resources :save_plans
   resources :searches
 
+  namespace :admin do
+    resources :users
+  end
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
