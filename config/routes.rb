@@ -12,7 +12,7 @@ Waysweet::Application.routes.draw do
   resources :plans, :except => [:show, :edit, :update] do
     resources :comments
   end
-  get "map" => "plans#map"
+
 
   get "faq" => "plans#faq"
 
@@ -23,7 +23,7 @@ Waysweet::Application.routes.draw do
   namespace :admin do
     resources :users
   end
-  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
