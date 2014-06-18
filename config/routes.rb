@@ -21,6 +21,7 @@ d
 
   namespace :admin do 
     get '', to: 'dashboard#index', as: '/' 
+    resources :users
   end 
 
   # The priority is based upon order of creation: first created -> highest priority.
