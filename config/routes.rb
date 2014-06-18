@@ -1,5 +1,5 @@
 Waysweet::Application.routes.draw do
-
+d
   root 'plans#home'
   
   resources :sessions
@@ -12,7 +12,6 @@ Waysweet::Application.routes.draw do
   resources :plans, :except => [:show, :edit, :update] do
     resources :comments
   end
-  get "map" => "plans#map"
 
   get "faq" => "plans#faq"
 
