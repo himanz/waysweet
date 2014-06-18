@@ -1,6 +1,5 @@
 Waysweet::Application.routes.draw do
 
-  get "dashboard/index"
   root 'plans#home'
   
   resources :sessions
