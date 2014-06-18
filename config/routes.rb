@@ -1,5 +1,6 @@
 Waysweet::Application.routes.draw do
-d
+
+  get "users/index"
   root 'plans#home'
   
   resources :sessions
