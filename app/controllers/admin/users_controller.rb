@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def new
@@ -7,7 +8,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -21,3 +22,9 @@ class Admin::UsersController < ApplicationController
   end
 
 end
+
+
+ private
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation) 
+  end
