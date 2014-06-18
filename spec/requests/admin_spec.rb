@@ -1,3 +1,5 @@
+# spec/reqeusts/admin_spec.rb
+
 it "accesses the dashboard" do 
   User.create( 
     email: 'user@example.com', 
