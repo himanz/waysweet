@@ -285,7 +285,7 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.prevent_non_active_users_to_login =
 
-    user.reset_password_mailer = UserMailer
+
     # -- reset_password --
     # reset password code attribute name.
     # Default: `:reset_password_token`
@@ -308,13 +308,13 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    user.reset_password_mailer = UserMailer
 
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
     #
-    # user.reset_password_email_method_name =
+    user.reset_password_email_method_name = :reset_password_email
 
 
     # when true sorcery will not automatically
