@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  authenticates_with_sorcery!
 authenticates_with_sorcery! 
 
   has_many :plans_owned, class_name: "Plan", foreign_key: 'owner_id'

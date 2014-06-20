@@ -1,5 +1,8 @@
 Waysweet::Application.routes.draw do
 
+  get "password_resets/create"
+  get "password_resets/edit"
+  get "password_resets/update"
   get "users/index"
   root 'plans#home'
   
@@ -19,6 +22,7 @@ Waysweet::Application.routes.draw do
   resources :cities
   resources :save_plans
   resources :searches
+  resources :password_resets
 
   namespace :admin do 
     get '', to: 'dashboard#index', as: '/' 
