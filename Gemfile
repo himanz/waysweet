@@ -33,13 +33,13 @@ gem 'sorcery'
 
 gem 'kaminari'
 
-gem 'geocoder'
-
 gem 'figaro'
 
 gem 'jquery-ui-rails'
 
 gem 'select2-rails'
+
+gem "pundit"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -58,7 +58,7 @@ group :production do
 	gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
