@@ -1,17 +1,23 @@
 <h1>Listing users</h1>
+<div class="formgrid">
 
 <table>
   <tr>
-    <th>User name</th>
-    <th>Last name</th>
-    <th>Email</th>
+    <th class="tabletitle">User ID</th>
+    <th class="tabletitle">User name</th>
+    <th class="tabletitle">Last name</th>
+    <th class="tabletitle">Email</th>
+    <th class="tabletitle">Created</th>
   </tr>
 
-<%= @users.each do |user| %>
+
   <tr>
+    <%= @users.each do |user| %>
+    <td><%= user.id %></td>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= user.email %></td>
+    <td><%= user.created_at %></td>
   </tr>
 <% end %>
 </table>
@@ -19,6 +25,6 @@
 <br />
 
 
-<%= link_to 'New User', new_admin_user_path %>
+<%= link_to 'Create New User', new_admin_user_path %>
 
-
+</div>
