@@ -1,4 +1,7 @@
+<div id="myModal" class="reveal-modal" data-reveal>
+
 <%= form_tag sessions_path, :class => "text-bars" do %>
+
 
   <div class="field">
   	<%= label_tag :email %>
@@ -14,7 +17,10 @@
   </div>
   <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
    <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
-   <li><%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %></li>
-              
-
+            
 <% end %>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div class="pagebreak"></div>

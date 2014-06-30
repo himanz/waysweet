@@ -37,8 +37,10 @@
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>
             <li class="has-dropdown">
               <% if !current_user %>
-                <%= link_to "Login", login_path %>
-                
+
+                <a href="login" data-reveal-id="myModal">Login</a>
+    
+
               <% else %>
                 <%= link_to current_user.first_name, current_user %>
                 <ul class="dropdown">
