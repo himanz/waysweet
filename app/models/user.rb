@@ -2,13 +2,14 @@ class User < ActiveRecord::Base
    authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
+  
 
   has_many :plans_owned, class_name: "Plan", foreign_key: 'owner_id'
   has_many :comments
   has_many :save_plans
   has_many :plans, :through => :save_plans 
   has_many :authentications, :dependent => :destroy
-  # accepts_nested_attributes_for :authentications
+  
 
 	  # validates_confirmation_of :password
 	  # validates_presence_of :password, :on => :create

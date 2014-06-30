@@ -31,8 +31,7 @@
           <ul class="right">
             <% if !current_user %>
               <li class="active"><%= link_to "Create Account", new_user_path %> </li>
-              <li><%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
-              </li>
+            
 
             <% end %>
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>

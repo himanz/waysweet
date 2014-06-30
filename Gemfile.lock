@@ -167,6 +167,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  oauth2
   pg
   quiet_assets
   rails (= 4.0.4)

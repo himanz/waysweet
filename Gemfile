@@ -41,6 +41,7 @@ gem 'jquery-ui-rails'
 
 gem 'select2-rails'
 
+gem 'oauth2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
