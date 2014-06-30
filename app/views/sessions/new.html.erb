@@ -1,3 +1,25 @@
+<%= form_tag sessions_path, :class => "text-bars" do %>
+
+
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="field">
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+    <%= label_tag :remember_me %>
+  </div>
+  <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
+   <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+   <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+            
+<% end %>
+
+
 <div id="myModal" class="reveal-modal" data-reveal>
 
 <%= form_tag sessions_path, :class => "text-bars" do %>
@@ -17,6 +39,7 @@
   </div>
   <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
    <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+   <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
             
 <% end %>
 
