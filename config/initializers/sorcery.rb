@@ -113,7 +113,8 @@ config.facebook.key = Figaro.env.facebook_client
   config.facebook.secret = Figaro.env.facebook_secret
   config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
   config.facebook.user_info_mapping = {:email => "email"}
-  config.facebook.access_permissions = ["email"]
+  # config.facebook.access_permissions = ["email"]
+  config.facebook.scope = "email"
   config.facebook.display = "popup"
   #
   # config.github.key = ""
