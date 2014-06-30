@@ -1,5 +1,7 @@
 Waysweet::Application.routes.draw do
 
+  get "oauths/oauth"
+  get "oauths/callback"
   get "users/index"
   root 'plans#home'
   
