@@ -1,7 +1,8 @@
 Waysweet::Application.routes.draw do
 
-  post "oauth/callback" => "oauths#callback"
-  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+post "oauth/callback" => "oauths#callback"
+get "oauth/callback" => "oauths#callback" # for use with Github
+get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
   get "users/index"
   root 'plans#home'

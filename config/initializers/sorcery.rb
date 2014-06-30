@@ -411,7 +411,7 @@ config.facebook.key = Figaro.env.facebook_client
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class = Authentication
+    user.authentications_class = Authentication
 
 
     # User's identifier in authentications class.
