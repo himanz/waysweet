@@ -14,6 +14,7 @@
   </div>
   <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
    <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+   <li><%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %></li>
               
 
 <% end %>
