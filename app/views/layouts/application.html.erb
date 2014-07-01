@@ -31,6 +31,7 @@
           <ul class="right">
             <% if !current_user %>
               <li class="active">
+                <!-- Reveal Modal for sign up -->
                  <a href ="" data-reveal-id="myModal-S">Sign Up</a>
                </li>
                 <div id="myModal-S" class="reveal-modal" data-reveal>
@@ -43,7 +44,7 @@
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>
             <li class="has-dropdown">
               <% if !current_user %>
-
+              <!-- Reveal Modal for Login -->
                 <a href ="" data-reveal-id="myModal">Login</a>
                 <div id="myModal" class="reveal-modal" data-reveal>
 
