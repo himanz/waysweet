@@ -34,8 +34,9 @@
                 <!-- Reveal Modal for sign up -->
                  <a href ="" data-reveal-id="myModal-S">Sign Up</a>
                </li>
+               
                 <div id="myModal-S" class="reveal-modal" data-reveal>
-                  <%= form_tag new_user_path, :class => "text-bars-a" do %>
+                  <%= form_tag users_path, :class => "text-bars-a" do %>
                     <div class="field">
                       <%= label_tag :first_name %>
                       <%= text_field_tag :first_name %>
