@@ -30,10 +30,16 @@
           <!-- Right Nav Section -->
           <ul class="right">
             <% if !current_user %>
-              <li class="active"><%= link_to "Create Account", new_user_path %> </li>
-            
+              <li class="active">
+                 <a href ="" data-reveal-id="myModal-S">Sign Up</a>
+               </li>
+                <div id="myModal-S" class="reveal-modal" data-reveal>
+                    Test
+                    <a class="close-reveal-modal">&#215;</a>
+                  </div>
 
             <% end %>
+
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>
             <li class="has-dropdown">
               <% if !current_user %>
@@ -69,7 +75,7 @@
                     </div>
                     <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
                     Don't have an account yet? 
-                    <%= link_to 'Create Account', new_user_path %>          
+                    <%= link_to 'Sign up', new_user_path %>          
                   <% end %>
 
                     <a class="close-reveal-modal">&#215;</a>
