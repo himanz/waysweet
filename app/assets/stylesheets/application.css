@@ -160,3 +160,22 @@ color: red;
   height: 100%
 
 }
+
+#gline{
+  color: #E5E5E5;
+  height: 2px;
+  width: 50%;
+}
+
+#fblink{
+  background-color: #00305B;
+  color: white;
+}
+
+#fblink a{
+  color: white;
+}
+
+#fblink a:hover{
+  color: #0359bb }
+
