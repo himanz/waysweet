@@ -1,3 +1,37 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#gline{
+  color: #E5E5E5;
+  height: 2px;
+  width: 50%;
+}
+
+
+
+table.logincenter{
+  border: 0
+}
+
+td.fb-link{
+  width: 100%;
+  background-color: #3b5998;
+  color: white;
+  text-align: center
+}
+
+td.bg-fb{
+  background-color: #3b5998;
+
+}
+
+table.logincenter{
+  background-color: #3b5998
+}
+
+.fi-social-facebook{
+  color: white;
+  font-size: 3em
+}
+
