@@ -38,8 +38,41 @@
             <li class="has-dropdown">
               <% if !current_user %>
 
-                <a data-reveal-id="myModal" href="login">Login</a>
-    
+                <a href ="" data-reveal-id="myModal">Login</a>
+                <div id="myModal" class="reveal-modal" data-reveal>
+
+                  <%= form_tag sessions_path, :class => "text-bars" do %>
+                  <a href="/oauth/facebook">
+                    <table class="logincenter">
+                      <tbody>
+                        <tr>
+                          <td class="bg-fb"><i class="fi-social-facebook"></i></td>
+                          <td class="fb-link">LOGIN WITH FACEBOOK</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </a>
+
+                  <div id="gline"></div> <center>OR</center> <div id="gline"></div>
+
+                    <div class="field">
+                      <%= label_tag :email %>
+                      <%= text_field_tag :email, params[:email] %>
+                    </div>
+                    <div class="field">
+                      <%= label_tag :password %>
+                      <%= password_field_tag :password %>
+                    </div>
+                    <div class="field">
+                      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                      <%= label_tag :remember_me %>
+                    </div>
+                    <div class="actions"><%= submit_tag "Log in", :class => 'button tiny login' %></div>
+                              
+                  <% end %>
+
+                    <a class="close-reveal-modal">&#215;</a>
+                  </div>
 
               <% else %>
                 <%= link_to current_user.first_name, current_user %>
