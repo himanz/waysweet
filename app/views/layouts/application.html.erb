@@ -35,11 +35,41 @@
                  <a href ="" data-reveal-id="myModal-S">Sign Up</a>
                </li>
                 <div id="myModal-S" class="reveal-modal" data-reveal>
-                    Test
+                  <%= form_tag new_user_path, :class => "text-bars-a" do %>
+                    <div class="field">
+                      <%= label_tag :first_name %>
+                      <%= text_field_tag :first_name %>
+                    </div>
+
+                    <div class="field">
+                      <%= label_tag :last_name %>
+                      <%= text_field_tag :last_name %>
+                    </div>
+
+                    <div class="field">
+                      <%= label_tag :email %>
+                      <%= text_field_tag :email %>
+                    </div>
+
+                    <div class="field">
+                      <%= label_tag :password %>
+                      <%= password_field_tag :password %>
+                    </div>
+
+                    <div class="field">
+                      <%= label_tag :password_confirmation %>
+                      <%= password_field_tag :password_confirmation %>
+                    </div>
+
+                  <% end %>
+
+                    <div class="actions"><%= submit_tag "Create User", :class => 'button tiny login' %></div>
+                    
                     <a class="close-reveal-modal">&#215;</a>
-                  </div>
+                </div>
 
             <% end %>
+                  
 
             <li class="active"><%= link_to "Submit Your Plan", new_plan_path %> </li>
             <li class="has-dropdown">
@@ -48,7 +78,7 @@
                 <a href ="" data-reveal-id="myModal">Login</a>
                 <div id="myModal" class="reveal-modal" data-reveal>
 
-                  <%= form_tag sessions_path, :class => "text-bars" do %>
+                  <%= form_tag sessions_path, :class => "text-bars-a" do %>
                   <a href="/oauth/facebook">
                     <table class="logincenter">
                       <tbody>
