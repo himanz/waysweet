@@ -119,6 +119,7 @@ class PlansController < ApplicationController
     	@cities.push([city.name,city.name])
     end
     @cities.sort!
+    @user = User.new
   end
   
 
@@ -127,6 +128,4 @@ class PlansController < ApplicationController
 		params.require(:plan).permit(:price, :data, :minute, :text, :carrier, :city_id)
 	end
   
-  
-
 end

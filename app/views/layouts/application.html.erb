@@ -36,35 +36,34 @@
                </li>
                
                 <div id="myModal-S" class="reveal-modal" data-reveal>
-                  <%= form_tag users_path, :class => "text-bars-a" do %>
+                  <%= form_for @user, :class => "text-bars-a" do |f| %>
                     <div class="field">
-                      <%= label_tag :first_name %>
-                      <%= text_field_tag :first_name %>
+                      <%= f.label :first_name %>
+                      <%= f.text_field :first_name %>
                     </div>
 
                     <div class="field">
-                      <%= label_tag :last_name %>
-                      <%= text_field_tag :last_name %>
+                      <%= f.label :last_name %>
+                      <%= f.text_field :last_name %>
                     </div>
 
                     <div class="field">
-                      <%= label_tag :email %>
-                      <%= text_field_tag :email %>
+                      <%= f.label :email %>
+                      <%= f.text_field :email %>
                     </div>
 
                     <div class="field">
-                      <%= label_tag :password %>
-                      <%= password_field_tag :password %>
+                      <%= f.label :password %>
+                      <%= f.password_field :password %>
                     </div>
 
-                    <div class="field">
-                      <%= label_tag :password_confirmation %>
-                      <%= password_field_tag :password_confirmation %>
-                    </div>
+                    
+
+                    <div class="actions"><%= f.submit "Create User", :class => 'button tiny login' %></div>
 
                   <% end %>
 
-                    <div class="actions"><%= submit_tag "Create User", :class => 'button tiny login' %></div>
+                    
                     
                     <a class="close-reveal-modal">&#215;</a>
                 </div>
