@@ -7,6 +7,7 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
   get "users/index"
   root 'plans#home'
+
   
   resources :sessions
   get "logout" => "sessions#destroy", :as => "logout"
@@ -20,6 +21,8 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
   end
 
   get "faq" => "plans#faq"
+
+  get "terms" => "plans#terms"
 
   resources :cities
   resources :save_plans
