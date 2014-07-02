@@ -23,6 +23,7 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
   get "faq" => "plans#faq"
 
   get "terms" => "plans#terms"
+  get "about" => "plans#about"
 
   resources :cities
   resources :save_plans
