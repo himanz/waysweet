@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @cities = City.all
+
+    if current_user == @user
+
+    else
+      redirect_to root_url, :alert => "Please Sign In!"
+    end    
   end
 
   def new
