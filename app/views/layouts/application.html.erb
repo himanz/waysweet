@@ -36,7 +36,7 @@
                </li>
                
                 <div id="myModal-S" class="reveal-modal" data-reveal>
-                  <%= form_for @user, :class => "text-bars-a" do |f| %>
+                  <%= form_for User.new, :class => "text-bars-a" do |f| %>
                     <div class="field">
                       <%= f.label :first_name %>
                       <%= f.text_field :first_name %>

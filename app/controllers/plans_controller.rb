@@ -119,7 +119,6 @@ class PlansController < ApplicationController
     	@cities.push([city.name,city.name])
     end
     @cities.sort!
-    @user = User.new
   end
   
 

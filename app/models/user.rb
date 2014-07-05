@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :save_plans
   has_many :plans, :through => :save_plans 
   has_many :authentications, :dependent => :destroy
-  # has_secure_password
+  
 
 	  validates_confirmation_of :password
 	  validates_presence_of :password, :on => :create
