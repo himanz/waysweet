@@ -70,7 +70,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid] .
   # Default: `[]`
   #
-  config.external_providers = [:facebook, :twitter]
+  config.external_providers = [:facebook]
 
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
@@ -104,14 +104,14 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter wil not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = Figaro.env.twitter_client
-  config.twitter.secret = Figaro.env.twitter_secret
-  config.twitter.callback_url = "http://bit.ly/1lr2oqX"
-  config.twitter.user_info_mapping = {:email => "screen_name"}
+  # config.twitter.key = Figaro.env.twitter_client
+  # config.twitter.secret = Figaro.env.twitter_secret
+  # config.twitter.callback_url = "http://bit.ly/1lr2oqX"
+  # config.twitter.user_info_mapping = {:email => "screen_name"}
   #
 config.facebook.key = Figaro.env.facebook_client
   config.facebook.secret = Figaro.env.facebook_secret
-  config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
+  config.facebook.callback_url = "http://staging-waysweeter.herokuapp.com/oauth/callback?provider=facebook"
   config.facebook.user_info_mapping = {:email => "email", :first_name => "name"}
   # config.facebook.access_permissions = ["email"]
   config.facebook.scope = "email"
