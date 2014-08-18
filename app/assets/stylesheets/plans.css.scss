@@ -474,7 +474,8 @@ table.planstable{
   }
 
   .searchbar{
-    min-width: 100px
+    min-width: 100px;
+    width: 44%;
   }
 
   .carrierbar{
@@ -502,5 +503,21 @@ table.planstable{
 
   table thead tr th{
     padding: 0.1em;
+  }
+
+  .fi-graph-bar{
+    font-size: 3em
+  }
+
+  .fi-telephone{
+    font-size: 3em
+  }
+
+  .fi-social-skillshare{
+    font-size: 3em
+  }
+
+  h3{
+    font-size: 1.1rem
   }
 }
