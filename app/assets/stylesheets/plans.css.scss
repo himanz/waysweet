@@ -470,6 +470,37 @@ table.planstable{
   }
 
   .formgrid{
-    width: 80%
+    width: 95%
+  }
+
+  .searchbar{
+    min-width: 100px
+  }
+
+  .carrierbar{
+    display: inline
+  }
+
+  .button.tiny{
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    font-size: 0.8125rem;
+    radius: 1em;
+    border-radius: 2em;
+  }
+
+  p {
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 0.7em;
+    line-height: 1;
+    margin-bottom: 0em;
+    text-rendering: optimizeLegibility;
+  }
+
+  table thead tr th{
+    padding: 0.1em;
   }
 }
