@@ -451,4 +451,25 @@ table.planstable{
     font-size: 1.3em 
   }
 
+  .columns.small-centered{
+    min-width: 3em;
+  }
+
+  .button.small{
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    font-size: 0.8125rem;
+    radius: 1em;
+    border-radius: 2em;
+  }
+
+  .header2{
+    font-size: 2em;
+  }
+
+  .formgrid{
+    width: 80%
+  }
 }
