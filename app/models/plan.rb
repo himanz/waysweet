@@ -25,8 +25,12 @@ class Plan < ActiveRecord::Base
     where(city_id: City.where(name:city_id).first.id).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
   end
 
-  def self.with_any_carrier_search_query(price, minute, data, text)
-    Plan.where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
+  def self.with_carrier_search_query(carrier, price, minute, data, text)
+    if carrier == "Any"
+      Plan.where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
+    else
+      Plan.where("carrier = ?", carrier).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
+    end
   end
 
   def self.check_unlimited(type, amount)

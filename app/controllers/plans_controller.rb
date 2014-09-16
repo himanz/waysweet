@@ -20,11 +20,7 @@ class PlansController < ApplicationController
         Plan.homesearch(user_id, params[:city], params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
       end
     elsif params[:indexsubmit]
-      if params[:carrier] == "Any"
-        @plans = Plan.with_any_carrier_search_query(params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
-      else
-    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
-    	end
+      @plans = Plan.with_carrier_search_query(params[:carrier], params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
     else
       @plans = Plan.all.page(params[:page])
     end
