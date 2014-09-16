@@ -11,10 +11,7 @@ class Plan < ActiveRecord::Base
   end
 
   def self.homesearch(user_id, city_id, price, minute, data, text)
-    
     # changes value of params to reflect unlimited before saving to our database
-    
-
     search = Search.new(city: city_id, price: price, minute: minute, data: data, text: text, user_id: user_id)
     search.save
 

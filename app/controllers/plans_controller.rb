@@ -50,15 +50,10 @@ class PlansController < ApplicationController
 		  @city.save	
 		end
     
-    if params[:minute] == "1050"
-        params[:minute] = "9999"
-    end
-    if params[:data] == "6500"
-      params[:data] = "9999"
-    end
-    if params[:text] == "2600"
-      params[:text] = "9999"
-    end
+    params[:minute] = Plan.check_unlimited("minute", params[:minute])
+    params[:data] = Plan.check_unlimited("data", params[:data])
+    params[:text] = Plan.check_unlimited("text", params[:text])
+    
     @plan.price = params[:price]
     @plan.minute = params[:minute]
     @plan.data = params[:data]
