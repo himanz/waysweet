@@ -20,6 +20,10 @@ class Plan < ActiveRecord::Base
     search = Search.new(city: city_id, price: price, minute: minute, data: data, text: text, user_id: user_id)
     search.save
 
+    with_city_search_query(city_id, price, minute, data, text)
+  end
+
+  def self.with_city_search_query(city_id, price, minute, data, text)
     where(city_id: City.where(name:city_id).first.id).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
   end
 
