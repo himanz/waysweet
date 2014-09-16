@@ -11,19 +11,13 @@ class Plan < ActiveRecord::Base
   end
 
   def self.homesearch(user_id, city_id, price, minute, data, text)
-    search = Search.new
+    
     # changes value of params to reflect unlimited before saving to our database
     minute = check_unlimited("minute", minute)
     data = check_unlimited("data", data)
     text = check_unlimited("text", text)
-  
-    search.city = city_id
-    search.price = price
-    search.minute = minute
-    search.data = data
-    search.text = text
-    search.user_id = user_id
-    
+
+    search = Search.new(city: city_id, price: price, minute: minute, data: data, text: text, user_id: user_id)
     search.save
 
     where(city_id: City.where(name:city_id).first.id).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
