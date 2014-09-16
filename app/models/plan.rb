@@ -10,30 +10,26 @@ class Plan < ActiveRecord::Base
     return carrier
   end
 
-  def self.homesearch(city_id, price, minute, data, text)
+  def self.homesearch(user_id, city_id, price, minute, data, text)
     search = Search.new
-      # changes value of params to reflect unlimited before saving to our database
-      if params[:minute] == "1050"
-        params[:minute] = "9999"
-      end
-      if params[:data] == "6500"
-        params[:data] = "9999"
-      end
-      if params[:text] == "2600"
-        params[:text] = "9999"
-      end
-      search.city = params[:city]  
-      search.price = params[:price]
-      search.minute = params[:minute]
-      search.data = params[:data]
-      search.text = params[:text]
-      if current_user
-        search.user_id = current_user.id
-      end
-      search.save
+    # changes value of params to reflect unlimited before saving to our database
+    minute = check_unlimited("minute", minute)
+    data = check_unlimited("data", data)
+    text = check_unlimited("text", text)
+  
+    search.city = city_id
+    search.price = price
+    search.minute = minute
+    search.data = data
+    search.text = text
+    search.user_id = user_id
+    
+    search.save
+
+    where(city_id: City.where(name:city_id).first.id).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
   end
 
-  def set_unlimited(type, amount)
+  def self.check_unlimited(type, amount)
     if (type == "minute" && amount == "1050") || (type == "data" && amount == "6500") || (type == "text" && amount == "2600")
       return "9999"
     else

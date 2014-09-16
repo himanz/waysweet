@@ -4,17 +4,15 @@ class PlansController < ApplicationController
 		@save_plan = SavePlan.new
     if current_user
       @save_plans = SavePlan.where(user_id: current_user.id)
+      user_id = current_user.id
+    else
+      user_id = nil
     end
-    
-    # checks if search is coming from home
-		if params[:homesubmit]
-			@plans = Plan.homesearch   
-		end
     
     # different queries in database depending on where search originates
     if params[:homesubmit]
       @plans = if params[:price]	 
-        Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
+        Plan.homesearch(user_id, params[:city], params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
       end
     elsif params[:indexsubmit]
       if params[:carrier] == "Any"
