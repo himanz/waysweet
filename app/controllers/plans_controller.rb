@@ -4,43 +4,23 @@ class PlansController < ApplicationController
 		@save_plan = SavePlan.new
     if current_user
       @save_plans = SavePlan.where(user_id: current_user.id)
+      user_id = current_user.id
+    else
+      user_id = nil
     end
     
-    # checks if search is coming from home
-		if params[:homesubmit]
-			search = Search.new
-      # changes value of params to reflect unlimited before saving to our database
-      if params[:minute] == "1050"
-        params[:minute] = "9999"
-      end
-      if params[:data] == "6500"
-        params[:data] = "9999"
-      end
-      if params[:text] == "2600"
-        params[:text] = "9999"
-      end
-      search.city = params[:city]  
-      search.price = params[:price]
-      search.minute = params[:minute]
-      search.data = params[:data]
-      search.text = params[:text]
-      if current_user
-      	search.user_id = current_user.id
-      end
-      search.save      
-		end
+    # checks params if it matches unlimited
+    params[:minute] = Plan.check_unlimited("minute", params[:minute])
+    params[:data] = Plan.check_unlimited("data", params[:data])
+    params[:text] = Plan.check_unlimited("text", params[:text])
     
     # different queries in database depending on where search originates
     if params[:homesubmit]
       @plans = if params[:price]	 
-        Plan.where(city_id: City.where(name:params[:city]).first.id).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
+        Plan.homesearch(user_id, params[:city], params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
       end
     elsif params[:indexsubmit]
-      if params[:carrier] == "Any"
-        @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
-      else
-    	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
-    	end
+      @plans = Plan.with_carrier_search_query(params[:carrier], params[:price], params[:minute], params[:data], params[:text]).page(params[:page])  
     else
       @plans = Plan.all.page(params[:page])
     end
