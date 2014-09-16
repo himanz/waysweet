@@ -8,26 +8,7 @@ class PlansController < ApplicationController
     
     # checks if search is coming from home
 		if params[:homesubmit]
-			search = Search.new
-      # changes value of params to reflect unlimited before saving to our database
-      if params[:minute] == "1050"
-        params[:minute] = "9999"
-      end
-      if params[:data] == "6500"
-        params[:data] = "9999"
-      end
-      if params[:text] == "2600"
-        params[:text] = "9999"
-      end
-      search.city = params[:city]  
-      search.price = params[:price]
-      search.minute = params[:minute]
-      search.data = params[:data]
-      search.text = params[:text]
-      if current_user
-      	search.user_id = current_user.id
-      end
-      search.save      
+			@plans = Plan.homesearch   
 		end
     
     # different queries in database depending on where search originates
