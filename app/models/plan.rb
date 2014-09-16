@@ -26,7 +26,7 @@ class Plan < ActiveRecord::Base
   end
 
   def self.with_any_carrier_search_query(price, minute, data, text)
-    Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
+    Plan.where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
   end
 
   def self.check_unlimited(type, amount)

@@ -21,7 +21,7 @@ class PlansController < ApplicationController
       end
     elsif params[:indexsubmit]
       if params[:carrier] == "Any"
-        @plans = Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
+        @plans = Plan.with_any_carrier_search_query(params[:price], params[:minute], params[:data], params[:text]).page(params[:page])
       else
     	  @plans = Plan.where("carrier   = ?", params[:carrier]).where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
     	end
