@@ -13,9 +13,7 @@ class Plan < ActiveRecord::Base
   def self.homesearch(user_id, city_id, price, minute, data, text)
     
     # changes value of params to reflect unlimited before saving to our database
-    minute = check_unlimited("minute", minute)
-    data = check_unlimited("data", data)
-    text = check_unlimited("text", text)
+    
 
     search = Search.new(city: city_id, price: price, minute: minute, data: data, text: text, user_id: user_id)
     search.save
@@ -25,6 +23,10 @@ class Plan < ActiveRecord::Base
 
   def self.with_city_search_query(city_id, price, minute, data, text)
     where(city_id: City.where(name:city_id).first.id).where("price <= ?", price).where("minute >= ?", minute).where("data >= ?", data).where("text >= ?", text).order("price ASC")
+  end
+
+  def self.with_any_carrier_search_query(price, minute, data, text)
+    Plan.where("price <= ?", params[:price]).where("minute >= ?", params[:minute]).where("data >= ?", params[:data]).where("text >= ?", params[:text]).order("price ASC").page(params[:page])
   end
 
   def self.check_unlimited(type, amount)

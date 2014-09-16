@@ -9,6 +9,11 @@ class PlansController < ApplicationController
       user_id = nil
     end
     
+    # checks params if it matches unlimited
+    params[:minute] = Plan.check_unlimited("minute", params[:minute])
+    params[:data] = Plan.check_unlimited("data", params[:data])
+    params[:text] = Plan.check_unlimited("text", params[:text])
+    
     # different queries in database depending on where search originates
     if params[:homesubmit]
       @plans = if params[:price]	 
