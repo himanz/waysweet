@@ -10,18 +10,20 @@
   border: 1px solid #ddd;
   float: left;
   width: 650px;
-  // right: 100px;
-  
-  
+}
+
+.userprofile.tabs dd.active a{
+  border-bottom: 5px solid #2BB890;
 }
 
 .planlist{
   height: 150px;
   width: 150px;
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid #D8D8D8;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 20px;
+  padding-top: 3em;
 }
 
 .user_plans_carrier{
@@ -29,21 +31,22 @@
 }
 
 .user_plans_info{
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  
 }
 
+.user_plans_carrier{
+  text-align: center;
+}
 
 .draglist{
   left: 50%;
   top: 100px;
   width: 200px;
   height: 280px;
-
 }
-
 
 .reveal-modal{
   position: fixed

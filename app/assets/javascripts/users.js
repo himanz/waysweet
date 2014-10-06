@@ -12,4 +12,11 @@ $(function() {
   });
 });
 
+$(document).ready(function(){
 
+$('.user_plans_info').hide();
+
+  $('.user_plans_carrier').hover(function(){
+    $(this).append ($('.user_plans_info'));
+  });
+});
