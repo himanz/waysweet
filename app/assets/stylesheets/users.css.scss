@@ -16,13 +16,25 @@
 }
 
 .planlist{
-height: 250px;
-width: 200px;
-display: inline-block;
-background-color: white
-  
-
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 50px;
 }
+
+.user_plans_carrier{
+  position: relative
+}
+
+.user_plans_info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
 
 .draglist{
   left: 50%;
